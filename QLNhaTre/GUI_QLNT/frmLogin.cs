@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace GUI_QLNT
 {
-    public partial class frmMain : Form
+    public partial class frmLogin : Form
     {
-        public frmMain()
+        public frmLogin()
         {
             InitializeComponent();
+        }
+
+        private void btnDangnhap_Click(object sender, EventArgs e)
+        {
+            frmMain fm = new frmMain();
+            this.Hide();
+            fm.ShowDialog();
+            this.Show();
         }
     }
 }
