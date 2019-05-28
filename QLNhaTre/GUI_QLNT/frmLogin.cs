@@ -8,9 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
+
 namespace GUI_QLNT
 {
-    public partial class frmLogin : Form
+    public partial class frmLogin : MetroFramework.Forms.MetroForm
     {
         public frmLogin()
         {
