@@ -43,11 +43,5 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DTO_QLNT\DTO_QLNT.csproj">
-      <Project>{542ed839-baa1-4638-87e2-9df5b58bb0e4}</Project>
-      <Name>DTO_QLNT</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
