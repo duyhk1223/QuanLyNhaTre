@@ -10,11 +10,31 @@ using System.Windows.Forms;
 
 namespace GUI_QLNT
 {
-    public partial class frmMain : Form
+    public partial class frmMain : MetroFramework.Forms.MetroForm
     {
         public frmMain()
         {
             InitializeComponent();
+        }
+        private void moveSidePanel(Control btn)
+        {
+            panelSide.Top = btn.Top;
+            panelSide.Height = btn.Height;
+        }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
+            moveSidePanel(btn1);
+        }
+
+        private void btn2_Click(object sender, EventArgs e)
+        {
+            moveSidePanel(btn2);
+        }
+
+        private void btn3_Click(object sender, EventArgs e)
+        {
+            moveSidePanel(btn3);
         }
     }
 }
