@@ -36,7 +36,7 @@
             this.btnGiaovien = new System.Windows.Forms.Button();
             this.btnHocsinh = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panelControl = new System.Windows.Forms.Panel();
+            this.pnlControl = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,13 +51,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(20, 60);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(135, 640);
+            this.panel1.Size = new System.Drawing.Size(135, 560);
             this.panel1.TabIndex = 0;
             // 
             // pnlSide
             // 
-            this.pnlSide.BackColor = System.Drawing.Color.Black;
-            this.pnlSide.Location = new System.Drawing.Point(0, 15);
+            this.pnlSide.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pnlSide.Location = new System.Drawing.Point(0, 19);
             this.pnlSide.Name = "pnlSide";
             this.pnlSide.Size = new System.Drawing.Size(7, 70);
             this.pnlSide.TabIndex = 1;
@@ -72,7 +72,7 @@
             this.btnHethong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHethong.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnHethong.ForeColor = System.Drawing.Color.White;
-            this.btnHethong.Location = new System.Drawing.Point(0, 225);
+            this.btnHethong.Location = new System.Drawing.Point(0, 229);
             this.btnHethong.Margin = new System.Windows.Forms.Padding(0);
             this.btnHethong.Name = "btnHethong";
             this.btnHethong.Size = new System.Drawing.Size(135, 70);
@@ -91,7 +91,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 155);
+            this.button2.Location = new System.Drawing.Point(0, 159);
             this.button2.Margin = new System.Windows.Forms.Padding(0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(135, 70);
@@ -110,7 +110,7 @@
             this.btnGiaovien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGiaovien.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnGiaovien.ForeColor = System.Drawing.Color.White;
-            this.btnGiaovien.Location = new System.Drawing.Point(0, 85);
+            this.btnGiaovien.Location = new System.Drawing.Point(0, 89);
             this.btnGiaovien.Margin = new System.Windows.Forms.Padding(0);
             this.btnGiaovien.Name = "btnGiaovien";
             this.btnGiaovien.Size = new System.Drawing.Size(135, 70);
@@ -129,7 +129,7 @@
             this.btnHocsinh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHocsinh.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnHocsinh.ForeColor = System.Drawing.Color.White;
-            this.btnHocsinh.Location = new System.Drawing.Point(0, 15);
+            this.btnHocsinh.Location = new System.Drawing.Point(0, 19);
             this.btnHocsinh.Margin = new System.Windows.Forms.Padding(0);
             this.btnHocsinh.Name = "btnHocsinh";
             this.btnHocsinh.Size = new System.Drawing.Size(135, 70);
@@ -144,23 +144,23 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(155, 60);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1025, 15);
+            this.panel2.Size = new System.Drawing.Size(905, 15);
             this.panel2.TabIndex = 1;
             // 
-            // panelControl
+            // pnlControl
             // 
-            this.panelControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl.Location = new System.Drawing.Point(155, 75);
-            this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(1025, 625);
-            this.panelControl.TabIndex = 2;
+            this.pnlControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlControl.Location = new System.Drawing.Point(155, 75);
+            this.pnlControl.Name = "pnlControl";
+            this.pnlControl.Size = new System.Drawing.Size(905, 545);
+            this.pnlControl.TabIndex = 2;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 720);
-            this.Controls.Add(this.panelControl);
+            this.ClientSize = new System.Drawing.Size(1080, 640);
+            this.Controls.Add(this.pnlControl);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -181,7 +181,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlSide;
-        private System.Windows.Forms.Panel panelControl;
+        private System.Windows.Forms.Panel pnlControl;
         private System.Windows.Forms.Button btnHocsinh;
         private System.Windows.Forms.Button btnHethong;
         private System.Windows.Forms.Button button2;

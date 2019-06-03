@@ -17,8 +17,6 @@ C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\bin\Debug\MetroFr
 C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\bin\Debug\MetroFramework.dll
 C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\bin\Debug\MetroFramework.Fonts.dll
 C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLNT.frmMain.resources
-C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLNT.UC_Dshs.resources
-C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLNT.UC_TTSK.resources
 C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLNT.UC_HeThong.resources
 C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\bin\Debug\MaterialSkin.dll
 C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLNT.UC_HocSinh.resources

@@ -32,12 +32,12 @@ namespace GUI_QLNT
         private void AddControlsToPanel(Control c)
         {
 
-            while (panelControl.Controls.Count > 0)
+            while (pnlControl.Controls.Count > 0)
             {
-                panelControl.Controls[0].Dispose();
+                pnlControl.Controls[0].Dispose();
             }
             c.Dock = DockStyle.Fill;
-            panelControl.Controls.Add(c);
+            pnlControl.Controls.Add(c);
         }
 
         private void btnHocsinh_Click(object sender, EventArgs e)

@@ -21,6 +21,24 @@ namespace GUI_QLNT
         {
 
         }
+
+        private void tabctrlHocsinh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabctrlHocsinh.SelectedTab == tabDSHS)
+            {
+                btnLuu.Hide();
+                btnThem.Show();
+                btnSua.Show();
+                btnXoa.Show();
+            }
+            else
+            {
+                btnLuu.Show();
+                btnThem.Hide();
+                btnSua.Hide();
+                btnXoa.Hide();
+            }
+        }
     }
     
 }
