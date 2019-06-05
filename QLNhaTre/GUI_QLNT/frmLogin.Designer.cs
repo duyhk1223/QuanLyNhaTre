@@ -105,7 +105,7 @@
             // 
             // btnDangnhap
             // 
-            this.btnDangnhap.BackColor = System.Drawing.Color.Silver;
+            this.btnDangnhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnDangnhap.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnDangnhap.FlatAppearance.BorderSize = 0;
             this.btnDangnhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

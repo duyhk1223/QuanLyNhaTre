@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace GUI_QLNT
 {
     public partial class frmMain : MetroFramework.Forms.MetroForm

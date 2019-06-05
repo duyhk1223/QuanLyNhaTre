@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace GUI_QLNT
 {
     public partial class UC_HocSinh : UserControl
@@ -17,10 +18,7 @@ namespace GUI_QLNT
             InitializeComponent();
         }
 
-        private void uC_DSHS_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void tabctrlHocsinh_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -38,6 +36,28 @@ namespace GUI_QLNT
                 btnSua.Hide();
                 btnXoa.Hide();
             }
+        }
+
+        private void UC_HocSinh_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pnlTool_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            frmThemHS fthem = new frmThemHS();
+            fthem.ShowDialog();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            frmSuaHS fsua = new frmSuaHS();
+            fsua.ShowDialog();
         }
     }
     
