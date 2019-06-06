@@ -22,3 +22,7 @@ C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLN
 C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLNT.pdb
 C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLNT.frmThemHS.resources
 C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLNT.frmSuaHS.resources
+C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLNT.UC_GiaoVien.resources
+C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLNT.frmThemGV.resources
+C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLNT.frmSuaGV.resources
+C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLNT.UC_DanhMuc.resources

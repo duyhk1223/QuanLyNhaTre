@@ -105,13 +105,13 @@
             // 
             // btnDangnhap
             // 
-            this.btnDangnhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnDangnhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnDangnhap.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.btnDangnhap.FlatAppearance.BorderSize = 0;
             this.btnDangnhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDangnhap.Location = new System.Drawing.Point(144, 121);
+            this.btnDangnhap.Location = new System.Drawing.Point(132, 121);
             this.btnDangnhap.Name = "btnDangnhap";
-            this.btnDangnhap.Size = new System.Drawing.Size(75, 23);
+            this.btnDangnhap.Size = new System.Drawing.Size(87, 23);
             this.btnDangnhap.TabIndex = 1;
             this.btnDangnhap.Text = "Đăng nhập";
             this.btnDangnhap.UseVisualStyleBackColor = false;
@@ -129,7 +129,6 @@
             this.MaximizeBox = false;
             this.Name = "frmLogin";
             this.Resizable = false;
-            this.Style = MetroFramework.MetroColorStyle.Green;
             this.Text = "Đăng nhập";
             this.ResumeLayout(false);
 

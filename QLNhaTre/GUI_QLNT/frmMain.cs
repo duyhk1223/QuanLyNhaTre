@@ -32,7 +32,7 @@ namespace GUI_QLNT
 
         private void AddControlsToPanel(Control c)
         {
-
+            
             while (pnlControl.Controls.Count > 0)
             {
                 pnlControl.Controls[0].Dispose();
@@ -41,28 +41,34 @@ namespace GUI_QLNT
             pnlControl.Controls.Add(c);
         }
 
-        private void btnHocsinh_Click(object sender, EventArgs e)
+        private void btnHocSinh_Click(object sender, EventArgs e)
         {
-            moveSidePanel(btnHocsinh);
+            moveSidePanel(btnHocSinh);
             UC_HocSinh uC_HocSinh = new UC_HocSinh();
             AddControlsToPanel(uC_HocSinh);
         }
 
-        private void btnHethong_Click(object sender, EventArgs e)
+        private void btnHeThong_Click(object sender, EventArgs e)
         {
-            moveSidePanel(btnHethong);
+            moveSidePanel(btnHeThong);
             UC_HeThong uC_HeThong = new UC_HeThong();
             AddControlsToPanel(uC_HeThong);
         }
 
-        private void btnGiaovien_Click(object sender, EventArgs e)
+        private void btnGiaoVien_Click(object sender, EventArgs e)
         {
-            moveSidePanel(btnGiaovien);
+            moveSidePanel(btnGiaoVien);
+            UC_GiaoVien uC_GiaoVien = new UC_GiaoVien();
+            AddControlsToPanel(uC_GiaoVien);
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
+        
 
+        private void btnDanhMuc_Click(object sender, EventArgs e)
+        {
+            moveSidePanel(btnDanhMuc);
+            UC_DanhMuc uC_DanhMuc = new UC_DanhMuc();
+            AddControlsToPanel(uC_DanhMuc);
         }
     }
 }

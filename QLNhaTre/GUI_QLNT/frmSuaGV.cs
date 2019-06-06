@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI_QLNT
 {
-    public partial class frmThemHS : Form
+    public partial class frmSuaGV : Form
     {
-        public frmThemHS()
+        public frmSuaGV()
         {
             InitializeComponent();
         }
@@ -20,11 +20,6 @@ namespace GUI_QLNT
         private void btnHuy_Click(object sender, EventArgs e)
         {
             this.Dispose();
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }
