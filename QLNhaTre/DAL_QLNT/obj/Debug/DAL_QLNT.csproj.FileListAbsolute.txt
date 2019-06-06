@@ -1,0 +1,9 @@
+C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\DAL_QLNT\bin\Debug\DAL_QLNT.dll
+C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\DAL_QLNT\bin\Debug\DAL_QLNT.pdb
+C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\DAL_QLNT\bin\Debug\DTO_QLNT.dll
+C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\DAL_QLNT\bin\Debug\DTO_QLNT.pdb
+C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\DAL_QLNT\obj\Debug\DAL_QLNT.csprojAssemblyReference.cache
+C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\DAL_QLNT\obj\Debug\DAL_QLNT.csproj.CoreCompileInputs.cache
+C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\DAL_QLNT\obj\Debug\DAL_QLNT.csproj.CopyComplete
+C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\DAL_QLNT\obj\Debug\DAL_QLNT.dll
+C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\DAL_QLNT\obj\Debug\DAL_QLNT.pdb
