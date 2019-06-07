@@ -82,6 +82,12 @@
     <Compile Include="frmSuaHS.Designer.cs">
       <DependentUpon>frmSuaHS.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSuaND.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSuaND.Designer.cs">
+      <DependentUpon>frmSuaND.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmThemGV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,14 +100,14 @@
     <Compile Include="frmThemHS.Designer.cs">
       <DependentUpon>frmThemHS.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmThemND.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemND.Designer.cs">
+      <DependentUpon>frmThemND.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UC_DanhMuc.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_DanhMuc.Designer.cs">
-      <DependentUpon>UC_DanhMuc.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC_GiaoVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -132,11 +138,17 @@
     <EmbeddedResource Include="frmSuaHS.resx">
       <DependentUpon>frmSuaHS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSuaND.resx">
+      <DependentUpon>frmSuaND.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmThemGV.resx">
       <DependentUpon>frmThemGV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemHS.resx">
       <DependentUpon>frmThemHS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemND.resx">
+      <DependentUpon>frmThemND.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -147,9 +159,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UC_DanhMuc.resx">
-      <DependentUpon>UC_DanhMuc.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UC_GiaoVien.resx">
       <DependentUpon>UC_GiaoVien.cs</DependentUpon>
     </EmbeddedResource>

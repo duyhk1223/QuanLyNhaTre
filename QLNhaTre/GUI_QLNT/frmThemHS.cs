@@ -22,9 +22,13 @@ namespace GUI_QLNT
             this.Dispose();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void frmThemHS_Load(object sender, EventArgs e)
         {
 
+            
+           /* var _point = new System.Drawing.Point(Cursor.Position.X, Cursor.Position.Y);
+            Top = _point.Y;
+            Left = _point.X - Width;*/
         }
     }
 }

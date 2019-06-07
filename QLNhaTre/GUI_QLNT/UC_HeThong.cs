@@ -16,5 +16,17 @@ namespace GUI_QLNT
         {
             InitializeComponent();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frmThemND fthemND = new frmThemND();
+            fthemND.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            frmSuaND fsuaND = new frmSuaND();
+            fsuaND.ShowDialog();
+        }
     }
 }

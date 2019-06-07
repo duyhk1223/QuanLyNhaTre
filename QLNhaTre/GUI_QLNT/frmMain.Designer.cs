@@ -32,7 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlSide = new System.Windows.Forms.Panel();
             this.btnHeThong = new System.Windows.Forms.Button();
-            this.btnDanhMuc = new System.Windows.Forms.Button();
             this.btnGiaoVien = new System.Windows.Forms.Button();
             this.btnHocSinh = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -45,7 +44,6 @@
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.Controls.Add(this.pnlSide);
             this.panel1.Controls.Add(this.btnHeThong);
-            this.panel1.Controls.Add(this.btnDanhMuc);
             this.panel1.Controls.Add(this.btnGiaoVien);
             this.panel1.Controls.Add(this.btnHocSinh);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -72,7 +70,7 @@
             this.btnHeThong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHeThong.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnHeThong.ForeColor = System.Drawing.Color.White;
-            this.btnHeThong.Location = new System.Drawing.Point(0, 229);
+            this.btnHeThong.Location = new System.Drawing.Point(0, 159);
             this.btnHeThong.Margin = new System.Windows.Forms.Padding(0);
             this.btnHeThong.Name = "btnHeThong";
             this.btnHeThong.Size = new System.Drawing.Size(135, 70);
@@ -80,25 +78,6 @@
             this.btnHeThong.Text = "Hệ thống";
             this.btnHeThong.UseVisualStyleBackColor = false;
             this.btnHeThong.Click += new System.EventHandler(this.btnHeThong_Click);
-            // 
-            // btnDanhMuc
-            // 
-            this.btnDanhMuc.BackColor = System.Drawing.Color.Transparent;
-            this.btnDanhMuc.FlatAppearance.BorderSize = 0;
-            this.btnDanhMuc.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnDanhMuc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnDanhMuc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnDanhMuc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDanhMuc.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDanhMuc.ForeColor = System.Drawing.Color.White;
-            this.btnDanhMuc.Location = new System.Drawing.Point(0, 159);
-            this.btnDanhMuc.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDanhMuc.Name = "btnDanhMuc";
-            this.btnDanhMuc.Size = new System.Drawing.Size(135, 70);
-            this.btnDanhMuc.TabIndex = 2;
-            this.btnDanhMuc.Text = "Danh mục";
-            this.btnDanhMuc.UseVisualStyleBackColor = false;
-            this.btnDanhMuc.Click += new System.EventHandler(this.btnDanhMuc_Click);
             // 
             // btnGiaoVien
             // 
@@ -183,7 +162,6 @@
         private System.Windows.Forms.Panel pnlControl;
         private System.Windows.Forms.Button btnHocSinh;
         private System.Windows.Forms.Button btnHeThong;
-        private System.Windows.Forms.Button btnDanhMuc;
         private System.Windows.Forms.Button btnGiaoVien;
     }
 }

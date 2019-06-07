@@ -143,7 +143,6 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin học sinh";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // comboBox1
             // 
@@ -318,6 +317,7 @@
             this.Name = "frmThemHS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thêm";
+            this.Load += new System.EventHandler(this.frmThemHS_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
