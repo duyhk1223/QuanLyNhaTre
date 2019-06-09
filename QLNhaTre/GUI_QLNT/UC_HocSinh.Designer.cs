@@ -39,7 +39,8 @@
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.tabctrlHocsinh = new MaterialSkin.Controls.MaterialTabControl();
             this.tabDSHS = new System.Windows.Forms.TabPage();
-            this.gridDSHS = new System.Windows.Forms.DataGridView();
+            this.dgvDSHS = new System.Windows.Forms.DataGridView();
+            this.clstt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabSK = new System.Windows.Forms.TabPage();
             this.gridSK = new System.Windows.Forms.DataGridView();
             this.pnlTool = new System.Windows.Forms.Panel();
@@ -54,7 +55,7 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.tabctrlHocsinh.SuspendLayout();
             this.tabDSHS.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridDSHS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSHS)).BeginInit();
             this.tabSK.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridSK)).BeginInit();
             this.pnlTool.SuspendLayout();
@@ -106,7 +107,7 @@
             // 
             // tabDSHS
             // 
-            this.tabDSHS.Controls.Add(this.gridDSHS);
+            this.tabDSHS.Controls.Add(this.dgvDSHS);
             this.tabDSHS.Location = new System.Drawing.Point(4, 22);
             this.tabDSHS.Name = "tabDSHS";
             this.tabDSHS.Padding = new System.Windows.Forms.Padding(3);
@@ -115,15 +116,16 @@
             this.tabDSHS.Text = "Danh sách học sinh";
             this.tabDSHS.UseVisualStyleBackColor = true;
             // 
-            // gridDSHS
+            // dgvDSHS
             // 
-            this.gridDSHS.AllowUserToAddRows = false;
-            this.gridDSHS.AllowUserToDeleteRows = false;
-            this.gridDSHS.AllowUserToResizeRows = false;
+            this.dgvDSHS.AllowUserToAddRows = false;
+            this.dgvDSHS.AllowUserToDeleteRows = false;
+            this.dgvDSHS.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-            this.gridDSHS.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gridDSHS.BackgroundColor = System.Drawing.Color.White;
-            this.gridDSHS.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDSHS.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDSHS.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvDSHS.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDSHS.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSteelBlue;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -132,22 +134,33 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridDSHS.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.gridDSHS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridDSHS.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridDSHS.EnableHeadersVisualStyles = false;
-            this.gridDSHS.Location = new System.Drawing.Point(3, 3);
-            this.gridDSHS.Name = "gridDSHS";
-            this.gridDSHS.ReadOnly = true;
-            this.gridDSHS.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.gridDSHS.RowHeadersVisible = false;
-            this.gridDSHS.RowHeadersWidth = 20;
+            this.dgvDSHS.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDSHS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSHS.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clstt});
+            this.dgvDSHS.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDSHS.EnableHeadersVisualStyles = false;
+            this.dgvDSHS.Location = new System.Drawing.Point(3, 3);
+            this.dgvDSHS.Name = "dgvDSHS";
+            this.dgvDSHS.ReadOnly = true;
+            this.dgvDSHS.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvDSHS.RowHeadersVisible = false;
+            this.dgvDSHS.RowHeadersWidth = 20;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.gridDSHS.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.gridDSHS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridDSHS.Size = new System.Drawing.Size(878, 352);
-            this.gridDSHS.TabIndex = 0;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
+            this.dgvDSHS.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvDSHS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDSHS.Size = new System.Drawing.Size(878, 352);
+            this.dgvDSHS.TabIndex = 0;
+            this.dgvDSHS.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvDSHS_RowPostPaint);
+            // 
+            // clstt
+            // 
+            this.clstt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.clstt.HeaderText = "STT";
+            this.clstt.Name = "clstt";
+            this.clstt.ReadOnly = true;
+            this.clstt.Width = 53;
             // 
             // tabSK
             // 
@@ -254,6 +267,7 @@
             this.cbLop.Name = "cbLop";
             this.cbLop.Size = new System.Drawing.Size(96, 21);
             this.cbLop.TabIndex = 2;
+            this.cbLop.SelectedIndexChanged += new System.EventHandler(this.cbLop_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -327,7 +341,6 @@
             this.button1.Text = "Xuất báo cáo";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Visible = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnSua
             // 
@@ -359,7 +372,7 @@
             this.Load += new System.EventHandler(this.UC_HocSinh_Load);
             this.tabctrlHocsinh.ResumeLayout(false);
             this.tabDSHS.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridDSHS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSHS)).EndInit();
             this.tabSK.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridSK)).EndInit();
             this.pnlTool.ResumeLayout(false);
@@ -382,10 +395,11 @@
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnLuu;
-        private System.Windows.Forms.DataGridView gridDSHS;
+        private System.Windows.Forms.DataGridView dgvDSHS;
         private System.Windows.Forms.ComboBox cbThangdo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView gridSK;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clstt;
     }
 }

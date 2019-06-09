@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS_QLNT;
+using DTO_QLNT;
 
 namespace GUI_QLNT
 {
@@ -17,6 +19,15 @@ namespace GUI_QLNT
             InitializeComponent();
         }
 
+
+        private void LoadLoptoCombobox()
+        {
+            cbLop.DataSource = LopBUS.Instance.GetLop();
+            cbLop.DisplayMember = "TENLOP";
+            //cbLop.ValueMember = "MALOP";
+
+        }
+
         private void btnHuy_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -24,11 +35,46 @@ namespace GUI_QLNT
 
         private void frmThemHS_Load(object sender, EventArgs e)
         {
-
+            LoadLoptoCombobox();
             
            /* var _point = new System.Drawing.Point(Cursor.Position.X, Cursor.Position.Y);
             Top = _point.Y;
             Left = _point.X - Width;*/
+        }
+
+        private string GetGioiTinh()
+        {
+            if (rbtnNam.Checked)
+                return rbtnNam.Text;
+            else
+                return rbtnNu.Text;
+        }
+
+        private void ThemHocSinh(string ten, string gioitinh, DateTime ngaysinh, int malop, DateTime ngayvaohoc, string diachi, string tencha, string sdtcha, string tenme, string sdtme)
+        {
+            if (HocSinhBUS.Instance.ThemHocSinh(ten, gioitinh, ngaysinh, malop, ngayvaohoc, diachi, tencha, sdtcha, tenme, sdtme))
+            {
+                MessageBox.Show("Thêm học sinh mới thành công!");
+            }
+            else
+                MessageBox.Show("Thêm học sinh mới thất bại!");
+        }
+
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            string hoten = txtHoTen.Text;
+            string gioitinh = GetGioiTinh();
+            DateTime ngaysinh = dtpkNgaySinh.Value.Date;
+            int malop = (cbLop.SelectedItem as Lop).MaLop;
+            DateTime ngayvaohoc = dtpkNgayVaoHoc.Value.Date;
+            string diachi = txtDiaChi.Text;
+            string tencha = txtHoTenCha.Text;
+            string sdtcha = txtSDTCha.Text;
+            string tenme = txtHoTenMe.Text;
+            string sdtme = txtSDTMe.Text;
+            ThemHocSinh(hoten, gioitinh, ngaysinh, malop, ngayvaohoc, diachi, tencha, sdtcha, tenme, sdtme);
+            this.Dispose();
         }
     }
 }
