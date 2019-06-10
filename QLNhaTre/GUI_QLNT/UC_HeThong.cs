@@ -16,5 +16,12 @@ namespace GUI_QLNT
         {
             InitializeComponent();
         }
+
+        private void tabctrlHeThong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+        }
+        
     }
 }

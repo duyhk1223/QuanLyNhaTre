@@ -36,11 +36,6 @@
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.tabctrlHeThong = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.pnlTool = new System.Windows.Forms.Panel();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
             this.gridDSHS = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,10 +46,15 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlTool = new System.Windows.Forms.Panel();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabctrlHeThong.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.pnlTool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridDSHS)).BeginInit();
+            this.pnlTool.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -99,6 +99,7 @@
             this.tabctrlHeThong.SelectedIndex = 0;
             this.tabctrlHeThong.Size = new System.Drawing.Size(719, 437);
             this.tabctrlHeThong.TabIndex = 3;
+            this.tabctrlHeThong.SelectedIndexChanged += new System.EventHandler(this.tabctrlHeThong_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -111,72 +112,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Quản lý lớp";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(711, 411);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Quản lý người dùng";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // pnlTool
-            // 
-            this.pnlTool.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.pnlTool.Controls.Add(this.btnXoa);
-            this.pnlTool.Controls.Add(this.btnSua);
-            this.pnlTool.Controls.Add(this.btnThem);
-            this.pnlTool.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTool.Location = new System.Drawing.Point(3, 3);
-            this.pnlTool.Name = "pnlTool";
-            this.pnlTool.Size = new System.Drawing.Size(705, 40);
-            this.pnlTool.TabIndex = 8;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnXoa.FlatAppearance.BorderSize = 0;
-            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(591, 0);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(114, 40);
-            this.btnXoa.TabIndex = 0;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            // 
-            // btnSua
-            // 
-            this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSua.FlatAppearance.BorderSize = 0;
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(474, 1);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(114, 40);
-            this.btnSua.TabIndex = 0;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            // 
-            // btnThem
-            // 
-            this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnThem.FlatAppearance.BorderSize = 0;
-            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(360, 1);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(0);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(114, 40);
-            this.btnThem.TabIndex = 0;
-            this.btnThem.Text = "Thêm mới";
-            this.btnThem.UseVisualStyleBackColor = true;
             // 
             // gridDSHS
             // 
@@ -272,6 +207,72 @@
             this.Column9.HeaderText = "Column9";
             this.Column9.Name = "Column9";
             // 
+            // pnlTool
+            // 
+            this.pnlTool.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.pnlTool.Controls.Add(this.btnXoa);
+            this.pnlTool.Controls.Add(this.btnSua);
+            this.pnlTool.Controls.Add(this.btnThem);
+            this.pnlTool.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTool.Location = new System.Drawing.Point(3, 3);
+            this.pnlTool.Name = "pnlTool";
+            this.pnlTool.Size = new System.Drawing.Size(705, 40);
+            this.pnlTool.TabIndex = 8;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnXoa.FlatAppearance.BorderSize = 0;
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Location = new System.Drawing.Point(591, 0);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(114, 40);
+            this.btnXoa.TabIndex = 0;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            // 
+            // btnSua
+            // 
+            this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnSua.FlatAppearance.BorderSize = 0;
+            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnSua.ForeColor = System.Drawing.Color.White;
+            this.btnSua.Location = new System.Drawing.Point(474, 1);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(114, 40);
+            this.btnSua.TabIndex = 0;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            // 
+            // btnThem
+            // 
+            this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnThem.FlatAppearance.BorderSize = 0;
+            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.Location = new System.Drawing.Point(360, 1);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(0);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(114, 40);
+            this.btnThem.TabIndex = 0;
+            this.btnThem.Text = "Thêm mới";
+            this.btnThem.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(711, 411);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Quản lý người dùng";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // UC_HeThong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,8 +285,8 @@
             this.Size = new System.Drawing.Size(724, 465);
             this.tabctrlHeThong.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.pnlTool.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridDSHS)).EndInit();
+            this.pnlTool.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

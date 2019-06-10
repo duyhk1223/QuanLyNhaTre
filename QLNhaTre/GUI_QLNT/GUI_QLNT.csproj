@@ -179,6 +179,10 @@
       <Project>{936e646f-fb76-4356-bbe6-ef6883635b5e}</Project>
       <Name>BUS_QLNT</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAL_QLNT\DAL_QLNT.csproj">
+      <Project>{87E18D1B-08A1-4907-91B3-A2DBDAA6B4E4}</Project>
+      <Name>DAL_QLNT</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DTO_QLNT\DTO_QLNT.csproj">
       <Project>{542ed839-baa1-4638-87e2-9df5b58bb0e4}</Project>
       <Name>DTO_QLNT</Name>

@@ -70,5 +70,6 @@ namespace GUI_QLNT
             UC_DanhMuc uC_DanhMuc = new UC_DanhMuc();
             AddControlsToPanel(uC_DanhMuc);
         }
+       
     }
 }
