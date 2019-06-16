@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtSDTMe = new System.Windows.Forms.TextBox();
+            this.txtHoTenMe = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnSua = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtHoTenCha = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtHoTen = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.cbLop = new System.Windows.Forms.ComboBox();
+            this.rbtnNu = new System.Windows.Forms.RadioButton();
+            this.rbtnNam = new System.Windows.Forms.RadioButton();
+            this.dtpkNgayVaoHoc = new System.Windows.Forms.DateTimePicker();
+            this.dtpkNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.txtSDTCha = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -61,19 +61,19 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox6
+            // txtSDTMe
             // 
-            this.textBox6.Location = new System.Drawing.Point(98, 116);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(139, 20);
-            this.textBox6.TabIndex = 6;
+            this.txtSDTMe.Location = new System.Drawing.Point(98, 116);
+            this.txtSDTMe.Name = "txtSDTMe";
+            this.txtSDTMe.Size = new System.Drawing.Size(139, 20);
+            this.txtSDTMe.TabIndex = 6;
             // 
-            // textBox5
+            // txtHoTenMe
             // 
-            this.textBox5.Location = new System.Drawing.Point(98, 90);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(280, 20);
-            this.textBox5.TabIndex = 4;
+            this.txtHoTenMe.Location = new System.Drawing.Point(98, 90);
+            this.txtHoTenMe.Name = "txtHoTenMe";
+            this.txtHoTenMe.Size = new System.Drawing.Size(280, 20);
+            this.txtHoTenMe.TabIndex = 4;
             // 
             // label9
             // 
@@ -95,13 +95,14 @@
             this.btnSua.TabIndex = 11;
             this.btnSua.Text = "Cập nhật";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // textBox2
+            // txtHoTenCha
             // 
-            this.textBox2.Location = new System.Drawing.Point(98, 38);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(280, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtHoTenCha.Location = new System.Drawing.Point(98, 38);
+            this.txtHoTenCha.Name = "txtHoTenCha";
+            this.txtHoTenCha.Size = new System.Drawing.Size(280, 20);
+            this.txtHoTenCha.TabIndex = 4;
             // 
             // label2
             // 
@@ -112,12 +113,12 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Họ tên cha:";
             // 
-            // textBox1
+            // txtHoTen
             // 
-            this.textBox1.Location = new System.Drawing.Point(97, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(280, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtHoTen.Location = new System.Drawing.Point(97, 41);
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.Size = new System.Drawing.Size(280, 20);
+            this.txtHoTen.TabIndex = 4;
             // 
             // label8
             // 
@@ -128,75 +129,77 @@
             this.label8.TabIndex = 5;
             this.label8.Text = "Điện thoại:";
             // 
-            // comboBox1
+            // cbLop
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(97, 119);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 7;
+            this.cbLop.FormattingEnabled = true;
+            this.cbLop.Location = new System.Drawing.Point(97, 119);
+            this.cbLop.Name = "cbLop";
+            this.cbLop.Size = new System.Drawing.Size(100, 21);
+            this.cbLop.TabIndex = 7;
             // 
-            // radioButton2
+            // rbtnNu
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(339, 69);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(39, 17);
-            this.radioButton2.TabIndex = 6;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Nữ";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbtnNu.AutoSize = true;
+            this.rbtnNu.Location = new System.Drawing.Point(339, 69);
+            this.rbtnNu.Name = "rbtnNu";
+            this.rbtnNu.Size = new System.Drawing.Size(39, 17);
+            this.rbtnNu.TabIndex = 6;
+            this.rbtnNu.TabStop = true;
+            this.rbtnNu.Text = "Nữ";
+            this.rbtnNu.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbtnNam
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(286, 69);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(47, 17);
-            this.radioButton1.TabIndex = 6;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Nam";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbtnNam.AutoSize = true;
+            this.rbtnNam.Location = new System.Drawing.Point(286, 69);
+            this.rbtnNam.Name = "rbtnNam";
+            this.rbtnNam.Size = new System.Drawing.Size(47, 17);
+            this.rbtnNam.TabIndex = 6;
+            this.rbtnNam.TabStop = true;
+            this.rbtnNam.Text = "Nam";
+            this.rbtnNam.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker2
+            // dtpkNgayVaoHoc
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(282, 120);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(95, 20);
-            this.dateTimePicker2.TabIndex = 5;
+            this.dtpkNgayVaoHoc.CustomFormat = "dd/MM/yyyy";
+            this.dtpkNgayVaoHoc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpkNgayVaoHoc.Location = new System.Drawing.Point(282, 120);
+            this.dtpkNgayVaoHoc.Name = "dtpkNgayVaoHoc";
+            this.dtpkNgayVaoHoc.Size = new System.Drawing.Size(95, 20);
+            this.dtpkNgayVaoHoc.TabIndex = 5;
             // 
-            // dateTimePicker1
+            // dtpkNgaySinh
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(97, 67);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(100, 20);
-            this.dateTimePicker1.TabIndex = 5;
+            this.dtpkNgaySinh.CustomFormat = "dd/MM/yyyy";
+            this.dtpkNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpkNgaySinh.Location = new System.Drawing.Point(97, 67);
+            this.dtpkNgaySinh.Name = "dtpkNgaySinh";
+            this.dtpkNgaySinh.Size = new System.Drawing.Size(100, 20);
+            this.dtpkNgaySinh.TabIndex = 5;
             // 
-            // textBox3
+            // txtDiaChi
             // 
-            this.textBox3.Location = new System.Drawing.Point(97, 93);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(280, 20);
-            this.textBox3.TabIndex = 4;
+            this.txtDiaChi.Location = new System.Drawing.Point(97, 93);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(280, 20);
+            this.txtDiaChi.TabIndex = 4;
             // 
-            // textBox4
+            // txtSDTCha
             // 
-            this.textBox4.Location = new System.Drawing.Point(98, 64);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(139, 20);
-            this.textBox4.TabIndex = 6;
+            this.txtSDTCha.Location = new System.Drawing.Point(98, 64);
+            this.txtSDTCha.Name = "txtSDTCha";
+            this.txtSDTCha.Size = new System.Drawing.Size(139, 20);
+            this.txtSDTCha.TabIndex = 6;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.txtSDTMe);
+            this.groupBox2.Controls.Add(this.txtSDTCha);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.txtHoTenMe);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txtHoTenCha);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(12, 172);
             this.groupBox2.Name = "groupBox2";
@@ -252,13 +255,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.cbLop);
+            this.groupBox1.Controls.Add(this.rbtnNu);
+            this.groupBox1.Controls.Add(this.rbtnNam);
+            this.groupBox1.Controls.Add(this.dtpkNgayVaoHoc);
+            this.groupBox1.Controls.Add(this.dtpkNgaySinh);
+            this.groupBox1.Controls.Add(this.txtDiaChi);
+            this.groupBox1.Controls.Add(this.txtHoTen);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
@@ -357,6 +360,7 @@
             this.Name = "frmSuaHS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmSuaHS";
+            this.Load += new System.EventHandler(this.frmSuaHS_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -367,21 +371,21 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtSDTMe;
+        private System.Windows.Forms.TextBox txtHoTenMe;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtHoTenCha;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ComboBox cbLop;
+        private System.Windows.Forms.RadioButton rbtnNu;
+        private System.Windows.Forms.RadioButton rbtnNam;
+        private System.Windows.Forms.DateTimePicker dtpkNgayVaoHoc;
+        private System.Windows.Forms.DateTimePicker dtpkNgaySinh;
+        private System.Windows.Forms.TextBox txtDiaChi;
+        private System.Windows.Forms.TextBox txtSDTCha;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label4;

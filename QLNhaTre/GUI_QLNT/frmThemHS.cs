@@ -24,7 +24,7 @@ namespace GUI_QLNT
         {
             cbLop.DataSource = LopBUS.Instance.GetLop();
             cbLop.DisplayMember = "TENLOP";
-            //cbLop.ValueMember = "MALOP";
+            cbLop.ValueMember = "MALOP";
 
         }
 
@@ -50,7 +50,7 @@ namespace GUI_QLNT
                 return rbtnNu.Text;
         }
 
-        private void ThemHocSinh(string ten, string gioitinh, DateTime ngaysinh, int malop, DateTime ngayvaohoc, string diachi, string tencha, string sdtcha, string tenme, string sdtme)
+        private void ThemHocSinh(string ten, string gioitinh, string ngaysinh, int malop, string ngayvaohoc, string diachi, string tencha, string sdtcha, string tenme, string sdtme)
         {
             if (HocSinhBUS.Instance.ThemHocSinh(ten, gioitinh, ngaysinh, malop, ngayvaohoc, diachi, tencha, sdtcha, tenme, sdtme))
             {
@@ -63,11 +63,12 @@ namespace GUI_QLNT
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            
             string hoten = txtHoTen.Text;
             string gioitinh = GetGioiTinh();
-            DateTime ngaysinh = dtpkNgaySinh.Value.Date;
+            string ngaysinh = dtpkNgaySinh.Value.ToString("MM/dd/yyyy");
             int malop = (cbLop.SelectedItem as Lop).MaLop;
-            DateTime ngayvaohoc = dtpkNgayVaoHoc.Value.Date;
+            string ngayvaohoc = dtpkNgayVaoHoc.Value.Date.ToString("MM/dd/yyyy");
             string diachi = txtDiaChi.Text;
             string tencha = txtHoTenCha.Text;
             string sdtcha = txtSDTCha.Text;

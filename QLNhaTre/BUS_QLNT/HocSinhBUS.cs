@@ -25,9 +25,28 @@ namespace BUS_QLNT
             return HocSinhDAL.Instance.GetHocSinhByMaLop(malop);
         }
 
-        public bool ThemHocSinh(string ten, string gioitinh, DateTime ngaysinh, int malop, DateTime ngayvaohoc, string diachi, string tencha, string sdtcha, string tenme, string sdtme)
+        public HocSinh GetHocSinhByMaHS(int mahs)
+        {
+            return HocSinhDAL.Instance.GetHocSinhByMaHS(mahs);
+        }
+
+
+
+        public bool ThemHocSinh(string ten, string gioitinh, string ngaysinh, int malop, string ngayvaohoc, string diachi, string tencha, string sdtcha, string tenme, string sdtme)
         {
             bool kq = HocSinhDAL.Instance.ThemHocSinh(ten, gioitinh, ngaysinh, malop, ngayvaohoc, diachi, tencha, sdtcha, tenme, sdtme);
+            return kq;
+        }
+
+        public bool SuaHocSinh(int mahs,string ten, string gioitinh, string ngaysinh, int malop, string ngayvaohoc, string diachi, string tencha, string sdtcha, string tenme, string sdtme)
+        {
+            bool kq = HocSinhDAL.Instance.SuaHocSinh(mahs,ten, gioitinh, ngaysinh, malop, ngayvaohoc, diachi, tencha, sdtcha, tenme, sdtme);
+            return kq;
+        }
+
+        public bool XoaHocSinh(int mahs)
+        {
+            bool kq = HocSinhDAL.Instance.XoaHocSinh(mahs);
             return kq;
         }
     }

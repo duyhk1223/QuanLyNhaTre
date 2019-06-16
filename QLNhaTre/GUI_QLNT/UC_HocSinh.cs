@@ -22,7 +22,7 @@ namespace GUI_QLNT
         }
 
         
-
+        
         private void tabctrlHocsinh_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tabctrlHocsinh.SelectedTab == tabDSHS)
@@ -53,14 +53,13 @@ namespace GUI_QLNT
         {
             cbLop.DataSource = LopBUS.Instance.GetLop();
             cbLop.DisplayMember = "TENLOP";
-            
-            
+            cbLop.ValueMember = "MALOP";
         }
 
         private void LoadDSHocSinhtodtgv()
         {
             dgvDSHS.DataSource = HocSinhBUS.Instance.GetHocSinhByMaLop((cbLop.SelectedItem as Lop).MaLop);
-
+            
             dgvDSHS.Columns[1].Visible = false;//ẩn cột mã học sinh;
             dgvDSHS.Columns[2].HeaderText = "Họ tên";
             dgvDSHS.Columns[3].HeaderText = "Giới tính";
@@ -76,6 +75,7 @@ namespace GUI_QLNT
             dgvDSHS.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvDSHS.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvDSHS.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            
         }
 
 
@@ -99,22 +99,45 @@ namespace GUI_QLNT
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            frmSuaHS fsua = new frmSuaHS();
-            fsua.ShowDialog();
-            LoadDSHocSinhtodtgv();
+            if (dgvDSHS.SelectedRows.Count != 0)
+            {
+                int mahs = (int)dgvDSHS.Rows[dgvDSHS.SelectedRows[0].Index].Cells[1].Value;
+                HocSinh hs = HocSinhBUS.Instance.GetHocSinhByMaHS(mahs);
+                frmSuaHS fsua = new frmSuaHS(hs);
+                fsua.ShowDialog();
+                LoadDSHocSinhtodtgv();
+            }
+            else
+            {
+                MessageBox.Show("Hãy chọn học sinh muốn sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show(this, "Thao tác này không thể hoàn tác.\nXóa?","Cảnh báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
+            if (dgvDSHS.SelectedRows != null)
             {
-                
+                DialogResult dr = MessageBox.Show(this, "Thao tác này không thể hoàn tác.\nXóa?", "Cảnh báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dr == DialogResult.Yes)
+                {
+                    int mahs;
+                    mahs = (int)dgvDSHS.Rows[dgvDSHS.SelectedRows[0].Index].Cells[1].Value;
+                    if (HocSinhBUS.Instance.XoaHocSinh(mahs))
+                    {
+                        MessageBox.Show("Đã xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadDSHocSinhtodtgv();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
             else
             {
-                
+                MessageBox.Show("Chọn học sinh muốn xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            
         }
 
         private void dgvDSHS_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)// auto đánh stt

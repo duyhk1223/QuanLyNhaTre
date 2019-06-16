@@ -11,14 +11,14 @@ namespace DAL_QLNT
     public class LopDAL
     {
         private static LopDAL instance;
-
+        private LopDAL() { }
         public static LopDAL Instance
         {
             get { if (instance == null) instance = new LopDAL(); return LopDAL.instance; }
             private set { LopDAL.instance = value; }
         }
 
-        private LopDAL() { }
+        
 
 
         public List<Lop> GetLop()
