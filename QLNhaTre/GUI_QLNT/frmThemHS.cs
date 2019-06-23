@@ -19,13 +19,18 @@ namespace GUI_QLNT
             InitializeComponent();
         }
 
+        private void LoadNamHoctoCombobox()
+        {
+            cbNamHoc.DataSource = NamHocBUS.Instance.GetNamHoc();
+            cbNamHoc.DisplayMember = "NAMBDKT";
+            cbNamHoc.ValueMember = "MANAMHOC";
+        }
 
         private void LoadLoptoCombobox()
         {
-            cbLop.DataSource = LopBUS.Instance.GetLop();
+            cbLop.DataSource = LopBUS.Instance.GetLopByMaNamHoc((cbNamHoc.SelectedItem as NamHoc).MaNamHoc);
             cbLop.DisplayMember = "TENLOP";
             cbLop.ValueMember = "MALOP";
-
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -35,7 +40,7 @@ namespace GUI_QLNT
 
         private void frmThemHS_Load(object sender, EventArgs e)
         {
-            LoadLoptoCombobox();
+            LoadNamHoctoCombobox();
             
            /* var _point = new System.Drawing.Point(Cursor.Position.X, Cursor.Position.Y);
             Top = _point.Y;
@@ -46,7 +51,7 @@ namespace GUI_QLNT
         {
             if (rbtnNam.Checked)
                 return rbtnNam.Text;
-            else
+            else 
                 return rbtnNu.Text;
         }
 
@@ -76,6 +81,11 @@ namespace GUI_QLNT
             string sdtme = txtSDTMe.Text;
             ThemHocSinh(hoten, gioitinh, ngaysinh, malop, ngayvaohoc, diachi, tencha, sdtcha, tenme, sdtme);
             this.Dispose();
+        }
+
+        private void cbNamHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadLoptoCombobox();
         }
     }
 }

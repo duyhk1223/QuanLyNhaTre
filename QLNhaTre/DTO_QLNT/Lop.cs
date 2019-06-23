@@ -14,15 +14,15 @@ namespace DTO_QLNT
         {
             this.MaLop = (int)row["MALOP"];
             this.TenLop = row["TENLOP"].ToString();
-            this.MaKhoi = row["MAKHOI"].ToString();
-            this.NamHoc = row["NAMHOC"].ToString();
+            this.MaKhoi = (int)row["MAKHOI"];
+            this.MaNamHoc = (int)row["MANAMHOC"];
         }
-        public Lop(int malop,string tenlop,string khoilop,string namhoc)
+        public Lop(int malop, string tenlop, int makhoi, int manamhoc)
         {
             this.MaLop = malop;
             this.TenLop = tenlop;
-            this.MaKhoi = khoilop;
-            this.NamHoc = namhoc;
+            this.MaKhoi = makhoi;
+            this.MaNamHoc = manamhoc;
         }
 
         private int maLop;
@@ -41,21 +41,21 @@ namespace DTO_QLNT
             set { tenLop = value; }
         }
 
-        private string maKhoi;
+        private int maKhoi;
 
-        public string MaKhoi
+        public int MaKhoi
         {
             get { return maKhoi; }
             set { maKhoi = value; }
         }
 
 
-        private string namHoc;
+        private int maNamHoc;
 
-        public string NamHoc
+        public int MaNamHoc
         {
-            get { return namHoc; }
-            set { namHoc = value; }
+            get { return maNamHoc; }
+            set { maNamHoc = value; }
         }
 
 

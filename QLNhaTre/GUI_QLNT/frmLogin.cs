@@ -27,5 +27,7 @@ namespace GUI_QLNT
             fm.ShowDialog();
             this.Show();
         }
+
+        
     }
 }

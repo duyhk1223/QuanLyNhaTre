@@ -57,6 +57,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbNamHoc = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -89,7 +91,7 @@
             this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnSua.FlatAppearance.BorderSize = 0;
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Location = new System.Drawing.Point(279, 334);
+            this.btnSua.Location = new System.Drawing.Point(279, 358);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
             this.btnSua.TabIndex = 11;
@@ -131,10 +133,11 @@
             // 
             // cbLop
             // 
+            this.cbLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLop.FormattingEnabled = true;
-            this.cbLop.Location = new System.Drawing.Point(97, 119);
+            this.cbLop.Location = new System.Drawing.Point(267, 119);
             this.cbLop.Name = "cbLop";
-            this.cbLop.Size = new System.Drawing.Size(100, 21);
+            this.cbLop.Size = new System.Drawing.Size(110, 21);
             this.cbLop.TabIndex = 7;
             // 
             // rbtnNu
@@ -163,9 +166,9 @@
             // 
             this.dtpkNgayVaoHoc.CustomFormat = "dd/MM/yyyy";
             this.dtpkNgayVaoHoc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpkNgayVaoHoc.Location = new System.Drawing.Point(282, 120);
+            this.dtpkNgayVaoHoc.Location = new System.Drawing.Point(98, 146);
             this.dtpkNgayVaoHoc.Name = "dtpkNgayVaoHoc";
-            this.dtpkNgayVaoHoc.Size = new System.Drawing.Size(95, 20);
+            this.dtpkNgayVaoHoc.Size = new System.Drawing.Size(100, 20);
             this.dtpkNgayVaoHoc.TabIndex = 5;
             // 
             // dtpkNgaySinh
@@ -201,7 +204,7 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.txtHoTenCha);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(12, 172);
+            this.groupBox2.Location = new System.Drawing.Point(12, 196);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(423, 156);
             this.groupBox2.TabIndex = 14;
@@ -229,7 +232,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(203, 122);
+            this.label6.Location = new System.Drawing.Point(14, 152);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 13);
             this.label6.TabIndex = 3;
@@ -255,6 +258,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbNamHoc);
+            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.cbLop);
             this.groupBox1.Controls.Add(this.rbtnNu);
             this.groupBox1.Controls.Add(this.rbtnNam);
@@ -270,7 +275,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 11);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(423, 155);
+            this.groupBox1.Size = new System.Drawing.Size(423, 179);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin học sinh";
@@ -278,7 +283,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(63, 122);
+            this.label7.Location = new System.Drawing.Point(233, 122);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(28, 13);
             this.label7.TabIndex = 3;
@@ -298,7 +303,7 @@
             this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnHuy.FlatAppearance.BorderSize = 0;
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuy.Location = new System.Drawing.Point(360, 334);
+            this.btnHuy.Location = new System.Drawing.Point(359, 358);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(75, 23);
             this.btnHuy.TabIndex = 12;
@@ -308,46 +313,65 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel4.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 5);
+            this.panel4.Location = new System.Drawing.Point(0, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 358);
+            this.panel4.Size = new System.Drawing.Size(3, 385);
             this.panel4.TabIndex = 8;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel3.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 363);
+            this.panel3.Location = new System.Drawing.Point(0, 388);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(441, 5);
+            this.panel3.Size = new System.Drawing.Size(443, 3);
             this.panel3.TabIndex = 9;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel2.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(441, 5);
+            this.panel2.Location = new System.Drawing.Point(443, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 363);
+            this.panel2.Size = new System.Drawing.Size(3, 388);
             this.panel2.TabIndex = 10;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(446, 5);
+            this.panel1.Size = new System.Drawing.Size(446, 3);
             this.panel1.TabIndex = 7;
+            // 
+            // cbNamHoc
+            // 
+            this.cbNamHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbNamHoc.FormattingEnabled = true;
+            this.cbNamHoc.Location = new System.Drawing.Point(98, 119);
+            this.cbNamHoc.Name = "cbNamHoc";
+            this.cbNamHoc.Size = new System.Drawing.Size(106, 21);
+            this.cbNamHoc.TabIndex = 9;
+            this.cbNamHoc.SelectedIndexChanged += new System.EventHandler(this.cbNamHoc_SelectedIndexChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(39, 122);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 13);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Năm học:";
             // 
             // frmSuaHS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(446, 368);
+            this.ClientSize = new System.Drawing.Size(446, 391);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -360,7 +384,6 @@
             this.Name = "frmSuaHS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmSuaHS";
-            this.Load += new System.EventHandler(this.frmSuaHS_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -400,5 +423,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox cbNamHoc;
+        private System.Windows.Forms.Label label11;
     }
 }

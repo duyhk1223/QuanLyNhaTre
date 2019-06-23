@@ -62,6 +62,9 @@ namespace GUI_QLNT
             AddControlsToPanel(uC_HeThong);
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }

@@ -21,10 +21,10 @@ namespace DAL_QLNT
         
 
 
-        public List<Lop> GetLop()
+        public List<Lop> GetLopByMaNamHoc(int manamhoc)
         {
             List<Lop> list = new List<Lop>();
-            string query = "SELECT * FROM LOP ORDER BY TENLOP";
+            string query = string.Format("SELECT * FROM LOP WHERE MANAMHOC={0} ORDER BY TENLOP",manamhoc);
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {

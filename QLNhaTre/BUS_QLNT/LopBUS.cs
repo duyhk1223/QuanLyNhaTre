@@ -22,9 +22,9 @@ namespace BUS_QLNT
         private LopBUS() { }
 
 
-        public List<Lop> GetLop()
+        public List<Lop> GetLopByMaNamHoc(int manamhoc)
         {
-            return LopDAL.Instance.GetLop();
+            return LopDAL.Instance.GetLopByMaNamHoc(manamhoc);
         }
 
     }

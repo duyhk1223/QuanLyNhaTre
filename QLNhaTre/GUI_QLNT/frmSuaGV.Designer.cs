@@ -274,38 +274,38 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel4.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 5);
+            this.panel4.Location = new System.Drawing.Point(0, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 263);
+            this.panel4.Size = new System.Drawing.Size(3, 267);
             this.panel4.TabIndex = 12;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel2.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(425, 5);
+            this.panel2.Location = new System.Drawing.Point(427, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 263);
+            this.panel2.Size = new System.Drawing.Size(3, 267);
             this.panel2.TabIndex = 14;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(430, 5);
+            this.panel1.Size = new System.Drawing.Size(430, 3);
             this.panel1.TabIndex = 11;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel3.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 268);
+            this.panel3.Location = new System.Drawing.Point(0, 270);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(430, 5);
+            this.panel3.Size = new System.Drawing.Size(430, 3);
             this.panel3.TabIndex = 13;
             // 
             // frmSuaGV

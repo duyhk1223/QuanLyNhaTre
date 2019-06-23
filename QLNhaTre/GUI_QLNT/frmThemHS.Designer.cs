@@ -57,44 +57,46 @@
             this.txtHoTenCha = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cbNamHoc = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(446, 5);
+            this.panel1.Size = new System.Drawing.Size(446, 3);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel2.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(441, 5);
+            this.panel2.Location = new System.Drawing.Point(443, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 363);
+            this.panel2.Size = new System.Drawing.Size(3, 392);
             this.panel2.TabIndex = 1;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel3.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 363);
+            this.panel3.Location = new System.Drawing.Point(0, 392);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(441, 5);
+            this.panel3.Size = new System.Drawing.Size(443, 3);
             this.panel3.TabIndex = 1;
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel4.BackColor = System.Drawing.Color.LightSlateGray;
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 5);
+            this.panel4.Location = new System.Drawing.Point(0, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 358);
+            this.panel4.Size = new System.Drawing.Size(3, 389);
             this.panel4.TabIndex = 1;
             // 
             // btnHuy
@@ -102,7 +104,7 @@
             this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnHuy.FlatAppearance.BorderSize = 0;
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuy.Location = new System.Drawing.Point(359, 334);
+            this.btnHuy.Location = new System.Drawing.Point(360, 362);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(75, 23);
             this.btnHuy.TabIndex = 2;
@@ -128,6 +130,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbNamHoc);
             this.groupBox1.Controls.Add(this.cbLop);
             this.groupBox1.Controls.Add(this.rbtnNu);
             this.groupBox1.Controls.Add(this.rbtnNam);
@@ -136,6 +139,7 @@
             this.groupBox1.Controls.Add(this.txtDiaChi);
             this.groupBox1.Controls.Add(this.txtHoTen);
             this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label5);
@@ -143,17 +147,18 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 11);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(423, 155);
+            this.groupBox1.Size = new System.Drawing.Size(423, 183);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin học sinh";
             // 
             // cbLop
             // 
+            this.cbLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLop.FormattingEnabled = true;
-            this.cbLop.Location = new System.Drawing.Point(97, 119);
+            this.cbLop.Location = new System.Drawing.Point(258, 119);
             this.cbLop.Name = "cbLop";
-            this.cbLop.Size = new System.Drawing.Size(100, 21);
+            this.cbLop.Size = new System.Drawing.Size(119, 21);
             this.cbLop.TabIndex = 7;
             // 
             // rbtnNu
@@ -181,7 +186,7 @@
             // dtpkNgayVaoHoc
             // 
             this.dtpkNgayVaoHoc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpkNgayVaoHoc.Location = new System.Drawing.Point(282, 120);
+            this.dtpkNgayVaoHoc.Location = new System.Drawing.Point(97, 146);
             this.dtpkNgayVaoHoc.Name = "dtpkNgayVaoHoc";
             this.dtpkNgayVaoHoc.Size = new System.Drawing.Size(95, 20);
             this.dtpkNgayVaoHoc.TabIndex = 5;
@@ -213,7 +218,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(203, 122);
+            this.label6.Location = new System.Drawing.Point(16, 152);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 13);
             this.label6.TabIndex = 3;
@@ -222,7 +227,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(63, 122);
+            this.label7.Location = new System.Drawing.Point(224, 122);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(28, 13);
             this.label7.TabIndex = 3;
@@ -256,7 +261,7 @@
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.txtHoTenCha);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(12, 172);
+            this.groupBox2.Location = new System.Drawing.Point(12, 200);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(423, 156);
             this.groupBox2.TabIndex = 6;
@@ -299,7 +304,7 @@
             // 
             this.txtHoTenMe.Location = new System.Drawing.Point(98, 90);
             this.txtHoTenMe.Name = "txtHoTenMe";
-            this.txtHoTenMe.Size = new System.Drawing.Size(280, 20);
+            this.txtHoTenMe.Size = new System.Drawing.Size(279, 20);
             this.txtHoTenMe.TabIndex = 4;
             // 
             // label9
@@ -315,7 +320,7 @@
             // 
             this.txtHoTenCha.Location = new System.Drawing.Point(98, 38);
             this.txtHoTenCha.Name = "txtHoTenCha";
-            this.txtHoTenCha.Size = new System.Drawing.Size(280, 20);
+            this.txtHoTenCha.Size = new System.Drawing.Size(279, 20);
             this.txtHoTenCha.TabIndex = 4;
             // 
             // label2
@@ -332,7 +337,7 @@
             this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnThem.FlatAppearance.BorderSize = 0;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Location = new System.Drawing.Point(278, 334);
+            this.btnThem.Location = new System.Drawing.Point(279, 362);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 2;
@@ -340,12 +345,31 @@
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(38, 122);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 13);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Năm học:";
+            // 
+            // cbNamHoc
+            // 
+            this.cbNamHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbNamHoc.FormattingEnabled = true;
+            this.cbNamHoc.Location = new System.Drawing.Point(97, 119);
+            this.cbNamHoc.Name = "cbNamHoc";
+            this.cbNamHoc.Size = new System.Drawing.Size(106, 21);
+            this.cbNamHoc.TabIndex = 7;
+            this.cbNamHoc.SelectedIndexChanged += new System.EventHandler(this.cbNamHoc_SelectedIndexChanged);
+            // 
             // frmThemHS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(446, 368);
+            this.ClientSize = new System.Drawing.Size(446, 395);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnThem);
@@ -398,5 +422,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtHoTenMe;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cbNamHoc;
+        private System.Windows.Forms.Label label11;
     }
 }

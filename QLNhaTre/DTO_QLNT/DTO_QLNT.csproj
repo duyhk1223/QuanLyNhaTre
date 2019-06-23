@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="HocSinh.cs" />
     <Compile Include="Lop.cs" />
+    <Compile Include="NamHoc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

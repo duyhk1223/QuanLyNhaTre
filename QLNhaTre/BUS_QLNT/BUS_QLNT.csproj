@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="HocSinhBUS.cs" />
     <Compile Include="LopBUS.cs" />
+    <Compile Include="NamHocBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

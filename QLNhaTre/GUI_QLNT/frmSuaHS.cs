@@ -20,7 +20,8 @@ namespace GUI_QLNT
             InitializeComponent();
         }
         private int mahs;
-        public frmSuaHS(HocSinh hs)
+
+        public frmSuaHS(HocSinh hs, int manamhoc)
         {
             
             InitializeComponent();
@@ -31,9 +32,14 @@ namespace GUI_QLNT
                 rbtnNam.Checked = true;
             else rbtnNu.Checked = true;
 
-            
+            dtpkNgaySinh.Value = hs.NgaySinh;
 
-            cbLop.DataSource = LopBUS.Instance.GetLop();
+            cbNamHoc.DataSource = NamHocBUS.Instance.GetNamHoc();
+            cbNamHoc.DisplayMember = "NAMBDKT";
+            cbNamHoc.ValueMember = "MANAMHOC";
+            cbNamHoc.SelectedValue = manamhoc;
+
+            cbLop.DataSource = LopBUS.Instance.GetLopByMaNamHoc(manamhoc);
             cbLop.DisplayMember = "TENLOP";
             cbLop.ValueMember = "MALOP";
             cbLop.SelectedValue = hs.MaLop;
@@ -62,11 +68,6 @@ namespace GUI_QLNT
             this.Dispose();
         }
 
-        private void frmSuaHS_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             
@@ -87,6 +88,19 @@ namespace GUI_QLNT
             SuaHocSinh(mahs, hoten, gioitinh, ngaysinh, malop, ngayvaohoc, diachi, tencha, sdtcha, tenme, sdtme);
             
             this.Dispose();
+        }
+
+        private void cbNamHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadLoptoCombobox();
+        }
+
+        private void LoadLoptoCombobox()
+        {
+
+            cbLop.DataSource = LopBUS.Instance.GetLopByMaNamHoc((cbNamHoc.SelectedItem as NamHoc).MaNamHoc);
+            cbLop.DisplayMember = "TENLOP";
+            //cbLop.ValueMember = "MALOP";
         }
     }
 }
