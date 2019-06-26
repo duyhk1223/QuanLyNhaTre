@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -41,34 +42,52 @@ namespace GUI_QLNT
         private void frmThemHS_Load(object sender, EventArgs e)
         {
             LoadNamHoctoCombobox();
-            
-           /* var _point = new System.Drawing.Point(Cursor.Position.X, Cursor.Position.Y);
-            Top = _point.Y;
-            Left = _point.X - Width;*/
+
+            /* var _point = new System.Drawing.Point(Cursor.Position.X, Cursor.Position.Y);
+             Top = _point.Y;
+             Left = _point.X - Width;*/
         }
 
         private string GetGioiTinh()
         {
             if (rbtnNam.Checked)
                 return rbtnNam.Text;
-            else 
+            else
                 return rbtnNu.Text;
         }
-
+        bool kq;
         private void ThemHocSinh(string ten, string gioitinh, string ngaysinh, int malop, string ngayvaohoc, string diachi, string tencha, string sdtcha, string tenme, string sdtme)
         {
-            if (HocSinhBUS.Instance.ThemHocSinh(ten, gioitinh, ngaysinh, malop, ngayvaohoc, diachi, tencha, sdtcha, tenme, sdtme))
+            
+            try
             {
-                MessageBox.Show("Thêm học sinh mới thành công!");
+               kq = HocSinhBUS.Instance.ThemHocSinh(ten, gioitinh, ngaysinh, malop, ngayvaohoc, diachi, tencha, sdtcha, tenme, sdtme);
             }
-            else
-                MessageBox.Show("Thêm học sinh mới thất bại!");
+            catch (SqlException sqlex)
+            {
+
+                if (sqlex.Procedure == "SiSoToiDa" || sqlex.Message.Contains("lop full"))
+                {
+                    MessageBox.Show("Đã đạt tối đa học sinh trong lớp này");
+                }
+                else
+                    MessageBox.Show("Có lỗi!");
+            }
+            
+            finally
+            {
+                if (kq)
+                {
+                    MessageBox.Show("Thêm thành công!");
+                }
+            }
+            
         }
 
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            
+
             string hoten = txtHoTen.Text;
             string gioitinh = GetGioiTinh();
             string ngaysinh = dtpkNgaySinh.Value.ToString("MM/dd/yyyy");
@@ -80,12 +99,15 @@ namespace GUI_QLNT
             string tenme = txtHoTenMe.Text;
             string sdtme = txtSDTMe.Text;
             ThemHocSinh(hoten, gioitinh, ngaysinh, malop, ngayvaohoc, diachi, tencha, sdtcha, tenme, sdtme);
-            this.Dispose();
+            
         }
 
         private void cbNamHoc_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadLoptoCombobox();
         }
+
+        
+
     }
 }

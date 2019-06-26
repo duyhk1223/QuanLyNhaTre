@@ -33,5 +33,7 @@ namespace DAL_QLNT
 
             return list;
         }
+
+        
     }
 }

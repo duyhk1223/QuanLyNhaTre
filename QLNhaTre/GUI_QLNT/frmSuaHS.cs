@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -53,14 +54,32 @@ namespace GUI_QLNT
             txtSDTMe.Text = hs.SdtMe;
         }
 
+        bool kq;
         private void SuaHocSinh(int mahs,string ten, string gioitinh, string ngaysinh, int malop, string ngayvaohoc, string diachi, string tencha, string sdtcha, string tenme, string sdtme)
         {
-            if (HocSinhBUS.Instance.SuaHocSinh(mahs, ten, gioitinh, ngaysinh, malop, ngayvaohoc, diachi, tencha, sdtcha, tenme, sdtme))
+            try
             {
-                MessageBox.Show("Cập nhật học sinh thành công!");
+                kq = HocSinhBUS.Instance.SuaHocSinh(mahs, ten, gioitinh, ngaysinh, malop, ngayvaohoc, diachi, tencha, sdtcha, tenme, sdtme);
             }
-            else
-                MessageBox.Show("Cập nhật thất bại!");
+            catch (SqlException sqlex)
+            {
+
+                if (sqlex.Procedure == "SiSoToiDa" || sqlex.Message.Contains("lop full"))
+                {
+                    MessageBox.Show("Đã đạt tối đa học sinh trong lớp này");
+                }
+                else
+                    MessageBox.Show("Có lỗi!");
+            }
+
+            finally
+            {
+                if (kq)
+                {
+                    MessageBox.Show("Cập nhật học sinh thành công!");
+                }
+            }
+            
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -87,7 +106,7 @@ namespace GUI_QLNT
             string sdtme = txtSDTMe.Text.Trim();
             SuaHocSinh(mahs, hoten, gioitinh, ngaysinh, malop, ngayvaohoc, diachi, tencha, sdtcha, tenme, sdtme);
             
-            this.Dispose();
+            
         }
 
         private void cbNamHoc_SelectedIndexChanged(object sender, EventArgs e)

@@ -29,11 +29,25 @@ namespace GUI_QLNT
             
         }
 
+        private void cbLop_TextChanged(object sender, EventArgs e)
+        {
+            LoadDSHocSinhtodtgv();
+        }
+
+        private void cbNamHoc_TextChanged(object sender, EventArgs e)
+        {
+            LoadLoptoCombobox();
+        }
+
         private void dgvDSHS_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)// auto đánh stt
         {
             dgvDSHS.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
         }
 
+        private void dgvSK_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            dgvSK.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
+        }
 
         private void tabctrlHocsinh_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -53,7 +67,7 @@ namespace GUI_QLNT
                 btnLuu.Show();
                 label3.Show();
                 cbThangdo.Show();
-                cbThangdo.SelectedItem = DateTime.Now.Month.ToString();
+                
                 button1.Show();
                 btnThem.Hide();
                 btnSua.Hide();
@@ -70,6 +84,11 @@ namespace GUI_QLNT
         private void cbNamHoc_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadLoptoCombobox();
+        }
+
+        private void cbThangdo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadSucKhoe();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -97,7 +116,7 @@ namespace GUI_QLNT
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (dgvDSHS.SelectedRows != null)
+            if (dgvDSHS.SelectedRows.Count==1)
             {
                 DialogResult dr = MessageBox.Show(this, "Thao tác này không thể hoàn tác.\nXóa?", "Cảnh báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dr == DialogResult.Yes)
@@ -122,7 +141,41 @@ namespace GUI_QLNT
 
         }
 
-        
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            var changedRows = ((DataTable)dgvSK.DataSource).GetChanges(DataRowState.Modified).Rows;
+
+
+            foreach (DataRow row in changedRows)
+            {
+                if (row["MASK"].ToString() == "")
+                {
+                    int mahs = (int)row["MAHS"];
+                    int malop = (cbLop.SelectedItem as Lop).MaLop;
+                    string thangdo = cbThangdo.SelectedItem.ToString();
+                    float chieucao = float.Parse(row["CHIEUCAO"].ToString());
+                    string dgcc = row["DGCC"].ToString();
+                    float cannang = float.Parse(row["CANNANG"].ToString());
+                    string dgcn = row["DGCN"].ToString();
+                    string dgc = row["DGC"].ToString();
+                    SucKhoeBUS.Instance.ThemSucKhoe(mahs, malop, Convert.ToInt32(thangdo), chieucao, dgcc, cannang, dgcn, dgc);
+                }
+                else
+                {
+                    int mask = (int)row["MASK"];
+                    float chieucao = float.Parse(row["CHIEUCAO"].ToString());
+                    string dgcc = row["DGCC"].ToString();
+                    float cannang = float.Parse(row["CANNANG"].ToString());
+                    string dgcn = row["DGCN"].ToString();
+                    string dgc = row["DGC"].ToString();
+                    SucKhoeBUS.Instance.SuaSucKhoe(mask, chieucao, dgcc, cannang, dgcn, dgc);
+                }
+
+            }
+            MessageBox.Show("Đã lưu!");
+            LoadSucKhoe();
+        }
+
         #endregion
 
 
@@ -169,20 +222,58 @@ namespace GUI_QLNT
 
         }
 
+        public void LoadSucKhoe()
+        {
+            int malop = (cbLop.SelectedItem as Lop).MaLop;
+            string thangdo = cbThangdo.SelectedItem.ToString();
+            
+            
+            DataTable dths = HocSinhBUS.Instance.GetHocSinh(malop);
+            dths.PrimaryKey = new DataColumn[]
+            {
+                dths.Columns["MAHS"]
+            };
+            DataTable dtsk = SucKhoeBUS.Instance.GetSucKhoe(malop, Convert.ToInt32(thangdo));
+            dtsk.PrimaryKey = new DataColumn[]
+            {
+                dtsk.Columns["MAHS"]
+            };
+
+            dths.Merge(dtsk);
+            dgvSK.DataSource = dths;
+            dgvSK.Columns[0].Visible = true;//cot stt
+            dgvSK.Columns[1].Visible = false;//cot mahs
+            dgvSK.Columns[5].Visible = false;//cot mask
+            dgvSK.Columns[6].Visible = false;//cot malop
+            dgvSK.Columns[7].Visible = false;//cot tháng 
+            dgvSK.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgvSK.Columns[12].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvSK.Columns[0].ReadOnly = true;
+            dgvSK.Columns[2].ReadOnly = true;
+            dgvSK.Columns[3].ReadOnly = true;
+            dgvSK.Columns[4].ReadOnly = true;
+            
+
+
+            dgvSK.Columns[2].HeaderText = "Họ tên";
+            dgvSK.Columns[3].HeaderText = "Giới tính";
+            dgvSK.Columns[4].HeaderText = "Ngày sinh";
+            dgvSK.Columns[8].HeaderText = "Chiều cao";
+            dgvSK.Columns[9].HeaderText = "ĐGCC";
+            dgvSK.Columns[10].HeaderText = "Cân nặng";
+            dgvSK.Columns[11].HeaderText = "ĐGCN";
+            dgvSK.Columns[12].HeaderText = "Đánh giá";
+
+        }
+
+
+
+
+
 
         #endregion
 
         
-
-        private void cbLop_TextChanged(object sender, EventArgs e)
-        {
-            LoadDSHocSinhtodtgv();
-        }
-
-        private void cbNamHoc_TextChanged(object sender, EventArgs e)
-        {
-            LoadLoptoCombobox();
-        }
     }
 
 }

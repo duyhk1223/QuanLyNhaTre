@@ -34,6 +34,13 @@ namespace DAL_QLNT
             return list;
         }
 
+        public DataTable GetHocSinh(int malop)
+        {
+            string query = string.Format("SELECT MAHS,HOTEN,GIOITINH,NGAYSINH FROM HOCSINH WHERE MALOP={0}", malop);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
+        }
+
         public HocSinh GetHocSinhByMaHS(int mahs)
         {
             string query = string.Format("SELECT * FROM HOCSINH WHERE MAHS={0}", mahs);
