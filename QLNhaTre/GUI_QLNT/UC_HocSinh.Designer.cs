@@ -54,9 +54,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBaoCao = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.tabctrlHocsinh.SuspendLayout();
             this.tabDSHS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSHS)).BeginInit();
@@ -230,10 +230,10 @@
             this.pnlTool.Controls.Add(this.cbLop);
             this.pnlTool.Controls.Add(this.label1);
             this.pnlTool.Controls.Add(this.btnThem);
-            this.pnlTool.Controls.Add(this.btnSua);
-            this.pnlTool.Controls.Add(this.button1);
+            this.pnlTool.Controls.Add(this.btnBaoCao);
             this.pnlTool.Controls.Add(this.btnLuu);
             this.pnlTool.Controls.Add(this.btnXoa);
+            this.pnlTool.Controls.Add(this.btnSua);
             this.pnlTool.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTool.Location = new System.Drawing.Point(5, 28);
             this.pnlTool.Name = "pnlTool";
@@ -356,42 +356,25 @@
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // btnXoa
+            // btnBaoCao
             // 
-            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnXoa.FlatAppearance.BorderSize = 0;
-            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXoa.Location = new System.Drawing.Point(778, 0);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(114, 40);
-            this.btnXoa.TabIndex = 0;
-            this.btnXoa.Text = " Xóa";
-            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(661, 1);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 39);
-            this.button1.TabIndex = 0;
-            this.button1.Text = " Xuất báo cáo";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
+            this.btnBaoCao.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnBaoCao.FlatAppearance.BorderSize = 0;
+            this.btnBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBaoCao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnBaoCao.ForeColor = System.Drawing.Color.White;
+            this.btnBaoCao.Image = ((System.Drawing.Image)(resources.GetObject("btnBaoCao.Image")));
+            this.btnBaoCao.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBaoCao.Location = new System.Drawing.Point(661, 1);
+            this.btnBaoCao.Margin = new System.Windows.Forms.Padding(0);
+            this.btnBaoCao.Name = "btnBaoCao";
+            this.btnBaoCao.Size = new System.Drawing.Size(114, 39);
+            this.btnBaoCao.TabIndex = 0;
+            this.btnBaoCao.Text = " Xuất báo cáo";
+            this.btnBaoCao.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBaoCao.UseVisualStyleBackColor = true;
+            this.btnBaoCao.Visible = false;
+            this.btnBaoCao.Click += new System.EventHandler(this.btnBaoCao_Click);
             // 
             // btnLuu
             // 
@@ -411,6 +394,24 @@
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Visible = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnXoa.FlatAppearance.BorderSize = 0;
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa.Location = new System.Drawing.Point(778, 0);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(114, 40);
+            this.btnXoa.TabIndex = 0;
+            this.btnXoa.Text = " Xóa";
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // UC_HocSinh
             // 
@@ -453,7 +454,7 @@
         private System.Windows.Forms.ComboBox cbThangdo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvSK;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBaoCao;
         private System.Windows.Forms.ComboBox cbNamHoc;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn clstt;

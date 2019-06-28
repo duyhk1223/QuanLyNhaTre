@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS_QLNT;
 using DTO_QLNT;
+using Microsoft.Office.Interop.Excel;
 
 
 
@@ -56,7 +57,7 @@ namespace GUI_QLNT
                 btnLuu.Hide();
                 label3.Hide();
                 cbThangdo.Hide();
-                button1.Hide();
+                btnBaoCao.Hide();
                 btnThem.Show();
                 btnSua.Show();
                 btnXoa.Show();
@@ -68,7 +69,7 @@ namespace GUI_QLNT
                 label3.Show();
                 cbThangdo.Show();
                 
-                button1.Show();
+                btnBaoCao.Show();
                 btnThem.Hide();
                 btnSua.Hide();
                 btnXoa.Hide();
@@ -143,7 +144,7 @@ namespace GUI_QLNT
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            var changedRows = ((DataTable)dgvSK.DataSource).GetChanges(DataRowState.Modified).Rows;
+            var changedRows = ((System.Data.DataTable)dgvSK.DataSource).GetChanges(DataRowState.Modified).Rows;
 
 
             foreach (DataRow row in changedRows)
@@ -226,14 +227,14 @@ namespace GUI_QLNT
         {
             int malop = (cbLop.SelectedItem as Lop).MaLop;
             string thangdo = cbThangdo.SelectedItem.ToString();
-            
-            
-            DataTable dths = HocSinhBUS.Instance.GetHocSinh(malop);
+
+
+            System.Data.DataTable dths = HocSinhBUS.Instance.GetHocSinh(malop);
             dths.PrimaryKey = new DataColumn[]
             {
                 dths.Columns["MAHS"]
             };
-            DataTable dtsk = SucKhoeBUS.Instance.GetSucKhoe(malop, Convert.ToInt32(thangdo));
+            System.Data.DataTable dtsk = SucKhoeBUS.Instance.GetSucKhoe(malop, Convert.ToInt32(thangdo));
             dtsk.PrimaryKey = new DataColumn[]
             {
                 dtsk.Columns["MAHS"]
@@ -248,6 +249,8 @@ namespace GUI_QLNT
             dgvSK.Columns[7].Visible = false;//cot tháng 
             dgvSK.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgvSK.Columns[12].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvSK.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
             dgvSK.Columns[0].ReadOnly = true;
             dgvSK.Columns[2].ReadOnly = true;
             dgvSK.Columns[3].ReadOnly = true;
@@ -271,9 +274,44 @@ namespace GUI_QLNT
 
 
 
+
         #endregion
 
-        
+        private void btnBaoCao_Click(object sender, EventArgs e)
+        {
+            if (dgvSK.Rows.Count > 0)
+            {
+                Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
+                excelApp.Application.Workbooks.Add(Type.Missing);
+
+                
+                excelApp.Cells[1, 1] = dgvSK.Columns[0].HeaderText;
+                excelApp.Cells[1, 2] = dgvSK.Columns[2].HeaderText;
+                excelApp.Cells[1, 3] = dgvSK.Columns[3].HeaderText;
+                excelApp.Cells[1, 4] = dgvSK.Columns[4].HeaderText;
+                excelApp.Cells[1, 5] = dgvSK.Columns[8].HeaderText;
+                excelApp.Cells[1, 6] = dgvSK.Columns[9].HeaderText;
+                excelApp.Cells[1, 7] = dgvSK.Columns[10].HeaderText;
+                excelApp.Cells[1, 8] = dgvSK.Columns[11].HeaderText;
+                excelApp.Cells[1, 9] = dgvSK.Columns[12].HeaderText;
+
+                for (int i = 0; i < dgvSK.Rows.Count; i++)
+                {
+                    excelApp.Cells[i + 2, 1] = dgvSK.Rows[i].Cells[0].Value;
+                    excelApp.Cells[i + 2, 2] = dgvSK.Rows[i].Cells[2].Value;
+                    excelApp.Cells[i + 2, 3] = dgvSK.Rows[i].Cells[3].Value;
+                    excelApp.Cells[i + 2, 4] = dgvSK.Rows[i].Cells[4].Value;
+                    excelApp.Cells[i + 2, 5] = dgvSK.Rows[i].Cells[8].Value;
+                    excelApp.Cells[i + 2, 6] = dgvSK.Rows[i].Cells[9].Value;
+                    excelApp.Cells[i + 2, 7] = dgvSK.Rows[i].Cells[10].Value;
+                    excelApp.Cells[i + 2, 8] = dgvSK.Rows[i].Cells[11].Value;
+                    excelApp.Cells[i + 2, 9] = dgvSK.Rows[i].Cells[12].Value;
+                }
+                
+                excelApp.Columns.AutoFit();
+                excelApp.Visible = true;
+            }
+        }
     }
 
 }
