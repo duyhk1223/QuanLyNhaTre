@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataProvider.cs" />
+    <Compile Include="GiaoVienDAL.cs" />
     <Compile Include="HocSinhDAL.cs" />
     <Compile Include="LopDAL.cs" />
     <Compile Include="NamHocDAL.cs" />

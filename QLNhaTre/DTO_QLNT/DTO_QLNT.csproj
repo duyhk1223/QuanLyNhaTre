@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GiaoVien.cs" />
     <Compile Include="HocSinh.cs" />
     <Compile Include="Lop.cs" />
     <Compile Include="NamHoc.cs" />
