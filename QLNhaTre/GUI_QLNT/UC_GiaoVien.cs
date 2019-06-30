@@ -93,26 +93,25 @@ namespace GUI_QLNT
 
 
 
-        DataTable dtphancong = new DataTable();
+        
         private void LoadGVTodgvPhanCong()
         {
-            string query = "SELECT MAGV, HOTEN FROM GIAOVIEN ORDER BY HOTEN";
+            string query = "SELECT MAGV, HOTEN, GIAOVIEN.MALOP, LOP.TENLOP FROM GIAOVIEN left join LOP on GIAOVIEN.MALOP=LOP.MALOP ORDER BY HOTEN";
 
-            dtphancong= GiaoVienBUS.Instance.GetGiaoVien(query);
-            dgvPhanCong.DataSource = dtphancong;
-                
+             
+            dgvPhanCong.DataSource = GiaoVienBUS.Instance.GetGiaoVien(query);
 
             dgvPhanCong.Columns[0].Visible = true;
             dgvPhanCong.Columns[1].Visible = false;//ẩn cột mã ;
             dgvPhanCong.Columns[2].HeaderText = "Họ tên";
+            dgvPhanCong.Columns[3].Visible = false;
+            dgvPhanCong.Columns[4].HeaderText = "Lớp hiện tại";
             dgvPhanCong.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            
+            dgvPhanCong.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
         }
 
-        private void LoadLopToPhanCong()
-        {
-            
-        }
+         
 
         private void gridDSGV_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
@@ -152,12 +151,48 @@ namespace GUI_QLNT
             //cbNamHoc.ValueMember = "MANAMHOC";
         }
 
+        private void LoadLoptoCombobox()
+        {
+
+            cbLop.DataSource = LopBUS.Instance.GetLopByMaNamHoc((cbNamHoc.SelectedItem as NamHoc).MaNamHoc);
+            cbLop.DisplayMember = "TENLOP";
+            cbLop.ValueMember = "MALOP";
+            cbLop.SelectedItem = null;
+        }
+
         private void cbNamHoc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            LoadLoptoCombobox();
+        }
 
-            //List<Lop> dslop = LopBUS.Instance.GetLopByMaNamHoc((cbNamHoc.SelectedItem as NamHoc).MaNamHoc);
-            //dgvPhanCong.Columns[3].
+        private void dgvPhanCong_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtTenGV.Text = dgvPhanCong.Rows[dgvPhanCong.SelectedRows[0].Index].Cells[2].Value.ToString();
+            string malop = dgvPhanCong.Rows[dgvPhanCong.SelectedRows[0].Index].Cells[3].Value.ToString();
+            if (malop != "")
+            {
+                cbLop.SelectedValue = Convert.ToInt32(malop);
+            }
+            else
+                cbLop.SelectedItem = null;
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            if (cbLop.SelectedItem != null)
+            {
+                int magv = (int)dgvPhanCong.Rows[dgvPhanCong.SelectedRows[0].Index].Cells[1].Value;
+                int malop = (int)cbLop.SelectedValue;
+                if (GiaoVienBUS.Instance.PhanCongGiaoVien(magv, malop))
+                {
+                    MessageBox.Show("Đã phân công!");
+                }
+                else MessageBox.Show("Thất bại!");
+
+            }
+            else
+                MessageBox.Show("Chọn một lớp để phân công!!");
+            
         }
     }
 }

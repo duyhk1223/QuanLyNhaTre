@@ -68,7 +68,7 @@ namespace GUI_QLNT
                 btnLuu.Show();
                 label3.Show();
                 cbThangdo.Show();
-                
+                cbThangdo.SelectedIndex = DateTime.Now.Month - 1;
                 btnBaoCao.Show();
                 btnThem.Hide();
                 btnSua.Hide();

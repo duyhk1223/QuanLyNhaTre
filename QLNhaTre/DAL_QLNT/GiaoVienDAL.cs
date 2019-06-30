@@ -77,5 +77,13 @@ namespace DAL_QLNT
             kq = DataProvider.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }
+
+        public bool PhanCongGiaoVien(int maGiaoVien,int malop)
+        {
+            int kq = 0;
+            string query = string.Format("UPDATE GIAOVIEN SET MALOP = {0} WHERE MAGV={1}",malop ,maGiaoVien);
+            kq = DataProvider.Instance.ExecuteNonQuery(query);
+            return kq > 0;
+        }
     }
 }

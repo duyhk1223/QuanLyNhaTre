@@ -55,5 +55,11 @@ namespace BUS_QLNT
             bool kq = GiaoVienDAL.Instance.XoaGiaoVien(maGv);
             return kq;
         }
+
+        public bool PhanCongGiaoVien(int magv,int malop)
+        {
+            bool kq = GiaoVienDAL.Instance.PhanCongGiaoVien(magv,malop);
+            return kq;
+        }
     }
 }
