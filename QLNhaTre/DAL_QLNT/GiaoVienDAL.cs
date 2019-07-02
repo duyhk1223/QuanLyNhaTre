@@ -22,7 +22,7 @@ namespace DAL_QLNT
         public List<GiaoVien> GetListGiaoVien()
         {
             List<GiaoVien> list = new List<GiaoVien>();
-            string query = string.Format("SELECT * FROM GIAOVIEN");
+            string query = string.Format("SELECT * FROM GIAOVIEN ");
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in dt.Rows)
             {
@@ -57,7 +57,7 @@ namespace DAL_QLNT
         {
             int kq = 0;
 
-            string query = string.Format("INSERT INTO GIAOVIEN(HOTEN,GIOITINH,NGAYSINH,DANTOC,DIACHI,SDT,TRINHDO,NGAYVAOLAM,TONGIAO) VALUES (N'{0}',N'{1}','{2}','{3}',N'{4}',N'{5}',N'{6}','{7}',N'{8}')", hoTen, gioiTinh, ngaySinh, danToc, diaChi, sdt, trinhDo, ngayVaoLam, tonGiao);
+            string query = string.Format("INSERT INTO GIAOVIEN(HOTEN,GIOITINH,NGAYSINH,DANTOC,DIACHI,SDT,TRINHDO,NGAYVAOLAM,TONGIAO) VALUES (N'{0}',N'{1}','{2}',N'{3}',N'{4}','{5}',N'{6}','{7}',N'{8}')", hoTen, gioiTinh, ngaySinh, danToc, diaChi, sdt, trinhDo, ngayVaoLam, tonGiao);
             kq = DataProvider.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }
@@ -65,7 +65,7 @@ namespace DAL_QLNT
         public bool SuaGiaoVien(int maGiaoVien, string hoTen, string gioiTinh, string ngaySinh, string danToc, string diaChi, string sdt, string trinhDo, string ngayVaoLam, string tonGiao)
         {
             int kq = 0;
-            string query = string.Format("UPDATE GIAOVIEN SET HOTEN = N'{0}', GIOITINH = '{1}', NGAYSINH = '{2}', DANTOC = '{3}', DIACHI = N'{4}', SDT = N'{5}', TRINHDO = '{6}', NGAYVAOLAM= N'{7}', TONGIAO = '{8}' WHERE MAGV = {9}", hoTen, gioiTinh, ngaySinh, danToc, diaChi, sdt, trinhDo, ngayVaoLam, tonGiao, maGiaoVien);
+            string query = string.Format("UPDATE GIAOVIEN SET HOTEN = N'{0}', GIOITINH = N'{1}', NGAYSINH = '{2}', DANTOC = N'{3}', DIACHI = N'{4}', SDT = N'{5}', TRINHDO = N'{6}', NGAYVAOLAM= N'{7}', TONGIAO = N'{8}' WHERE MAGV = {9}", hoTen, gioiTinh, ngaySinh, danToc, diaChi, sdt, trinhDo, ngayVaoLam, tonGiao, maGiaoVien);
             kq = DataProvider.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }

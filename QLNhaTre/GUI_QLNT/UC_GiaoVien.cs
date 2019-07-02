@@ -186,6 +186,7 @@ namespace GUI_QLNT
                 if (GiaoVienBUS.Instance.PhanCongGiaoVien(magv, malop))
                 {
                     MessageBox.Show("Đã phân công!");
+                    LoadGVTodgvPhanCong();
                 }
                 else MessageBox.Show("Thất bại!");
 

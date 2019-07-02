@@ -144,6 +144,7 @@ namespace GUI_QLNT
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+
             var changedRows = ((System.Data.DataTable)dgvSK.DataSource).GetChanges(DataRowState.Modified).Rows;
 
 

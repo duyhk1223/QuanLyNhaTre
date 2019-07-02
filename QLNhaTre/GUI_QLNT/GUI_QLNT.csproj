@@ -118,11 +118,11 @@
     <Compile Include="UC_GiaoVien.Designer.cs">
       <DependentUpon>UC_GiaoVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_HeThong.cs">
+    <Compile Include="UC_DanhMuc.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_HeThong.Designer.cs">
-      <DependentUpon>UC_HeThong.cs</DependentUpon>
+    <Compile Include="UC_DanhMuc.Designer.cs">
+      <DependentUpon>UC_DanhMuc.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_HocSinh.cs">
       <SubType>UserControl</SubType>
@@ -166,8 +166,8 @@
     <EmbeddedResource Include="UC_GiaoVien.resx">
       <DependentUpon>UC_GiaoVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_HeThong.resx">
-      <DependentUpon>UC_HeThong.cs</DependentUpon>
+    <EmbeddedResource Include="UC_DanhMuc.resx">
+      <DependentUpon>UC_DanhMuc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_HocSinh.resx">
       <DependentUpon>UC_HocSinh.cs</DependentUpon>

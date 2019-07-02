@@ -58,7 +58,7 @@ namespace GUI_QLNT
         private void btnHeThong_Click(object sender, EventArgs e)
         {
             moveSidePanel(btnHeThong);
-            UC_HeThong uC_HeThong = new UC_HeThong();
+            UC_DanhMuc uC_HeThong = new UC_DanhMuc();
             AddControlsToPanel(uC_HeThong);
         }
 

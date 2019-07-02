@@ -83,22 +83,84 @@ namespace GUI_QLNT
             }
             
         }
+        bool CheckData()
+        {
+            if (string.IsNullOrEmpty(txtHoTen.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập họ tên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtHoTen.Focus();
+                return false;
 
+            }
 
+            if (dtpkNgaySinh.Value.Year - 2019 > 100 || dtpkNgaySinh.Value.Year - 2019 < 0)
+            {
+                MessageBox.Show("Ngày sinh không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dtpkNgaySinh.Focus();
+                return false;
+            }
+            if (dtpkNgayVaoHoc.Value.Day - DateTime.Now.Day <= 0)
+            {
+                MessageBox.Show("Ngày vào học không hợp lệ");
+                dtpkNgayVaoHoc.Focus();
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtDiaChi.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập địa chỉ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtDiaChi.Focus();
+                return false;
+
+            }
+            if (string.IsNullOrEmpty(txtHoTenCha.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập họ tên cha", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtHoTenCha.Focus();
+                return false;
+
+            }
+            if (string.IsNullOrEmpty(txtSDTCha.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập sdt cha", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtSDTCha.Focus();
+                return false;
+
+            }
+            if (string.IsNullOrEmpty(txtHoTenMe.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập họ tên mẹ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtHoTenMe.Focus();
+                return false;
+
+            }
+            if (string.IsNullOrEmpty(txtSDTMe.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập sdt mẹ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtSDTMe.Focus();
+                return false;
+
+            }
+            return true;
+
+            
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
-
-            string hoten = txtHoTen.Text;
-            string gioitinh = GetGioiTinh();
-            string ngaysinh = dtpkNgaySinh.Value.ToString("MM/dd/yyyy");
-            int malop = (cbLop.SelectedItem as Lop).MaLop;
-            string ngayvaohoc = dtpkNgayVaoHoc.Value.Date.ToString("MM/dd/yyyy");
-            string diachi = txtDiaChi.Text;
-            string tencha = txtHoTenCha.Text;
-            string sdtcha = txtSDTCha.Text;
-            string tenme = txtHoTenMe.Text;
-            string sdtme = txtSDTMe.Text;
-            ThemHocSinh(hoten, gioitinh, ngaysinh, malop, ngayvaohoc, diachi, tencha, sdtcha, tenme, sdtme);
+            if (CheckData())
+            {
+                string hoten = txtHoTen.Text;
+                string gioitinh = GetGioiTinh();
+                string ngaysinh = dtpkNgaySinh.Value.ToString("MM/dd/yyyy");
+                int malop = (cbLop.SelectedItem as Lop).MaLop;
+                string ngayvaohoc = dtpkNgayVaoHoc.Value.Date.ToString("MM/dd/yyyy");
+                string diachi = txtDiaChi.Text;
+                string tencha = txtHoTenCha.Text;
+                string sdtcha = txtSDTCha.Text;
+                string tenme = txtHoTenMe.Text;
+                string sdtme = txtSDTMe.Text;
+                ThemHocSinh(hoten, gioitinh, ngaysinh, malop, ngayvaohoc, diachi, tencha, sdtcha, tenme, sdtme);
+                this.Dispose();
+            }
             
         }
 
