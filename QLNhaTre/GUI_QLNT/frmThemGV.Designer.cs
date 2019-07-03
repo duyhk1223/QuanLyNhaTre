@@ -63,6 +63,7 @@
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(280, 20);
             this.txtHoTen.TabIndex = 7;
+            this.txtHoTen.Validated += new System.EventHandler(this.txtHoTen_Validated);
             // 
             // label1
             // 

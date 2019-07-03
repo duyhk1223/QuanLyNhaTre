@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS_QLNT;
 using DTO_QLNT;
+using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace GUI_QLNT
 {
@@ -85,21 +87,26 @@ namespace GUI_QLNT
         }
         bool CheckData()
         {
-            if (string.IsNullOrEmpty(txtHoTen.Text))
+            if (string.IsNullOrEmpty(txtHoTen.Text) || isName(txtHoTen.Text) == false)
             {
-                MessageBox.Show("Bạn chưa nhập họ tên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Họ tên không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtHoTen.Focus();
                 return false;
 
             }
+            if (rbtnNam.Checked == false && rbtnNu.Checked == false)
+            {
+                MessageBox.Show("Bạn chưa nhập giới tính", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            if (dtpkNgaySinh.Value.Year - 2019 > 100 || dtpkNgaySinh.Value.Year - 2019 < 0)
+                return false;
+            }
+            if (isDoB(dtpkNgaySinh.Value.Date) == false)
             {
                 MessageBox.Show("Ngày sinh không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dtpkNgaySinh.Focus();
                 return false;
             }
-            if (dtpkNgayVaoHoc.Value.Day - DateTime.Now.Day <= 0)
+            if (IsNgayVaoHoc(dtpkNgayVaoHoc.Value.Date) == false)
             {
                 MessageBox.Show("Ngày vào học không hợp lệ");
                 dtpkNgayVaoHoc.Focus();
@@ -112,37 +119,37 @@ namespace GUI_QLNT
                 return false;
 
             }
-            if (string.IsNullOrEmpty(txtHoTenCha.Text))
+            if (string.IsNullOrEmpty(txtHoTenCha.Text) || isName(txtHoTenCha.Text) == false)
             {
-                MessageBox.Show("Bạn chưa nhập họ tên cha", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("họ tên cha không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtHoTenCha.Focus();
                 return false;
 
             }
-            if (string.IsNullOrEmpty(txtSDTCha.Text))
+            if (string.IsNullOrEmpty(txtSDTCha.Text) || isPhoneNumber(txtSDTCha.Text) == false)
             {
-                MessageBox.Show("Bạn chưa nhập sdt cha", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("sdt cha không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtSDTCha.Focus();
                 return false;
 
             }
-            if (string.IsNullOrEmpty(txtHoTenMe.Text))
+            if (string.IsNullOrEmpty(txtHoTenMe.Text) || isName(txtHoTenMe.Text) == false)
             {
-                MessageBox.Show("Bạn chưa nhập họ tên mẹ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("tên mẹ không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtHoTenMe.Focus();
                 return false;
 
             }
-            if (string.IsNullOrEmpty(txtSDTMe.Text))
+            if (string.IsNullOrEmpty(txtSDTMe.Text) || isPhoneNumber(txtSDTMe.Text) == false)
             {
-                MessageBox.Show("Bạn chưa nhập sdt mẹ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(" sdt mẹ không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtSDTMe.Focus();
                 return false;
 
             }
             return true;
 
-            
+
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -163,12 +170,84 @@ namespace GUI_QLNT
             }
             
         }
+        // chuẩn hóa họ tên
+        public static string FormatProperCase(string str)
+        {
+            CultureInfo cultureInfo = new CultureInfo("vi-VN");
+            TextInfo textInfo = cultureInfo.TextInfo;
+            str = textInfo.ToLower(str);
+            // Replace multiple white space to 1 white  space
+            str = System.Text.RegularExpressions.Regex.Replace(str, @"\s{2,}", " ");
+            //Upcase like Title
+            return textInfo.ToTitleCase(str);
+        }
+        
+        //kiểm tra sdt
+        private bool isPhoneNumber(string pText)
+        {
+            Regex regex = new Regex(@"^\d{9,11}$");
+            return regex.IsMatch(pText);
+        }
+        //kierm tra tên
+        private bool isName(string pText)
+        {
+            Regex regex = new Regex(@"\D[^~!@#$%^&*()_+-=\]{}|:'<>,.?`\/\\]{1,}$");
+            return regex.IsMatch(pText);
+        }
+        private bool isDoB(DateTime date)
+        {
+            DateTime now = DateTime.Now;
+            if (1 <= now.Year - date.Year && now.Year - date.Year <= 10)
+                return true;
+            else return false;
+        }
+        private bool IsNgayVaoHoc(DateTime dt)
+        {
+            if (dt.Year == DateTime.Now.Year)
+            {
+                if (dt.Month == DateTime.Now.Month)
+                {
+                    if (DateTime.Now.Day - dt.Day >= 0)
+                        return true;
+                    else
+                        return false;
+                }
 
+            }
+
+            if (dt.Year == DateTime.Now.Year)
+            {
+                if (dt.Month <= DateTime.Now.Month)
+                    return true;
+                else return false;
+            }
+            if (dt.Year <= DateTime.Now.Year)
+                return true;
+            else
+                return false;
+        }
         private void cbNamHoc_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadLoptoCombobox();
         }
 
+        private void txtHoTen_Validated(object sender, EventArgs e)
+        {
+            txtHoTen.Text = FormatProperCase(txtHoTen.Text);
+
+        }
+
+        private void txtHoTenCha_Validated(object sender, EventArgs e)
+        {
+            txtHoTenCha.Text = FormatProperCase(txtHoTenCha.Text);
+        }
+
+        private void txtHoTenMe_Validated(object sender, EventArgs e)
+        {
+            txtHoTenMe.Text = FormatProperCase(txtHoTenMe.Text);
+        }
+
+        
         
 
     }

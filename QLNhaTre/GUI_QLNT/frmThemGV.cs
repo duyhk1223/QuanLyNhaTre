@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -43,16 +45,30 @@ namespace GUI_QLNT
             else
                 MessageBox.Show("Thêm Thất bại");
         }
-       bool CheckData()
+        
+
+        bool CheckData()
         {
-            if(string.IsNullOrEmpty(txtHoTen.Text))
+            if(string.IsNullOrEmpty(txtHoTen.Text)||isName(txtHoTen.Text)==false)
             {
                 MessageBox.Show("Bạn chưa nhập họ tên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtHoTen.Focus();
                 return false;
 
             }
-            if(string.IsNullOrEmpty(txtDanToc.Text))
+            if (rbtnNam.Checked == false && rbtnNu.Checked == false)
+            {
+                MessageBox.Show("Bạn chưa nhập giới tính", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                return false;
+            }
+            if (isDoB(dtpkNgaySinh.Value.Date) == false)
+            {
+                MessageBox.Show("Ngày sinh không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dtpkNgaySinh.Focus();
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtDanToc.Text))
             {
                 MessageBox.Show("Bạn chưa nhập dân tộc", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtHoTen.Focus();
@@ -71,7 +87,7 @@ namespace GUI_QLNT
                 txtHoTen.Focus();
                 return false;
             }
-            if (string.IsNullOrEmpty(txtSDT.Text))
+            if (string.IsNullOrEmpty(txtSDT.Text)||isPhoneNumber(txtSDT.Text)==false)
             {
                 MessageBox.Show("Bạn chưa nhập sdt", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtHoTen.Focus();
@@ -89,13 +105,8 @@ namespace GUI_QLNT
                 txtHoTen.Focus();
                 return false;
             }
-            if(dtpkNgaySinh.Value.Year-2019>100|| dtpkNgaySinh.Value.Year - 2019<0)
-            {
-                MessageBox.Show("Ngày sinh không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dtpkNgaySinh.Focus();
-                return false;
-            }
-            if(dtpkNgayVaoLam.Value.Day-DateTime.Now.Day<0)
+            
+            if(IsNgayVaoLam(dtpkNgayVaoLam.Value.Date)==false)
             {
                 MessageBox.Show("Ngày vào làm không hợp lệ");
                 dtpkNgayVaoLam.Focus();
@@ -121,6 +132,67 @@ namespace GUI_QLNT
                 ThemGiaoVien(hoTen, gioitinh, ngaysinh, dantoc, diachi, sdt, trinhdo, ngayvaolam, tongiao);
                 this.Dispose();
             }
+        }
+        // chuẩn hóa họ tên
+        public static string FormatProperCase(string str)
+        {
+            CultureInfo cultureInfo = new CultureInfo("vi-VN");
+            TextInfo textInfo = cultureInfo.TextInfo;
+            str = textInfo.ToLower(str);
+            // Replace multiple white space to 1 white  space
+            str = System.Text.RegularExpressions.Regex.Replace(str, @"\s{2,}", " ");
+            //Upcase like Title
+            return textInfo.ToTitleCase(str);
+        }
+        //kiểm tra sdt
+        private bool isPhoneNumber(string pText)
+        {
+            Regex regex = new Regex(@"^\d{9,11}$");
+            return regex.IsMatch(pText);
+        }
+        //kierm tra tên
+        private bool isName(string pText)
+        {
+            Regex regex = new Regex(@"\D[^~!@#$%^&*()_+-=\]{}|:'<>,.?`\/\\]{1,}$");
+            return regex.IsMatch(pText);
+        }
+        private bool isDoB(DateTime date)
+        {
+            DateTime now = DateTime.Now;
+            if (17 <= now.Year - date.Year && now.Year - date.Year <= 50)
+                return true;
+            else return false;
+        }
+        private bool IsNgayVaoLam(DateTime dt)
+        {
+            if (dt.Year == DateTime.Now.Year)
+            {
+                if (dt.Month == DateTime.Now.Month)
+                {
+                    if (DateTime.Now.Day - dt.Day >= 0)
+                        return true;
+                    else
+                        return false;
+                }
+
+            }
+
+            if (dt.Year == DateTime.Now.Year)
+            {
+                if (dt.Month <= DateTime.Now.Month)
+                    return true;
+                else return false;
+            }
+            if (dt.Year <= DateTime.Now.Year)
+                return true;
+            else
+                return false;
+        }
+        
+
+        private void txtHoTen_Validated(object sender, EventArgs e)
+        {
+            txtHoTen.Text = FormatProperCase(txtHoTen.Text);
         }
     }
 }

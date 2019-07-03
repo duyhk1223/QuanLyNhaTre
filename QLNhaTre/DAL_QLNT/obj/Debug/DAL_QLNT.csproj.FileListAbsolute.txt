@@ -1,4 +1,4 @@
-C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\DAL_QLNT\bin\Debug\DAL_QLNT.dll
+﻿C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\DAL_QLNT\bin\Debug\DAL_QLNT.dll
 C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\DAL_QLNT\bin\Debug\DAL_QLNT.pdb
 C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\DAL_QLNT\bin\Debug\DTO_QLNT.dll
 C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\DAL_QLNT\bin\Debug\DTO_QLNT.pdb
@@ -41,3 +41,4 @@ C:\Users\kdi69\Downloads\-N-master\-N-master\checkdataHS-GV-ND\DAL_QLNT\obj\Debu
 C:\Users\kdi69\Downloads\-N-master\-N-master\checkdataHS-GV-ND\DAL_QLNT\obj\Debug\DAL_QLNT.csproj.CopyComplete
 C:\Users\kdi69\Downloads\-N-master\-N-master\checkdataHS-GV-ND\DAL_QLNT\obj\Debug\DAL_QLNT.dll
 C:\Users\kdi69\Downloads\-N-master\-N-master\checkdataHS-GV-ND\DAL_QLNT\obj\Debug\DAL_QLNT.pdb
+
