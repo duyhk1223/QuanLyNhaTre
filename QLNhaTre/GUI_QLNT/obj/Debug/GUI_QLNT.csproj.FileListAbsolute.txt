@@ -1,4 +1,4 @@
-﻿C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\bin\Debug\GUI_QLNT.exe.config
+C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\bin\Debug\GUI_QLNT.exe.config
 C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\bin\Debug\GUI_QLNT.exe
 C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\bin\Debug\GUI_QLNT.pdb
 C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\bin\Debug\BUS_QLNT.dll
@@ -150,4 +150,4 @@ C:\Users\kdi69\Downloads\-N-master\-N-master\checkdataHS-GV-ND\GUI_QLNT\obj\Debu
 C:\Users\kdi69\Downloads\-N-master\-N-master\checkdataHS-GV-ND\GUI_QLNT\obj\Debug\GUI_QLNT.exe
 C:\Users\kdi69\Downloads\-N-master\-N-master\checkdataHS-GV-ND\GUI_QLNT\obj\Debug\GUI_QLNT.pdb
 C:\Users\kdi69\Downloads\-N-master\-N-master\checkdataHS-GV-ND\GUI_QLNT\obj\Debug\GUI_QLNT.UC_DanhMuc.resources
-
+C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLNT.UC_DanhMuc.resources

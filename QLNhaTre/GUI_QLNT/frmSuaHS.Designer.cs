@@ -429,4 +429,5 @@
         private System.Windows.Forms.ComboBox cbNamHoc;
         private System.Windows.Forms.Label label11;
     }
+
 }

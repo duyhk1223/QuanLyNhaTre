@@ -35,6 +35,8 @@
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTrinhDo = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.txtTonGiao = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDanToc = new System.Windows.Forms.TextBox();
@@ -52,8 +54,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtTrinhDo = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -142,6 +142,22 @@
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin giáo viên";
+            // 
+            // txtTrinhDo
+            // 
+            this.txtTrinhDo.Location = new System.Drawing.Point(95, 191);
+            this.txtTrinhDo.Name = "txtTrinhDo";
+            this.txtTrinhDo.Size = new System.Drawing.Size(130, 20);
+            this.txtTrinhDo.TabIndex = 18;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(39, 194);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(50, 13);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Trình độ:";
             // 
             // txtTonGiao
             // 
@@ -246,6 +262,7 @@
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(280, 20);
             this.txtHoTen.TabIndex = 7;
+            this.txtHoTen.Validated += new System.EventHandler(this.txtHoTen_Validated);
             // 
             // label1
             // 
@@ -291,22 +308,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(430, 3);
             this.panel3.TabIndex = 13;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(39, 194);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(50, 13);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Trình độ:";
-            // 
-            // txtTrinhDo
-            // 
-            this.txtTrinhDo.Location = new System.Drawing.Point(95, 191);
-            this.txtTrinhDo.Name = "txtTrinhDo";
-            this.txtTrinhDo.Size = new System.Drawing.Size(130, 20);
-            this.txtTrinhDo.TabIndex = 18;
             // 
             // frmSuaGV
             // 

@@ -231,74 +231,77 @@ namespace GUI_QLNT
 
         private void LoadDSHocSinhtodtgv()
         {
+            if (cbLop.SelectedItem != null)
+            {
+                int malop = (cbLop.SelectedItem as Lop).MaLop;
 
-            int malop = (cbLop.SelectedItem as Lop).MaLop;
-
-            dgvDSHS.DataSource = HocSinhBUS.Instance.GetHocSinhByMaLop(malop);
-            dgvDSHS.Columns[0].Visible = true;
-            dgvDSHS.Columns[1].Visible = false;//ẩn cột mã học sinh;
-            dgvDSHS.Columns[2].HeaderText = "Họ tên";
-            dgvDSHS.Columns[3].HeaderText = "Giới tính";
-            dgvDSHS.Columns[4].HeaderText = "Ngày sinh";
-            dgvDSHS.Columns[5].Visible = false;//ẩn cột mã lớp
-            dgvDSHS.Columns[6].HeaderText = "Ngày vào học";
-            dgvDSHS.Columns[7].HeaderText = "Địa chỉ";
-            dgvDSHS.Columns[8].HeaderText = "Họ tên cha";
-            dgvDSHS.Columns[9].HeaderText = "Điện thoại";
-            dgvDSHS.Columns[10].HeaderText = "Họ tên mẹ";
-            dgvDSHS.Columns[11].HeaderText = "Điện thoại";
-            dgvDSHS.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvDSHS.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvDSHS.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvDSHS.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
+                dgvDSHS.DataSource = HocSinhBUS.Instance.GetHocSinhByMaLop(malop);
+                dgvDSHS.Columns[0].Visible = true;
+                dgvDSHS.Columns[1].Visible = false;//ẩn cột mã học sinh;
+                dgvDSHS.Columns[2].HeaderText = "Họ tên";
+                dgvDSHS.Columns[3].HeaderText = "Giới tính";
+                dgvDSHS.Columns[4].HeaderText = "Ngày sinh";
+                dgvDSHS.Columns[5].Visible = false;//ẩn cột mã lớp
+                dgvDSHS.Columns[6].HeaderText = "Ngày vào học";
+                dgvDSHS.Columns[7].HeaderText = "Địa chỉ";
+                dgvDSHS.Columns[8].HeaderText = "Họ tên cha";
+                dgvDSHS.Columns[9].HeaderText = "Điện thoại";
+                dgvDSHS.Columns[10].HeaderText = "Họ tên mẹ";
+                dgvDSHS.Columns[11].HeaderText = "Điện thoại";
+                dgvDSHS.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvDSHS.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvDSHS.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvDSHS.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
 
         }
 
         public void LoadSucKhoe()
         {
-            int malop = (cbLop.SelectedItem as Lop).MaLop;
-            string thangdo = cbThangdo.SelectedItem.ToString();
-
-
-            System.Data.DataTable dths = HocSinhBUS.Instance.GetHocSinh(malop);
-            dths.PrimaryKey = new DataColumn[]
+            if (cbLop.SelectedItem != null)
             {
+                int malop = (cbLop.SelectedItem as Lop).MaLop;
+                string thangdo = cbThangdo.SelectedItem.ToString();
+
+
+                System.Data.DataTable dths = HocSinhBUS.Instance.GetHocSinh(malop);
+                dths.PrimaryKey = new DataColumn[]
+                {
                 dths.Columns["MAHS"]
-            };
-            System.Data.DataTable dtsk = SucKhoeBUS.Instance.GetSucKhoe(malop, Convert.ToInt32(thangdo));
-            dtsk.PrimaryKey = new DataColumn[]
-            {
+                };
+                System.Data.DataTable dtsk = SucKhoeBUS.Instance.GetSucKhoe(malop, Convert.ToInt32(thangdo));
+                dtsk.PrimaryKey = new DataColumn[]
+                {
                 dtsk.Columns["MAHS"]
-            };
+                };
 
-            dths.Merge(dtsk);
-            dgvSK.DataSource = dths;
-            dgvSK.Columns[0].Visible = true;//cot stt
-            dgvSK.Columns[1].Visible = false;//cot mahs
-            dgvSK.Columns[5].Visible = false;//cot mask
-            
-            
-            
-            dgvSK.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvSK.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-            dgvSK.Columns[0].ReadOnly = true;
-            dgvSK.Columns[2].ReadOnly = true;
-            dgvSK.Columns[3].ReadOnly = true;
-            dgvSK.Columns[4].ReadOnly = true;
-            
+                dths.Merge(dtsk);
+                dgvSK.DataSource = dths;
+                dgvSK.Columns[0].Visible = true;//cot stt
+                dgvSK.Columns[1].Visible = false;//cot mahs
+                dgvSK.Columns[5].Visible = false;//cot mask
 
 
-            dgvSK.Columns[2].HeaderText = "Họ tên";
-            dgvSK.Columns[3].HeaderText = "Giới tính";
-            dgvSK.Columns[4].HeaderText = "Ngày sinh";
-            dgvSK.Columns[6].HeaderText = "Chiều cao";
-            dgvSK.Columns[7].HeaderText = "ĐGCC";
-            dgvSK.Columns[8].HeaderText = "Cân nặng";
-            dgvSK.Columns[9].HeaderText = "ĐGCN";
-            dgvSK.Columns[10].HeaderText = "Đánh giá";
 
+                dgvSK.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgvSK.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                dgvSK.Columns[0].ReadOnly = true;
+                dgvSK.Columns[2].ReadOnly = true;
+                dgvSK.Columns[3].ReadOnly = true;
+                dgvSK.Columns[4].ReadOnly = true;
+
+
+
+                dgvSK.Columns[2].HeaderText = "Họ tên";
+                dgvSK.Columns[3].HeaderText = "Giới tính";
+                dgvSK.Columns[4].HeaderText = "Ngày sinh";
+                dgvSK.Columns[6].HeaderText = "Chiều cao";
+                dgvSK.Columns[7].HeaderText = "ĐGCC";
+                dgvSK.Columns[8].HeaderText = "Cân nặng";
+                dgvSK.Columns[9].HeaderText = "ĐGCN";
+                dgvSK.Columns[10].HeaderText = "Đánh giá";
+            }
         }
 
 
