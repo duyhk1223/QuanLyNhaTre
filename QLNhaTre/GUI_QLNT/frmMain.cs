@@ -48,13 +48,6 @@ namespace GUI_QLNT
             AddControlsToPanel(uC_HocSinh);
         }
 
-        private void btnHeThong_Click(object sender, EventArgs e)
-        {
-            moveSidePanel(btnHeThong);
-            UC_HeThong uC_HeThong = new UC_HeThong();
-            AddControlsToPanel(uC_HeThong);
-        }
-
         private void btnGiaoVien_Click(object sender, EventArgs e)
         {
             moveSidePanel(btnGiaoVien);
@@ -62,13 +55,16 @@ namespace GUI_QLNT
             AddControlsToPanel(uC_GiaoVien);
         }
 
-        
-
-        private void btnDanhMuc_Click(object sender, EventArgs e)
+        private void btnHeThong_Click(object sender, EventArgs e)
         {
-            moveSidePanel(btnDanhMuc);
-            UC_DanhMuc uC_DanhMuc = new UC_DanhMuc();
-            AddControlsToPanel(uC_DanhMuc);
+            moveSidePanel(btnHeThong);
+            UC_DanhMuc uC_HeThong = new UC_DanhMuc();
+            AddControlsToPanel(uC_HeThong);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
