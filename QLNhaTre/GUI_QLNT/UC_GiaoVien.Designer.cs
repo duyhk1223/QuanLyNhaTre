@@ -126,7 +126,8 @@
             this.gridDSGV.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
             this.gridDSGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gridDSGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.gridDSGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.gridDSGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.gridDSGV.BackgroundColor = System.Drawing.Color.White;
             this.gridDSGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gridDSGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -164,7 +165,7 @@
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Visible = false;
-            this.Column1.Width = 34;
+            this.Column1.Width = 33;
             // 
             // tabPhanCong
             // 

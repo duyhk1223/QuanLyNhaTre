@@ -154,7 +154,6 @@
             this.cbGiaoVien.Name = "cbGiaoVien";
             this.cbGiaoVien.Size = new System.Drawing.Size(183, 21);
             this.cbGiaoVien.TabIndex = 19;
-            this.cbGiaoVien.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -175,7 +174,6 @@
             this.cbQuyen.Name = "cbQuyen";
             this.cbQuyen.Size = new System.Drawing.Size(183, 21);
             this.cbQuyen.TabIndex = 19;
-            this.cbQuyen.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // frmThemND
             // 

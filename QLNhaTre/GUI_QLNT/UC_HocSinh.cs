@@ -27,18 +27,10 @@ namespace GUI_QLNT
         private void UC_HocSinh_Load(object sender, EventArgs e)
         {
             LoadNamHoctoCombobox();
-            
+            cbThangdo.SelectedIndex = DateTime.Now.Month - 1;
         }
 
-        private void cbLop_TextChanged(object sender, EventArgs e)
-        {
-            LoadDSHocSinhtodtgv();
-        }
-
-        private void cbNamHoc_TextChanged(object sender, EventArgs e)
-        {
-            LoadLoptoCombobox();
-        }
+        
 
         private void dgvDSHS_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)// auto đánh stt
         {
@@ -61,35 +53,41 @@ namespace GUI_QLNT
                 btnThem.Show();
                 btnSua.Show();
                 btnXoa.Show();
+                LoadDSHocSinhtodtgv();
             }
             else
             {
-                
                 btnLuu.Show();
                 label3.Show();
                 cbThangdo.Show();
-                cbThangdo.SelectedIndex = DateTime.Now.Month - 1;
                 btnBaoCao.Show();
                 btnThem.Hide();
                 btnSua.Hide();
                 btnXoa.Hide();
+                LoadSucKhoe();
             }
-        }
-
-
-        private void cbLop_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            LoadDSHocSinhtodtgv();
         }
 
         private void cbNamHoc_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadLoptoCombobox();
+            if (tabctrlHocsinh.SelectedTab == tabSK)
+                LoadSucKhoe();
         }
+
+        private void cbLop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabctrlHocsinh.SelectedTab == tabDSHS)
+                LoadDSHocSinhtodtgv();
+            else
+                LoadSucKhoe();
+        }
+
 
         private void cbThangdo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadSucKhoe();
+            if (tabctrlHocsinh.SelectedTab == tabSK)
+                LoadSucKhoe();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -144,39 +142,72 @@ namespace GUI_QLNT
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-
-            var changedRows = ((System.Data.DataTable)dgvSK.DataSource).GetChanges(DataRowState.Modified).Rows;
-
-
-            foreach (DataRow row in changedRows)
+            System.Data.DataTable dt = ((System.Data.DataTable)dgvSK.DataSource).GetChanges(DataRowState.Modified);
+            if (dt != null)
             {
-                if (row["MASK"].ToString() == "")
+                var changedRows = ((System.Data.DataTable)dgvSK.DataSource).GetChanges(DataRowState.Modified).Rows;
+                foreach (DataRow row in changedRows)
                 {
-                    int mahs = (int)row["MAHS"];
-                    int malop = (cbLop.SelectedItem as Lop).MaLop;
-                    string thangdo = cbThangdo.SelectedItem.ToString();
-                    float chieucao = float.Parse(row["CHIEUCAO"].ToString());
-                    string dgcc = row["DGCC"].ToString();
-                    float cannang = float.Parse(row["CANNANG"].ToString());
-                    string dgcn = row["DGCN"].ToString();
-                    string dgc = row["DGC"].ToString();
-                    SucKhoeBUS.Instance.ThemSucKhoe(mahs, malop, Convert.ToInt32(thangdo), chieucao, dgcc, cannang, dgcn, dgc);
-                }
-                else
-                {
-                    int mask = (int)row["MASK"];
-                    float chieucao = float.Parse(row["CHIEUCAO"].ToString());
-                    string dgcc = row["DGCC"].ToString();
-                    float cannang = float.Parse(row["CANNANG"].ToString());
-                    string dgcn = row["DGCN"].ToString();
-                    string dgc = row["DGC"].ToString();
-                    SucKhoeBUS.Instance.SuaSucKhoe(mask, chieucao, dgcc, cannang, dgcn, dgc);
-                }
 
+                    if (row["CHIEUCAO"].ToString() != "" && row["CANNANG"].ToString() != "")
+                    {
+                        float chieucao = float.Parse(row["CHIEUCAO"].ToString());
+                        string dgcc = row["DGCC"].ToString();
+                        float cannang = float.Parse(row["CANNANG"].ToString());
+                        string dgcn = row["DGCN"].ToString();
+                        string dgc = row["DGC"].ToString();
+                        if (row["MASK"].ToString() == "")
+                        {
+                            int mahs = (int)row["MAHS"];
+                            
+                            string thangdo = cbThangdo.SelectedItem.ToString();
+
+                            SucKhoeBUS.Instance.ThemSucKhoe(mahs, Convert.ToInt32(thangdo), chieucao, dgcc, cannang, dgcn, dgc);
+                        }
+                        else
+                        {
+                            int mask = (int)row["MASK"];
+
+                            SucKhoeBUS.Instance.SuaSucKhoe(mask, chieucao, dgcc, cannang, dgcn, dgc);
+                        }
+                        MessageBox.Show("Đã lưu!");
+                        LoadSucKhoe();
+                    }
+                    else
+                        if (row["CHIEUCAO"].ToString() == "" && row["CANNANG"].ToString() == ""&& row["MASK"].ToString() == "")
+                        {
+                             MessageBox.Show("Không có thay đổi");
+                        }
+                        else
+                            if(row["CHIEUCAO"].ToString() == "" || row["CANNANG"].ToString() == "")
+                            {
+                                 MessageBox.Show("Xin hãy nhập cả chiều cao và cân nặng");
+                            }
+                }
             }
-            MessageBox.Show("Đã lưu!");
-            LoadSucKhoe();
+            else
+            {
+                MessageBox.Show("Không có thay đổi");
+            }
+                
         }
+
+        private void CellOnlyNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dgvSK_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (dgvSK.CurrentCell.ColumnIndex == 8 || dgvSK.CurrentCell.ColumnIndex == 10)
+            {
+                e.Control.KeyPress += new KeyPressEventHandler(CellOnlyNumber_KeyPress);
+            }
+        }
+
 
         #endregion
 
@@ -246,10 +277,10 @@ namespace GUI_QLNT
             dgvSK.Columns[0].Visible = true;//cot stt
             dgvSK.Columns[1].Visible = false;//cot mahs
             dgvSK.Columns[5].Visible = false;//cot mask
-            dgvSK.Columns[6].Visible = false;//cot malop
-            dgvSK.Columns[7].Visible = false;//cot tháng 
-            dgvSK.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            dgvSK.Columns[12].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            
+            
+            
+            dgvSK.Columns[10].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvSK.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             dgvSK.Columns[0].ReadOnly = true;
@@ -262,18 +293,17 @@ namespace GUI_QLNT
             dgvSK.Columns[2].HeaderText = "Họ tên";
             dgvSK.Columns[3].HeaderText = "Giới tính";
             dgvSK.Columns[4].HeaderText = "Ngày sinh";
-            dgvSK.Columns[8].HeaderText = "Chiều cao";
-            dgvSK.Columns[9].HeaderText = "ĐGCC";
-            dgvSK.Columns[10].HeaderText = "Cân nặng";
-            dgvSK.Columns[11].HeaderText = "ĐGCN";
-            dgvSK.Columns[12].HeaderText = "Đánh giá";
+            dgvSK.Columns[6].HeaderText = "Chiều cao";
+            dgvSK.Columns[7].HeaderText = "ĐGCC";
+            dgvSK.Columns[8].HeaderText = "Cân nặng";
+            dgvSK.Columns[9].HeaderText = "ĐGCN";
+            dgvSK.Columns[10].HeaderText = "Đánh giá";
 
         }
 
 
 
-
-
+        
 
 
         #endregion
@@ -313,6 +343,8 @@ namespace GUI_QLNT
                 excelApp.Visible = true;
             }
         }
+
+        
     }
 
 }

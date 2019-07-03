@@ -10,12 +10,12 @@ namespace DTO_QLNT
     {
 
 
-        public SucKhoe(int mask, int mahs, int malop, int thangdo, float chieucao, string dgcc, float cannang, string dgcn, string dgc)
+        public SucKhoe(int mask, int mahs, float chieucao, string dgcc, float cannang, string dgcn, string dgc)
         {
             this.MaSK = mask;
             this.MaHS = mahs;
-            this.MaLop = malop;
-            this.ThangDo = thangdo;
+            
+            
             this.ChieuCao = chieucao;
             this.DGCC = dgcc;
             this.CanNang = cannang;
@@ -39,22 +39,10 @@ namespace DTO_QLNT
             set { maHS = value; }
         }
 
-        private int maLop;
-
-        public int MaLop
-        {
-            get { return maLop; }
-            set { maLop = value; }
-        }
+        
 
 
-        private int thangDo;
-
-        public int ThangDo
-        {
-            get { return thangDo; }
-            set { thangDo = value; }
-        }
+        
 
         private float chieuCao;
 

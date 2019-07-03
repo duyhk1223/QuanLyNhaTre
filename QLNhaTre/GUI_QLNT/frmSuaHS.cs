@@ -63,7 +63,7 @@ namespace GUI_QLNT
 
             }
 
-            if (dtpkNgaySinh.Value.Year - 2019 > 100 || dtpkNgaySinh.Value.Year - 2019 < 0)
+            if (dtpkNgaySinh.Value.Year - 2019 > 100 || 2019 - dtpkNgaySinh.Value.Year   < 0)
             {
                 MessageBox.Show("Ngày sinh không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dtpkNgaySinh.Focus();

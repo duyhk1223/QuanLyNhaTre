@@ -19,15 +19,15 @@ namespace DAL_QLNT
 
         public DataTable GetSucKhoe(int malop,int thangdo)
         {
-            string query = string.Format("SELECT * FROM SUCKHOE WHERE MALOP={0} AND THANGDO = {1}", malop, thangdo);
+            string query = string.Format("SELECT MASK,SUCKHOE.MAHS,CHIEUCAO,DGCC,CANNANG,DGCN,DGC FROM SUCKHOE,HOCSINH WHERE HOCSINH.MAHS = SUCKHOE.MAHS AND HOCSINH.MALOP={0} AND THANGDO = {1}", malop, thangdo);
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             return data;
         }
 
-        public bool ThemSucKhoe(int mahs, int malop, int thangdo, float chieucao, string dgcc, float cannang, string dgcn, string dgc)
+        public bool ThemSucKhoe(int mahs, int thangdo, float chieucao, string dgcc, float cannang, string dgcn, string dgc)
         {
             int kq = 0;
-            string query = string.Format("INSERT INTO SUCKHOE VALUES ({0},{1},{2},{3},N'{4}',{5},N'{6}',N'{7}')", mahs, malop, thangdo, chieucao, dgcc, cannang, dgcn, dgc);
+            string query = string.Format("INSERT INTO SUCKHOE VALUES ({0},{1},{2},N'{3}',{4},N'{5}',N'{6}')", mahs,  thangdo, chieucao, dgcc, cannang, dgcn, dgc);
             kq = DataProvider.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }

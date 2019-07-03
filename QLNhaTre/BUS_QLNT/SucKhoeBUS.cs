@@ -26,9 +26,9 @@ namespace BUS_QLNT
             return SucKhoeDAL.Instance.GetSucKhoe(malop, thangdo);
         }
 
-        public bool ThemSucKhoe(int mahs, int malop, int thangdo, float chieucao, string dgcc, float cannang, string dgcn, string dgc)
+        public bool ThemSucKhoe(int mahs, int thangdo, float chieucao, string dgcc, float cannang, string dgcn, string dgc)
         {
-            return SucKhoeDAL.Instance.ThemSucKhoe(mahs, malop, thangdo, chieucao, dgcc, cannang, dgcn, dgc);
+            return SucKhoeDAL.Instance.ThemSucKhoe(mahs, thangdo, chieucao, dgcc, cannang, dgcn, dgc);
         }
 
         public bool SuaSucKhoe(int mask, float chieucao, string dgcc, float cannang, string dgcn, string dgc)

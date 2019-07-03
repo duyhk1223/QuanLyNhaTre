@@ -79,10 +79,7 @@ namespace GUI_QLNT
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-          
-        }
+       
 
         private void frmThemND_Load(object sender, EventArgs e)
         {

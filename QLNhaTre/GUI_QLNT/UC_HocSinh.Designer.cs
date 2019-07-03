@@ -128,6 +128,7 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
             this.dgvDSHS.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDSHS.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvDSHS.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvDSHS.BackgroundColor = System.Drawing.Color.White;
             this.dgvDSHS.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDSHS.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -185,6 +186,8 @@
             this.dgvSK.AllowUserToResizeRows = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.AliceBlue;
             this.dgvSK.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvSK.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvSK.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSK.BackgroundColor = System.Drawing.Color.White;
             this.dgvSK.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvSK.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -213,6 +216,7 @@
             this.dgvSK.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSK.Size = new System.Drawing.Size(878, 352);
             this.dgvSK.TabIndex = 1;
+            this.dgvSK.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvSK_EditingControlShowing);
             this.dgvSK.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvSK_RowPostPaint);
             // 
             // Column1
@@ -220,7 +224,7 @@
             this.Column1.HeaderText = "STT";
             this.Column1.Name = "Column1";
             this.Column1.Visible = false;
-            this.Column1.Width = 53;
+            this.Column1.Width = 33;
             // 
             // pnlTool
             // 
@@ -288,7 +292,7 @@
             this.cbNamHoc.Name = "cbNamHoc";
             this.cbNamHoc.Size = new System.Drawing.Size(96, 21);
             this.cbNamHoc.TabIndex = 2;
-            this.cbNamHoc.TextChanged += new System.EventHandler(this.cbNamHoc_TextChanged);
+            this.cbNamHoc.SelectedIndexChanged += new System.EventHandler(this.cbNamHoc_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -310,7 +314,7 @@
             this.cbLop.Name = "cbLop";
             this.cbLop.Size = new System.Drawing.Size(96, 21);
             this.cbLop.TabIndex = 2;
-            this.cbLop.TextChanged += new System.EventHandler(this.cbLop_TextChanged);
+            this.cbLop.SelectedIndexChanged += new System.EventHandler(this.cbLop_SelectedIndexChanged);
             // 
             // label1
             // 

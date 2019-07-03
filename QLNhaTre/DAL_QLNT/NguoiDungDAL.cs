@@ -20,7 +20,7 @@ namespace DAL_QLNT
         public List<NguoiDung> GetListUsers()
         {
             List<NguoiDung> list = new List<NguoiDung>();
-            string query = string.Format("SELECT * FROM NGUOIDUNG Where QUYEN = N'Giáo viên' OR QUYEN = N'Ban giám hiệu' ORDER BY QUYEN ");
+            string query = string.Format("SELECT * FROM NGUOIDUNG Where QUYEN = N'Giáo viên' OR QUYEN = N'Ban giám hiệu' ORDER BY QUYEN");
             DataTable dt = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in dt.Rows)
             {
@@ -47,7 +47,7 @@ namespace DAL_QLNT
         {
             int kq = 0;
 
-            string query = string.Format("INSERT INTO NGUOIDUNG(TAIKHOAN,MATKHAU,MAGV,QUYEN) VALUES (N'{0}','{1}','{2}','{3}')", taiKhoan, matKhau, maGV, quyen);
+            string query = string.Format("INSERT INTO NGUOIDUNG(TAIKHOAN,MATKHAU,MAGV,QUYEN) VALUES ('{0}','{1}','{2}',N'{3}')", taiKhoan, matKhau, maGV, quyen);
             kq = DataProvider.Instance.ExecuteNonQuery(query);
             return kq > 0;
         }
