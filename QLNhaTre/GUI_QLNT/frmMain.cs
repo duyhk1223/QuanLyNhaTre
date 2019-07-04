@@ -62,9 +62,11 @@ namespace GUI_QLNT
             AddControlsToPanel(uC_HeThong);
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void btnTimKiem_Click(object sender, EventArgs e)
         {
-
+            moveSidePanel(btnTimKiem);
+            UC_TimKiem uC = new UC_TimKiem();
+            AddControlsToPanel(uC);
         }
     }
 }

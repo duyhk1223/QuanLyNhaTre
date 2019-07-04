@@ -30,7 +30,7 @@ namespace GUI_QLNT
             cbThangdo.SelectedIndex = DateTime.Now.Month - 1;
         }
 
-        
+
 
         private void dgvDSHS_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)// auto đánh stt
         {
@@ -103,7 +103,7 @@ namespace GUI_QLNT
             {
                 int mahs = (int)dgvDSHS.Rows[dgvDSHS.SelectedRows[0].Index].Cells[1].Value;
                 HocSinh hs = HocSinhBUS.Instance.GetHocSinhByMaHS(mahs);
-                frmSuaHS fsua = new frmSuaHS(hs,(cbNamHoc.SelectedValue as NamHoc).MaNamHoc);
+                frmSuaHS fsua = new frmSuaHS(hs, (cbNamHoc.SelectedValue as NamHoc).MaNamHoc);
                 fsua.ShowDialog();
                 LoadDSHocSinhtodtgv();
             }
@@ -115,7 +115,7 @@ namespace GUI_QLNT
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (dgvDSHS.SelectedRows.Count==1)
+            if (dgvDSHS.SelectedRows.Count == 1)
             {
                 DialogResult dr = MessageBox.Show(this, "Thao tác này không thể hoàn tác.\nXóa?", "Cảnh báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dr == DialogResult.Yes)
@@ -159,7 +159,7 @@ namespace GUI_QLNT
                         if (row["MASK"].ToString() == "")
                         {
                             int mahs = (int)row["MAHS"];
-                            
+
                             string thangdo = cbThangdo.SelectedItem.ToString();
 
                             SucKhoeBUS.Instance.ThemSucKhoe(mahs, Convert.ToInt32(thangdo), chieucao, dgcc, cannang, dgcn, dgc);
@@ -174,22 +174,22 @@ namespace GUI_QLNT
                         LoadSucKhoe();
                     }
                     else
-                        if (row["CHIEUCAO"].ToString() == "" && row["CANNANG"].ToString() == ""&& row["MASK"].ToString() == "")
-                        {
-                             MessageBox.Show("Không có thay đổi");
-                        }
-                        else
-                            if(row["CHIEUCAO"].ToString() == "" || row["CANNANG"].ToString() == "")
-                            {
-                                 MessageBox.Show("Xin hãy nhập cả chiều cao và cân nặng");
-                            }
+                        if (row["CHIEUCAO"].ToString() == "" && row["CANNANG"].ToString() == "" && row["MASK"].ToString() == "")
+                    {
+                        MessageBox.Show("Không có thay đổi");
+                    }
+                    else
+                            if (row["CHIEUCAO"].ToString() == "" || row["CANNANG"].ToString() == "")
+                    {
+                        MessageBox.Show("Xin hãy nhập cả chiều cao và cân nặng");
+                    }
                 }
             }
             else
             {
                 MessageBox.Show("Không có thay đổi");
             }
-                
+
         }
 
         private void CellOnlyNumber_KeyPress(object sender, KeyPressEventArgs e)
@@ -202,12 +202,16 @@ namespace GUI_QLNT
 
         private void dgvSK_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            if (dgvSK.CurrentCell.ColumnIndex == 8 || dgvSK.CurrentCell.ColumnIndex == 10)
+            e.Control.KeyPress -= new KeyPressEventHandler(CellOnlyNumber_KeyPress);
+            if (dgvSK.CurrentCell.ColumnIndex == 6 || dgvSK.CurrentCell.ColumnIndex == 8)
             {
-                e.Control.KeyPress += new KeyPressEventHandler(CellOnlyNumber_KeyPress);
+                System.Windows.Forms.TextBox tb = e.Control as System.Windows.Forms.TextBox;
+                if (tb != null)
+                {
+                    tb.KeyPress += new KeyPressEventHandler(CellOnlyNumber_KeyPress);
+                }
             }
         }
-
 
         #endregion
 
@@ -216,7 +220,7 @@ namespace GUI_QLNT
 
         private void LoadLoptoCombobox()
         {
-            
+
             cbLop.DataSource = LopBUS.Instance.GetLopByMaNamHoc((cbNamHoc.SelectedItem as NamHoc).MaNamHoc);
             cbLop.DisplayMember = "TENLOP";
             //cbLop.ValueMember = "MALOP";
@@ -306,7 +310,7 @@ namespace GUI_QLNT
 
 
 
-        
+
 
 
         #endregion
@@ -318,7 +322,7 @@ namespace GUI_QLNT
                 Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
                 excelApp.Application.Workbooks.Add(Type.Missing);
 
-                
+
                 excelApp.Cells[1, 1] = dgvSK.Columns[0].HeaderText;
                 excelApp.Cells[1, 2] = dgvSK.Columns[2].HeaderText;
                 excelApp.Cells[1, 3] = dgvSK.Columns[3].HeaderText;
@@ -341,13 +345,13 @@ namespace GUI_QLNT
                     excelApp.Cells[i + 2, 8] = dgvSK.Rows[i].Cells[11].Value;
                     excelApp.Cells[i + 2, 9] = dgvSK.Rows[i].Cells[12].Value;
                 }
-                
+
                 excelApp.Columns.AutoFit();
                 excelApp.Visible = true;
             }
         }
 
-        
+
     }
 
 }

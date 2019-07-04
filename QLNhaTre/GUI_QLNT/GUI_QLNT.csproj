@@ -130,6 +130,12 @@
     <Compile Include="UC_HocSinh.Designer.cs">
       <DependentUpon>UC_HocSinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_TimKiem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_TimKiem.Designer.cs">
+      <DependentUpon>UC_TimKiem.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_HocSinh.resx">
       <DependentUpon>UC_HocSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_TimKiem.resx">
+      <DependentUpon>UC_TimKiem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

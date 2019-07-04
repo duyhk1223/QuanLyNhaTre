@@ -38,6 +38,10 @@ namespace BUS_QLNT
             return HocSinhDAL.Instance.GetHocSinh(malop);
         }
 
+        public DataTable GetHocSinhByKeyWord(string keyword)
+        {
+            return HocSinhDAL.Instance.GetHocSinhByKeyWord(keyword);
+        }
 
         public bool ThemHocSinh(string ten, string gioitinh, string ngaysinh, int malop, string ngayvaohoc, string diachi, string tencha, string sdtcha, string tenme, string sdtme)
         {
