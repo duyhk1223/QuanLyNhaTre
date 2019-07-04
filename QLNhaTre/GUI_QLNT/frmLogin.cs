@@ -28,7 +28,8 @@ namespace GUI_QLNT
         {
             string taiKhoan = txtTaikhoan.Text;
             string matKhau = txtMatkhau.Text;
-            if (NguoiDungBUS.Instance.Login(taiKhoan,matKhau))
+            ID_USER = NguoiDungBUS.Instance.GetID(taiKhoan,matKhau);
+            if (ID_USER != string.Empty)
             {
                 frmMain fm = new frmMain();
                 this.Hide();

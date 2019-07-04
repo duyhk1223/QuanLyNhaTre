@@ -28,6 +28,17 @@ namespace GUI_QLNT
         {
             LoadNamHoctoCombobox();
             cbThangdo.SelectedIndex = DateTime.Now.Month - 1;
+
+
+            if (frmMain.QUYEN == "Giáo viên")
+            {
+                string[] thongtinlop = NguoiDungBUS.Instance.GetThongTinLop(frmLogin.ID_USER);
+                cbNamHoc.SelectedValue = int.Parse(thongtinlop[0]);
+                cbLop.SelectedValue = int.Parse(thongtinlop[1]);
+
+                cbNamHoc.Enabled = false;
+                cbLop.Enabled = false;
+            }
         }
 
 
@@ -173,13 +184,11 @@ namespace GUI_QLNT
                         MessageBox.Show("Đã lưu!");
                         LoadSucKhoe();
                     }
-                    else
-                        if (row["CHIEUCAO"].ToString() == "" && row["CANNANG"].ToString() == "" && row["MASK"].ToString() == "")
+                    else if (row["CHIEUCAO"].ToString() == "" && row["CANNANG"].ToString() == "" && row["MASK"].ToString() == "")
                     {
                         MessageBox.Show("Không có thay đổi");
                     }
-                    else
-                            if (row["CHIEUCAO"].ToString() == "" || row["CANNANG"].ToString() == "")
+                    else if (row["CHIEUCAO"].ToString() == "" || row["CANNANG"].ToString() == "")
                     {
                         MessageBox.Show("Xin hãy nhập cả chiều cao và cân nặng");
                     }
@@ -190,7 +199,7 @@ namespace GUI_QLNT
                 MessageBox.Show("Không có thay đổi");
             }
 
-        }
+        } 
 
         private void CellOnlyNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -220,17 +229,18 @@ namespace GUI_QLNT
 
         private void LoadLoptoCombobox()
         {
-
+            
             cbLop.DataSource = LopBUS.Instance.GetLopByMaNamHoc((cbNamHoc.SelectedItem as NamHoc).MaNamHoc);
             cbLop.DisplayMember = "TENLOP";
-            //cbLop.ValueMember = "MALOP";
+            cbLop.ValueMember = "MALOP";
         }
 
         private void LoadNamHoctoCombobox()
         {
             cbNamHoc.DataSource = NamHocBUS.Instance.GetNamHoc();
             cbNamHoc.DisplayMember = "NAMBDKT";
-            //cbNamHoc.ValueMember = "MANAMHOC";
+            cbNamHoc.ValueMember = "MANAMHOC";
+            
         }
 
         private void LoadDSHocSinhtodtgv()

@@ -53,9 +53,18 @@ namespace BUS_QLNT
             return kq;
         }
 
-        public bool Login(string taikhoan, string matkhau)
+        public string GetID(string taikhoan, string matkhau)
         {
-            return NguoiDungDAL.Instance.Login(taikhoan, matkhau);
+            return NguoiDungDAL.Instance.getID(taikhoan, matkhau);
+        }
+
+        public string GetQuyen(string id)
+        {
+            return NguoiDungDAL.Instance.GetQuyen(id);
+        }
+        public string[] GetThongTinLop(string id)// lấy thông tin lớp của chủ tk đang dạy
+        {
+            return NguoiDungDAL.Instance.getthongtinlop(id);
         }
     }
 }

@@ -87,8 +87,10 @@ namespace DAL_QLNT
             return kq > 0;
         }
 
-        public bool Login(string taikhoan, string matkhau)
+        public string getID(string taikhoan, string matkhau)
         {
+            string id = string.Empty;
+
             byte[] temp = ASCIIEncoding.ASCII.GetBytes(matkhau);
             byte[] hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
 
@@ -100,8 +102,42 @@ namespace DAL_QLNT
             }
             string query = string.Format("SELECT * FROM NGUOIDUNG WHERE TAIKHOAN = '{0}' AND MATKHAU = '{1}'", taikhoan, hasPass);
 
-            DataTable result = DataProvider.Instance.ExecuteQuery(query);
-            return result.Rows.Count > 0;
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            if ( dt!= null)
+            {
+                foreach(DataRow dr in dt.Rows)
+                {
+                    id = dr["ID"].ToString();
+                }
+            }
+            return id;
+        }
+
+        public string GetQuyen(string id)
+        {
+            string quyen = string.Empty;
+            string query = string.Format("SELECT QUYEN FROM NGUOIDUNG WHERE ID = {0}", id);
+            quyen = DataProvider.Instance.ExecuteScalar(query).ToString();
+            return quyen;
+        }
+
+        public string[] getthongtinlop(string id) // lớp của gv đang dạy (chủ tk)
+        {
+            string[] thongtinlop = new string[2];
+            string query = string.Empty;
+            query += "SELECT  LOP.MANAMHOC, GIAOVIEN.MALOP ";
+            query += "FROM NGUOIDUNG, GIAOVIEN, LOP ";
+            query += string.Format("WHERE NGUOIDUNG.MAGV = GIAOVIEN.MAGV AND GIAOVIEN.MALOP=LOP.MALOP AND ID = {0}", id);
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            if (dt != null)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    thongtinlop[0]=(dr["MANAMHOC"].ToString());
+                    thongtinlop[1]=(dr["MALOP"].ToString());
+                }
+            }
+            return thongtinlop;
         }
     }
 }
