@@ -398,6 +398,7 @@
             // 
             // gridNguoiDung
             // 
+            this.gridNguoiDung.AllowUserToAddRows = false;
             this.gridNguoiDung.AllowUserToDeleteRows = false;
             this.gridNguoiDung.AllowUserToResizeRows = false;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));

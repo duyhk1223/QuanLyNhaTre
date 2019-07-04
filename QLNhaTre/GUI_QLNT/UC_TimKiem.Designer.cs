@@ -37,9 +37,9 @@
             this.txtTen = new MetroFramework.Controls.MetroTextBox();
             this.btnTim = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.dgvKetQua = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlTool.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -115,9 +115,9 @@
             this.btnTim.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnTim.FlatAppearance.BorderSize = 0;
             this.btnTim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTim.Location = new System.Drawing.Point(585, 7);
+            this.btnTim.Location = new System.Drawing.Point(585, 8);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(100, 25);
+            this.btnTim.Size = new System.Drawing.Size(100, 23);
             this.btnTim.TabIndex = 1;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = false;
@@ -132,6 +132,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(839, 22);
             this.panel3.TabIndex = 10;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(3, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Kết quả tìm kiếm:";
+            this.label1.Visible = false;
             // 
             // dgvKetQua
             // 
@@ -180,17 +191,6 @@
             this.Column1.ReadOnly = true;
             this.Column1.Visible = false;
             this.Column1.Width = 33;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(3, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Kết quả tìm kiếm:";
-            this.label1.Visible = false;
             // 
             // label2
             // 

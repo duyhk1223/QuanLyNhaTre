@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL_QLNT;
+using System.Data;
+
 namespace BUS_QLNT
 {
     public class NguoiDungBUS
@@ -17,26 +19,27 @@ namespace BUS_QLNT
             private set { NguoiDungBUS.instance = value; }
         }
 
-        public List<NguoiDung> GetListUsers()
+        //public List<NguoiDung> GetListUsers()
+        //{
+        //    return NguoiDungDAL.Instance.GetListUsers();
+        //}
+        
+        public DataTable GetDSNguoiDung()
         {
-            return NguoiDungDAL.Instance.GetListUsers();
-        }
-        public NguoiDung GetUsers()
-        {
-            return NguoiDungDAL.Instance.GetUsers();
+            return NguoiDungDAL.Instance.GetDSNguoiDung();
         }
         public NguoiDung GetUsersById(int id)
         {
             return NguoiDungDAL.Instance.GetUsersById(id);
         }
-        public bool ThemUsers(string taiKhoan, string matKhau, int maGV, string quyen)
+        public bool ThemUsers(string taiKhoan, int maGV, string quyen)
         {
-            bool kq = NguoiDungDAL.Instance.ThemUsers(taiKhoan, matKhau, maGV, quyen);
+            bool kq = NguoiDungDAL.Instance.ThemUsers(taiKhoan, maGV, quyen);
             return kq;
         }
-        public bool SuaUsers(int id, string taiKhoan, string matKhau, int maGV, string quyen)
+        public bool SuaUsers(int id, string taiKhoan, int maGV, string quyen)
         {
-            bool kq = NguoiDungDAL.Instance.SuaUsers(id, taiKhoan, matKhau, maGV, quyen);
+            bool kq = NguoiDungDAL.Instance.SuaUsers(id, taiKhoan, maGV, quyen);
             return kq;
         }
         public bool XoaUsers(int id)
@@ -49,6 +52,10 @@ namespace BUS_QLNT
             bool kq = NguoiDungDAL.Instance.Check(taikhoan);
             return kq;
         }
-        
+
+        public bool Login(string taikhoan, string matkhau)
+        {
+            return NguoiDungDAL.Instance.Login(taikhoan, matkhau);
+        }
     }
 }

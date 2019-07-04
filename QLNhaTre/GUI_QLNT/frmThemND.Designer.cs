@@ -34,14 +34,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.cbGiaoVien = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbQuyen = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // panel4
@@ -96,26 +95,10 @@
             this.txtTaiKhoan.Size = new System.Drawing.Size(183, 20);
             this.txtTaiKhoan.TabIndex = 7;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(55, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Mật khẩu:";
-            // 
-            // txtMatKhau
-            // 
-            this.txtMatKhau.Location = new System.Drawing.Point(116, 51);
-            this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(183, 20);
-            this.txtMatKhau.TabIndex = 7;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(63, 77);
+            this.label3.Location = new System.Drawing.Point(63, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 6;
@@ -126,7 +109,7 @@
             this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnThem.FlatAppearance.BorderSize = 0;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Location = new System.Drawing.Point(143, 128);
+            this.btnThem.Location = new System.Drawing.Point(143, 105);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
             this.btnThem.TabIndex = 9;
@@ -139,7 +122,7 @@
             this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnHuy.FlatAppearance.BorderSize = 0;
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuy.Location = new System.Drawing.Point(224, 128);
+            this.btnHuy.Location = new System.Drawing.Point(224, 105);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(75, 23);
             this.btnHuy.TabIndex = 18;
@@ -150,7 +133,7 @@
             // cbGiaoVien
             // 
             this.cbGiaoVien.FormattingEnabled = true;
-            this.cbGiaoVien.Location = new System.Drawing.Point(116, 74);
+            this.cbGiaoVien.Location = new System.Drawing.Point(116, 51);
             this.cbGiaoVien.Name = "cbGiaoVien";
             this.cbGiaoVien.Size = new System.Drawing.Size(183, 21);
             this.cbGiaoVien.TabIndex = 19;
@@ -158,7 +141,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 104);
+            this.label4.Location = new System.Drawing.Point(28, 81);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 13);
             this.label4.TabIndex = 6;
@@ -170,10 +153,22 @@
             this.cbQuyen.Items.AddRange(new object[] {
             "Giáo viên",
             "Ban giám hiệu"});
-            this.cbQuyen.Location = new System.Drawing.Point(116, 101);
+            this.cbQuyen.Location = new System.Drawing.Point(116, 78);
             this.cbQuyen.Name = "cbQuyen";
             this.cbQuyen.Size = new System.Drawing.Size(183, 21);
             this.cbQuyen.TabIndex = 19;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(10, 142);
+            this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(231, 12);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Mật khẩu mặc định là 123, có thể đổi sau khi đăng nhập.";
             // 
             // frmThemND
             // 
@@ -181,13 +176,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(341, 163);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.cbQuyen);
             this.Controls.Add(this.cbGiaoVien);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtTaiKhoan);
             this.Controls.Add(this.label1);
@@ -213,13 +207,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTaiKhoan;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.ComboBox cbGiaoVien;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbQuyen;
+        private System.Windows.Forms.Label label2;
     }
 }

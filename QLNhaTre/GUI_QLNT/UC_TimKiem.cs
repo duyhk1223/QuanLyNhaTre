@@ -25,12 +25,14 @@ namespace GUI_QLNT
 
         public void TimKiem()
         {
-            label1.Show();
+            
             string keyword = txtTen.Text.Trim();
             DataTable dt = new DataTable();
             dt = HocSinhBUS.Instance.GetHocSinhByKeyWord(keyword);
             if (dt.Rows.Count > 0)
             {
+                label1.Show(); 
+
                 dgvKetQua.DataSource = dt;
 
                 dgvKetQua.Columns[0].Visible = true;
@@ -48,7 +50,10 @@ namespace GUI_QLNT
                 dgvKetQua.Columns[12].HeaderText = "Điện thoại";
             }
             else
+            {
                 label2.Show();
+            }
+               
 
         }
 

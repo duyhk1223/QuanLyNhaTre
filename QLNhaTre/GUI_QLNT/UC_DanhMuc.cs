@@ -44,14 +44,15 @@ namespace GUI_QLNT
         }
         private void LoadDSNDtodtgv()
         {
-            gridNguoiDung.DataSource = NguoiDungBUS.Instance.GetListUsers();
+            gridNguoiDung.DataSource = NguoiDungBUS.Instance.GetDSNguoiDung();
+
             gridNguoiDung.Columns[0].Visible = true;
             gridNguoiDung.Columns[1].Visible = false;
-            gridNguoiDung.Columns[5].Visible = false;
+            gridNguoiDung.Columns[3].Visible = false;
 
             gridNguoiDung.Columns[2].HeaderText = "Tài Khoản";
-            gridNguoiDung.Columns[3].HeaderText = "Mật Khẩu";
-            gridNguoiDung.Columns[4].HeaderText = "Quyền";
+            gridNguoiDung.Columns[4].HeaderText = "Tên giáo viên";
+            gridNguoiDung.Columns[5].HeaderText = "Quyền";
             gridNguoiDung.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
         }

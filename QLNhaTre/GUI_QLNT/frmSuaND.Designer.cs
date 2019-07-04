@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.btnSua = new System.Windows.Forms.Button();
-            this.txtMatKhau = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,7 +47,7 @@
             this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnSua.FlatAppearance.BorderSize = 0;
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Location = new System.Drawing.Point(143, 130);
+            this.btnSua.Location = new System.Drawing.Point(143, 105);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
             this.btnSua.TabIndex = 20;
@@ -57,26 +55,10 @@
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // txtMatKhau
-            // 
-            this.txtMatKhau.Location = new System.Drawing.Point(116, 51);
-            this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(183, 20);
-            this.txtMatKhau.TabIndex = 17;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(55, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Mật khẩu:";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(63, 79);
+            this.label3.Location = new System.Drawing.Point(63, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 15;
@@ -104,14 +86,14 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 155);
+            this.panel4.Size = new System.Drawing.Size(5, 130);
             this.panel4.TabIndex = 11;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 160);
+            this.panel3.Location = new System.Drawing.Point(0, 135);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(336, 5);
             this.panel3.TabIndex = 12;
@@ -122,7 +104,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(336, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 160);
+            this.panel2.Size = new System.Drawing.Size(5, 135);
             this.panel2.TabIndex = 13;
             // 
             // panel1
@@ -139,7 +121,7 @@
             this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnHuy.FlatAppearance.BorderSize = 0;
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuy.Location = new System.Drawing.Point(224, 130);
+            this.btnHuy.Location = new System.Drawing.Point(224, 105);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(75, 23);
             this.btnHuy.TabIndex = 21;
@@ -150,16 +132,15 @@
             // cbGiaoVien
             // 
             this.cbGiaoVien.FormattingEnabled = true;
-            this.cbGiaoVien.Location = new System.Drawing.Point(116, 76);
+            this.cbGiaoVien.Location = new System.Drawing.Point(116, 51);
             this.cbGiaoVien.Name = "cbGiaoVien";
             this.cbGiaoVien.Size = new System.Drawing.Size(183, 21);
             this.cbGiaoVien.TabIndex = 22;
-            this.cbGiaoVien.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 106);
+            this.label4.Location = new System.Drawing.Point(28, 81);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 13);
             this.label4.TabIndex = 15;
@@ -171,24 +152,21 @@
             this.cbQuyen.Items.AddRange(new object[] {
             "Giáo viên",
             "Ban giám hiệu"});
-            this.cbQuyen.Location = new System.Drawing.Point(116, 103);
+            this.cbQuyen.Location = new System.Drawing.Point(116, 78);
             this.cbQuyen.Name = "cbQuyen";
             this.cbQuyen.Size = new System.Drawing.Size(183, 21);
             this.cbQuyen.TabIndex = 22;
-            this.cbQuyen.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // frmSuaND
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 165);
+            this.ClientSize = new System.Drawing.Size(341, 140);
             this.Controls.Add(this.cbQuyen);
             this.Controls.Add(this.cbGiaoVien);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtTaiKhoan);
             this.Controls.Add(this.label1);
@@ -208,8 +186,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.TextBox txtMatKhau;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTaiKhoan;
         private System.Windows.Forms.Label label1;

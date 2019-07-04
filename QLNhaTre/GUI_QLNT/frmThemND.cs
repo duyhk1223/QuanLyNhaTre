@@ -18,9 +18,9 @@ namespace GUI_QLNT
             InitializeComponent();
           
         }
-        private void ThemUsers(string taiKhoan, string matKhau, int maGV, string quyen)
+        private void ThemUsers(string taiKhoan, int maGV, string quyen)
         {
-            if (NguoiDungBUS.Instance.ThemUsers(taiKhoan, matKhau, maGV, quyen))
+            if (NguoiDungBUS.Instance.ThemUsers(taiKhoan, maGV, quyen))
             {
                 MessageBox.Show("Thêm thành công");
             }
@@ -36,12 +36,7 @@ namespace GUI_QLNT
                 txtTaiKhoan.Focus();
                 return false;
             }
-            if (string.IsNullOrEmpty(txtMatKhau.Text))
-            {
-                MessageBox.Show("Bạn chưa nhập mật khẩu","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                txtMatKhau.Focus();
-                return false;
-            }
+            
             if (NguoiDungBUS.Instance.Check(txtTaiKhoan.Text))
             {
                 MessageBox.Show("trùng");
@@ -57,10 +52,10 @@ namespace GUI_QLNT
             if (CheckData())
             {
                 string taiKhoan = txtTaiKhoan.Text;
-                string matKhau = txtMatKhau.Text;
+               
                 int maGV = (cbGiaoVien.SelectedItem as DTO_QLNT.GiaoVien).MaGiaoVien;
                 string quyen = cbQuyen.SelectedItem.ToString();
-                ThemUsers(taiKhoan, matKhau, maGV,quyen);
+                ThemUsers(taiKhoan, maGV,quyen);
                 this.Dispose();
             }
            
