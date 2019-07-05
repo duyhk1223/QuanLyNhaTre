@@ -38,27 +38,35 @@ namespace GUI_QLNT
             }
             else
             {
-                MessageBox.Show("Hãy chọn học sinh muốn sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Hãy chọn giáo viên muốn sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show(this, "Thao tác này không thể hoàn tác.\nXóa?.", "Cảnh báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
+            if (gridDSGV.SelectedRows.Count > 0)
             {
-                int maGV;
-                maGV = (int)gridDSGV.Rows[gridDSGV.SelectedRows[0].Index].Cells[1].Value;
-                if (GiaoVienBUS.Instance.XoaGiaoVien(maGV))
+                DialogResult dr = MessageBox.Show(this, "Thao tác này không thể hoàn tác.\nXóa?.", "Cảnh báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
                 {
-                    MessageBox.Show("Đã xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadDSGVtodtgv();
+
+                    int maGV;
+                    maGV = (int)gridDSGV.Rows[gridDSGV.SelectedRows[0].Index].Cells[1].Value;
+                    if (GiaoVienBUS.Instance.XoaGiaoVien(maGV))
+                    {
+                        MessageBox.Show("Đã xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadDSGVtodtgv();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Xóa không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -167,19 +175,22 @@ namespace GUI_QLNT
 
         private void dgvPhanCong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtTenGV.Text = dgvPhanCong.Rows[dgvPhanCong.SelectedRows[0].Index].Cells[2].Value.ToString();
-            string malop = dgvPhanCong.Rows[dgvPhanCong.SelectedRows[0].Index].Cells[3].Value.ToString();
-            if (malop != "")
+            if (dgvPhanCong.Rows.Count > 0)
             {
-                cbLop.SelectedValue = Convert.ToInt32(malop);
+                txtTenGV.Text = dgvPhanCong.Rows[dgvPhanCong.SelectedRows[0].Index].Cells[2].Value.ToString();
+                string malop = dgvPhanCong.Rows[dgvPhanCong.SelectedRows[0].Index].Cells[3].Value.ToString();
+                if (malop != "")
+                {
+                    cbLop.SelectedValue = Convert.ToInt32(malop);
+                }
+                else
+                    cbLop.SelectedItem = null;
             }
-            else
-                cbLop.SelectedItem = null;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (cbLop.SelectedItem != null)
+            if (cbLop.SelectedItem != null && txtTenGV.Text!=string.Empty)
             {
                 int magv = (int)dgvPhanCong.Rows[dgvPhanCong.SelectedRows[0].Index].Cells[1].Value;
                 int malop = (int)cbLop.SelectedValue;
@@ -191,8 +202,15 @@ namespace GUI_QLNT
                 else MessageBox.Show("Thất bại!");
 
             }
-            else
+            else if (cbLop.SelectedItem == null)
+            {
                 MessageBox.Show("Chọn một lớp để phân công!!");
+            }
+            else
+            {
+                MessageBox.Show("Chọn giáo viên để phân công");
+            }
+               
             
         }
     }

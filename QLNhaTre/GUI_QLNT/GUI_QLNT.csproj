@@ -92,6 +92,18 @@
     <Compile Include="frmSuaHS.Designer.cs">
       <DependentUpon>frmSuaHS.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSuaLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSuaLop.designer.cs">
+      <DependentUpon>frmSuaLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSuaNamHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSuaNamHoc.designer.cs">
+      <DependentUpon>frmSuaNamHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSuaND.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +121,18 @@
     </Compile>
     <Compile Include="frmThemHS.Designer.cs">
       <DependentUpon>frmThemHS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemLop.designer.cs">
+      <DependentUpon>frmThemLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemNamHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemNamHoc.designer.cs">
+      <DependentUpon>frmThemNamHoc.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThemND.cs">
       <SubType>Form</SubType>
@@ -157,6 +181,12 @@
     <EmbeddedResource Include="frmSuaHS.resx">
       <DependentUpon>frmSuaHS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSuaLop.resx">
+      <DependentUpon>frmSuaLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSuaNamHoc.resx">
+      <DependentUpon>frmSuaNamHoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSuaND.resx">
       <DependentUpon>frmSuaND.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +195,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemHS.resx">
       <DependentUpon>frmThemHS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemLop.resx">
+      <DependentUpon>frmThemLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemNamHoc.resx">
+      <DependentUpon>frmThemNamHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemND.resx">
       <DependentUpon>frmThemND.cs</DependentUpon>

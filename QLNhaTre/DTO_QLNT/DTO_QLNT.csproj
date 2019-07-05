@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="GiaoVien.cs" />
     <Compile Include="HocSinh.cs" />
+    <Compile Include="Khoi.cs" />
     <Compile Include="Lop.cs" />
     <Compile Include="NamHoc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

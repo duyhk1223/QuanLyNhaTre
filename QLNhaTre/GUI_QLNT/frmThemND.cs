@@ -22,10 +22,10 @@ namespace GUI_QLNT
         {
             if (NguoiDungBUS.Instance.ThemUsers(taiKhoan, maGV, quyen))
             {
-                MessageBox.Show("Thêm thành công");
+                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-                MessageBox.Show("Thêm Thất bại");
+                MessageBox.Show("Thêm Thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         bool CheckData()
         {
@@ -39,7 +39,7 @@ namespace GUI_QLNT
             
             if (NguoiDungBUS.Instance.Check(txtTaiKhoan.Text))
             {
-                MessageBox.Show("trùng");
+                MessageBox.Show("trùng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 

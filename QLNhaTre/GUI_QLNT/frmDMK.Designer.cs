@@ -57,14 +57,14 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 137);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(334, 5);
+            this.panel3.Size = new System.Drawing.Size(327, 5);
             this.panel3.TabIndex = 16;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(334, 5);
+            this.panel2.Location = new System.Drawing.Point(327, 5);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(5, 137);
             this.panel2.TabIndex = 17;
@@ -75,7 +75,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(339, 5);
+            this.panel1.Size = new System.Drawing.Size(332, 5);
             this.panel1.TabIndex = 14;
             // 
             // label1
@@ -156,7 +156,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 142);
+            this.ClientSize = new System.Drawing.Size(332, 142);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.txtMkmoi2);

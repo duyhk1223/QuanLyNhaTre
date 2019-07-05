@@ -58,60 +58,60 @@ namespace GUI_QLNT
         {
             if (string.IsNullOrEmpty(txtHoTen.Text) || isName(txtHoTen.Text)==false)
             {
-                MessageBox.Show("Họ tên không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Họ tên không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtHoTen.Focus();
                 return false;
 
             }
             if (rbtnNam.Checked == false && rbtnNu.Checked == false)
             {
-                MessageBox.Show("Bạn chưa nhập giới tính", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bạn chưa nhập giới tính", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
               
                 return false;
             }
             if (isDoB(dtpkNgaySinh.Value.Date)==false)
             {
-                MessageBox.Show("Ngày sinh không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Độ tuổi phải từ 3-5 ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dtpkNgaySinh.Focus();
                 return false;
             }
             if (IsNgayVaoHoc(dtpkNgayVaoHoc.Value.Date)==false)
             {
-                MessageBox.Show("Ngày vào học không hợp lệ");
+                MessageBox.Show("Ngày vào học không hợp lệ","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 dtpkNgayVaoHoc.Focus();
                 return false;
             }
             if (string.IsNullOrEmpty(txtDiaChi.Text))
             {
-                MessageBox.Show("Bạn chưa nhập địa chỉ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bạn chưa nhập địa chỉ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtDiaChi.Focus();
                 return false;
 
             }
             if (string.IsNullOrEmpty(txtHoTenCha.Text) || isName(txtHoTenCha.Text)==false)
             {
-                MessageBox.Show("họ tên cha không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("họ tên cha không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtHoTenCha.Focus();
                 return false;
 
             }
             if (string.IsNullOrEmpty(txtSDTCha.Text) || isPhoneNumber(txtSDTCha.Text)==false)
             {
-                MessageBox.Show("sdt cha không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("sdt hợp lệ là từ 9-11 số", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtSDTCha.Focus();
                 return false;
 
             }
             if (string.IsNullOrEmpty(txtHoTenMe.Text) || isName(txtHoTenMe.Text)==false)
             {
-                MessageBox.Show("tên mẹ không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("tên mẹ không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtHoTenMe.Focus();
                 return false;
 
             }
             if (string.IsNullOrEmpty(txtSDTMe.Text) || isPhoneNumber(txtSDTMe.Text)==false)
             {
-                MessageBox.Show(" sdt mẹ không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(" sdt hợp lệ là từ 9-11 số", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtSDTMe.Focus();
                 return false;
 
@@ -131,17 +131,17 @@ namespace GUI_QLNT
 
                 if (sqlex.Procedure == "SiSoToiDa" || sqlex.Message.Contains("lop full"))
                 {
-                    MessageBox.Show("Đã đạt tối đa học sinh trong lớp này");
+                    MessageBox.Show("Đã đạt tối đa học sinh trong lớp này","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show("Có lỗi!");
+                    MessageBox.Show("Có lỗi!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 
             finally
             {
                 if (kq)
                 {
-                    MessageBox.Show("Cập nhật học sinh thành công!");
+                    MessageBox.Show("Cập nhật học sinh thành công!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
             }
             
@@ -233,7 +233,7 @@ namespace GUI_QLNT
         private bool isDoB(DateTime date)
         {
             DateTime now = DateTime.Now;
-            if (1 <= now.Year - date.Year && now.Year - date.Year <= 10)
+            if (2 < now.Year - date.Year && now.Year - date.Year < 6)
                 return true;
             else return false;
         }

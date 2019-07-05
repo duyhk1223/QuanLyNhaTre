@@ -153,54 +153,63 @@ namespace GUI_QLNT
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            System.Data.DataTable dt = ((System.Data.DataTable)dgvSK.DataSource).GetChanges(DataRowState.Modified);
-            if (dt != null)
+            try
             {
-                var changedRows = ((System.Data.DataTable)dgvSK.DataSource).GetChanges(DataRowState.Modified).Rows;
-                foreach (DataRow row in changedRows)
+                System.Data.DataTable dt = ((System.Data.DataTable)dgvSK.DataSource).GetChanges(DataRowState.Modified);
+                if (dt != null)
                 {
+                    var changedRows = ((System.Data.DataTable)dgvSK.DataSource).GetChanges(DataRowState.Modified).Rows;
 
-                    if (row["CHIEUCAO"].ToString() != "" && row["CANNANG"].ToString() != "")
+                    foreach (DataRow row in changedRows)
                     {
-                        float chieucao = float.Parse(row["CHIEUCAO"].ToString());
-                        string dgcc = row["DGCC"].ToString();
-                        float cannang = float.Parse(row["CANNANG"].ToString());
-                        string dgcn = row["DGCN"].ToString();
-                        string dgc = row["DGC"].ToString();
-                        if (row["MASK"].ToString() == "")
+
+                        if (row["CHIEUCAO"].ToString() != "" && row["CANNANG"].ToString() != "")
                         {
-                            int mahs = (int)row["MAHS"];
+                            float chieucao = float.Parse(row["CHIEUCAO"].ToString());
+                            string dgcc = row["DGCC"].ToString();
+                            float cannang = float.Parse(row["CANNANG"].ToString());
+                            string dgcn = row["DGCN"].ToString();
+                            string dgc = row["DGC"].ToString();
+                            if (row["MASK"].ToString() == "")
+                            {
+                                int mahs = (int)row["MAHS"];
 
-                            string thangdo = cbThangdo.SelectedItem.ToString();
+                                string thangdo = cbThangdo.SelectedItem.ToString();
 
-                            SucKhoeBUS.Instance.ThemSucKhoe(mahs, Convert.ToInt32(thangdo), chieucao, dgcc, cannang, dgcn, dgc);
+                                SucKhoeBUS.Instance.ThemSucKhoe(mahs, Convert.ToInt32(thangdo), chieucao, dgcc, cannang, dgcn, dgc);
+                            }
+                            else
+                            {
+                                int mask = (int)row["MASK"];
+
+                                SucKhoeBUS.Instance.SuaSucKhoe(mask, chieucao, dgcc, cannang, dgcn, dgc);
+                            }
+                            MessageBox.Show("Đã lưu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadSucKhoe();
                         }
-                        else
+                        else if (row["CHIEUCAO"].ToString() == "" && row["CANNANG"].ToString() == "" && row["MASK"].ToString() == "")
                         {
-                            int mask = (int)row["MASK"];
-
-                            SucKhoeBUS.Instance.SuaSucKhoe(mask, chieucao, dgcc, cannang, dgcn, dgc);
+                            MessageBox.Show("Không có thay đổi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                        MessageBox.Show("Đã lưu!");
-                        LoadSucKhoe();
-                    }
-                    else if (row["CHIEUCAO"].ToString() == "" && row["CANNANG"].ToString() == "" && row["MASK"].ToString() == "")
-                    {
-                        MessageBox.Show("Không có thay đổi");
-                    }
-                    else if (row["CHIEUCAO"].ToString() == "" || row["CANNANG"].ToString() == "")
-                    {
-                        MessageBox.Show("Xin hãy nhập cả chiều cao và cân nặng");
+                        else if (row["CHIEUCAO"].ToString() == "" || row["CANNANG"].ToString() == "")
+                        {
+                            MessageBox.Show("Xin hãy nhập cả chiều cao và cân nặng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Không có thay đổi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Không có thay đổi");
+                MessageBox.Show("Không có dữ liệu");
             }
+            
+            
 
-        } 
-
+        }
         private void CellOnlyNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')

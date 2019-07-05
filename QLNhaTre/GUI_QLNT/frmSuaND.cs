@@ -36,10 +36,10 @@ namespace GUI_QLNT
         {
             if (NguoiDungBUS.Instance.SuaUsers(id, taiKhoan, maGV, quyen))
             {
-                MessageBox.Show("Sửa Thành Công");
+                MessageBox.Show("Sửa Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-                MessageBox.Show("Sửa Thất Bại");
+                MessageBox.Show("Sửa Thất Bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace GUI_QLNT
             
             if (string.IsNullOrEmpty(txtTaiKhoan.Text))
             {
-                MessageBox.Show("Bạn chưa nhập tên đăng nhập", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bạn chưa nhập tên đăng nhập", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtTaiKhoan.Focus();
                 return false;
             }

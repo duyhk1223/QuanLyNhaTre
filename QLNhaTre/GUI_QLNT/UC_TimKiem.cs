@@ -61,7 +61,7 @@ namespace GUI_QLNT
         {
             if (txtTen.Text.Length == 0)
             {
-                MessageBox.Show("Bạn chưa nhập gì cả");
+                MessageBox.Show("Bạn chưa nhập gì cả", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else TimKiem();
         }

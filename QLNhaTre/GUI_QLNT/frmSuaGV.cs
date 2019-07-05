@@ -51,68 +51,68 @@ namespace GUI_QLNT
         {
             if (GiaoVienBUS.Instance.SuaGiaoVien(maGiaoVien, hoTen, gioiTinh, ngaySinh, danToc, diaChi, sdt, trinhDo, ngayVaoLam, tonGiao))
             {
-                MessageBox.Show("Sửa Thành Công");
+                MessageBox.Show("Sửa Thành Công","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             else
-                MessageBox.Show("Sửa Thất Bại");
+                MessageBox.Show("Sửa Thất Bại","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         bool CheckData()
         {
             if (string.IsNullOrEmpty(txtHoTen.Text) || isName(txtHoTen.Text) == false)
             {
-                MessageBox.Show("Bạn chưa nhập họ tên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bạn chưa nhập họ tên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtHoTen.Focus();
                 return false;
 
             }
             if (rbtnNam.Checked == false && rbtnNu.Checked == false)
             {
-                MessageBox.Show("Bạn chưa nhập giới tính", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bạn chưa nhập giới tính", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return false;
             }
             if (isDoB(dtpkNgaySinh.Value.Date) == false)
             {
-                MessageBox.Show("Ngày sinh không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Độ tuổi phải từ 18-50", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dtpkNgaySinh.Focus();
                 return false;
             }
             if (string.IsNullOrEmpty(txtDanToc.Text))
             {
-                MessageBox.Show("Bạn chưa nhập dân tộc", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bạn chưa nhập dân tộc", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtHoTen.Focus();
                 return false;
 
             }
             if (string.IsNullOrEmpty(txtTonGiao.Text))
             {
-                MessageBox.Show("Bạn chưa nhập tôn giáo", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bạn chưa nhập tôn giáo", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtHoTen.Focus();
                 return false;
             }
             if (string.IsNullOrEmpty(txtDiaChi.Text))
             {
-                MessageBox.Show("Bạn chưa nhập địa chỉ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bạn chưa nhập địa chỉ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtHoTen.Focus();
                 return false;
             }
             if (string.IsNullOrEmpty(txtSDT.Text) || isPhoneNumber(txtSDT.Text) == false)
             {
-                MessageBox.Show("Bạn chưa nhập sdt", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("sdt hợp lệ là từ 9-11 số", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtHoTen.Focus();
                 return false;
             }
             if (string.IsNullOrEmpty(txtTrinhDo.Text))
             {
-                MessageBox.Show("Bạn chưa nhập trình độ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bạn chưa nhập trình độ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtHoTen.Focus();
                 return false;
             }
            
             if (IsNgayVaoLam(dtpkNgayVaoLam.Value.Date) == false)
             {
-                MessageBox.Show("Ngày vào làm không hợp lệ");
+                MessageBox.Show("Ngày vào làm không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dtpkNgayVaoLam.Focus();
                 return false;
             }
@@ -145,7 +145,7 @@ namespace GUI_QLNT
         private bool isDoB(DateTime date)
         {
             DateTime now = DateTime.Now;
-            if (17 <= now.Year - date.Year && now.Year - date.Year <= 50)
+            if (17 < now.Year - date.Year && now.Year - date.Year < 51)
                 return true;
             else return false;
         }
