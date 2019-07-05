@@ -335,11 +335,11 @@ namespace GUI_QLNT
                 excelApp.Cells[1, 2] = dgvSK.Columns[2].HeaderText;
                 excelApp.Cells[1, 3] = dgvSK.Columns[3].HeaderText;
                 excelApp.Cells[1, 4] = dgvSK.Columns[4].HeaderText;
-                excelApp.Cells[1, 5] = dgvSK.Columns[8].HeaderText;
-                excelApp.Cells[1, 6] = dgvSK.Columns[9].HeaderText;
-                excelApp.Cells[1, 7] = dgvSK.Columns[10].HeaderText;
-                excelApp.Cells[1, 8] = dgvSK.Columns[11].HeaderText;
-                excelApp.Cells[1, 9] = dgvSK.Columns[12].HeaderText;
+                excelApp.Cells[1, 5] = dgvSK.Columns[6].HeaderText;
+                excelApp.Cells[1, 6] = dgvSK.Columns[7].HeaderText;
+                excelApp.Cells[1, 7] = dgvSK.Columns[8].HeaderText;
+                excelApp.Cells[1, 8] = dgvSK.Columns[9].HeaderText;
+                excelApp.Cells[1, 9] = dgvSK.Columns[10].HeaderText;
 
                 for (int i = 0; i < dgvSK.Rows.Count; i++)
                 {
@@ -347,11 +347,11 @@ namespace GUI_QLNT
                     excelApp.Cells[i + 2, 2] = dgvSK.Rows[i].Cells[2].Value;
                     excelApp.Cells[i + 2, 3] = dgvSK.Rows[i].Cells[3].Value;
                     excelApp.Cells[i + 2, 4] = dgvSK.Rows[i].Cells[4].Value;
-                    excelApp.Cells[i + 2, 5] = dgvSK.Rows[i].Cells[8].Value;
-                    excelApp.Cells[i + 2, 6] = dgvSK.Rows[i].Cells[9].Value;
-                    excelApp.Cells[i + 2, 7] = dgvSK.Rows[i].Cells[10].Value;
-                    excelApp.Cells[i + 2, 8] = dgvSK.Rows[i].Cells[11].Value;
-                    excelApp.Cells[i + 2, 9] = dgvSK.Rows[i].Cells[12].Value;
+                    excelApp.Cells[i + 2, 5] = dgvSK.Rows[i].Cells[6].Value;
+                    excelApp.Cells[i + 2, 6] = dgvSK.Rows[i].Cells[7].Value;
+                    excelApp.Cells[i + 2, 7] = dgvSK.Rows[i].Cells[8].Value;
+                    excelApp.Cells[i + 2, 8] = dgvSK.Rows[i].Cells[9].Value;
+                    excelApp.Cells[i + 2, 9] = dgvSK.Rows[i].Cells[10].Value;
                 }
 
                 excelApp.Columns.AutoFit();

@@ -109,5 +109,10 @@ namespace GUI_QLNT
         {
             gridNguoiDung.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
