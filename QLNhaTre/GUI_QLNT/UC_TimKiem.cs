@@ -20,18 +20,17 @@ namespace GUI_QLNT
         }
 
 
-
-
+        #region phương thức
 
         public void TimKiem()
         {
-            
+
             string keyword = txtTen.Text.Trim();
             DataTable dt = new DataTable();
             dt = HocSinhBUS.Instance.GetHocSinhByKeyWord(keyword);
             if (dt.Rows.Count > 0)
             {
-                label1.Show(); 
+                label1.Show();
 
                 dgvKetQua.DataSource = dt;
 
@@ -53,9 +52,13 @@ namespace GUI_QLNT
             {
                 label2.Show();
             }
-               
+
 
         }
+
+        #endregion
+
+        #region sự kiện
 
         private void btnTim_Click(object sender, EventArgs e)
         {
@@ -78,5 +81,9 @@ namespace GUI_QLNT
         {
             dgvKetQua.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
         }
+        #endregion
+       
+
+        
     }
 }

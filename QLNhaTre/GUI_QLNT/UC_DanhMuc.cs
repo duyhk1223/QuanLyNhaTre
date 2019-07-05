@@ -21,31 +21,8 @@ namespace GUI_QLNT
 
         }
 
+        #region phương thức
 
-
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            frmThemND fthemND = new frmThemND();
-            fthemND.ShowDialog();
-            LoadDSNDtodtgv();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (gridNguoiDung.SelectedRows.Count != 0)
-            {
-                int id = (int)gridNguoiDung.Rows[gridNguoiDung.SelectedRows[0].Index].Cells[1].Value;
-                NguoiDung us = NguoiDungBUS.Instance.GetUsersById(id);
-                frmSuaND fsua = new frmSuaND(us);
-                fsua.ShowDialog();
-                LoadDSNDtodtgv();
-            }
-            else
-            {
-                MessageBox.Show("Hãy chọn tài khoản muốn sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
         private void LoadDSNDtodtgv()
         {
             gridNguoiDung.DataSource = NguoiDungBUS.Instance.GetDSNguoiDung();
@@ -87,12 +64,35 @@ namespace GUI_QLNT
             gridKhoi.Columns[2].HeaderText = "Tên khối";
             gridKhoi.Columns[2].ReadOnly = true;
             gridKhoi.Columns[3].HeaderText = "Sỉ số tối đa";
-            
+
         }
-        /*private void dgvNamHoc_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+
+        #endregion
+
+        #region sự kiện
+
+        private void button3_Click(object sender, EventArgs e)
         {
-            dgvNamHoc.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
-        }*/
+            frmThemND fthemND = new frmThemND();
+            fthemND.ShowDialog();
+            LoadDSNDtodtgv();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (gridNguoiDung.SelectedRows.Count != 0)
+            {
+                int id = (int)gridNguoiDung.Rows[gridNguoiDung.SelectedRows[0].Index].Cells[1].Value;
+                NguoiDung us = NguoiDungBUS.Instance.GetUsersById(id);
+                frmSuaND fsua = new frmSuaND(us);
+                fsua.ShowDialog();
+                LoadDSNDtodtgv();
+            }
+            else
+            {
+                MessageBox.Show("Hãy chọn tài khoản muốn sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
         private void UC_HeThong_Load(object sender, EventArgs e)
         {
@@ -131,6 +131,21 @@ namespace GUI_QLNT
         private void gridNguoiDung_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             gridNguoiDung.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
+        }
+
+        private void gridLop_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            gridLop.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
+        }
+
+        private void dgvNamHoc_RowPostPaint_1(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            dgvNamHoc.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
+        }
+
+        private void gridKhoi_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            gridKhoi.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -271,21 +286,6 @@ namespace GUI_QLNT
             }
         }
 
-        private void gridLop_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            gridLop.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
-        }
-
-        private void dgvNamHoc_RowPostPaint_1(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            dgvNamHoc.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
-        }
-
-        private void gridKhoi_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            gridKhoi.Rows[e.RowIndex].Cells[0].Value = (e.RowIndex + 1).ToString();
-        }
-
         private void btn_Click(object sender, EventArgs e)//button cập nhật khối
         {
 
@@ -317,7 +317,6 @@ namespace GUI_QLNT
             }
         }
 
-       
         private void gridKhoi_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             e.Control.KeyPress -= new KeyPressEventHandler(CellOnlyNumber_KeyPress);
@@ -330,7 +329,8 @@ namespace GUI_QLNT
                 }
             }
         }
-        
+
+        #endregion
     }
 }
 

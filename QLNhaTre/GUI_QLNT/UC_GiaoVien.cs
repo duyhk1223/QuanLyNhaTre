@@ -19,6 +19,80 @@ namespace GUI_QLNT
             InitializeComponent();
         }
 
+
+        #region phương thức
+
+
+
+        #endregion
+
+        #region sự kiện
+
+
+
+        #endregion
+
+
+        #region phương thức
+
+        private void LoadDSGVtodtgv()
+        {
+            gridDSGV.DataSource = GiaoVienBUS.Instance.GetGiaoVien();
+
+            gridDSGV.Columns[0].Visible = true;
+            gridDSGV.Columns[1].Visible = false;//ẩn cột mã ;
+            gridDSGV.Columns[2].HeaderText = "Họ tên";
+            gridDSGV.Columns[3].HeaderText = "Giới tính";
+            gridDSGV.Columns[4].HeaderText = "Ngày sinh";
+            gridDSGV.Columns[5].HeaderText = "Dân tộc";
+            gridDSGV.Columns[6].HeaderText = "Tôn Giáo";
+            gridDSGV.Columns[7].HeaderText = "Địa chỉ";
+            gridDSGV.Columns[8].HeaderText = "SDT";
+            gridDSGV.Columns[9].HeaderText = "Trình Độ";
+            gridDSGV.Columns[10].HeaderText = "Ngày Vào Làm";
+            gridDSGV.Columns[11].Visible = false;
+
+            gridDSGV.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            gridDSGV.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+        }
+
+        private void LoadGVTodgvPhanCong()
+        {
+            string query = "SELECT MAGV, HOTEN, GIAOVIEN.MALOP, LOP.TENLOP FROM GIAOVIEN left join LOP on GIAOVIEN.MALOP=LOP.MALOP ORDER BY HOTEN";
+
+
+            dgvPhanCong.DataSource = GiaoVienBUS.Instance.GetGiaoVien(query);
+
+            dgvPhanCong.Columns[0].Visible = true;
+            dgvPhanCong.Columns[1].Visible = false;//ẩn cột mã ;
+            dgvPhanCong.Columns[2].HeaderText = "Họ tên";
+            dgvPhanCong.Columns[3].Visible = false;
+            dgvPhanCong.Columns[4].HeaderText = "Lớp hiện tại";
+            dgvPhanCong.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvPhanCong.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+        }
+
+        private void LoadNamHoctoCombobox()
+        {
+            cbNamHoc.DisplayMember = "NamBDKT";
+            cbNamHoc.ValueMember = "MaNamHoc";
+            cbNamHoc.DataSource = NamHocBUS.Instance.GetNamHoc();
+        }
+
+        private void LoadLoptoCombobox()
+        {
+            cbLop.DisplayMember = "TenLop";
+            cbLop.ValueMember = "MaLop";
+            cbLop.DataSource = LopBUS.Instance.GetLopByMaNamHoc((int)cbNamHoc.SelectedValue);
+            cbLop.SelectedItem = null;
+        }
+
+        #endregion
+
+        #region sự kiện
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             frmThemGV fthemgv = new frmThemGV();
@@ -74,52 +148,8 @@ namespace GUI_QLNT
         {
             LoadDSGVtodtgv();
             LoadNamHoctoCombobox();
-            
-        }
-
-        private void LoadDSGVtodtgv()
-        {
-            gridDSGV.DataSource = GiaoVienBUS.Instance.GetGiaoVien();
-
-            gridDSGV.Columns[0].Visible = true;
-            gridDSGV.Columns[1].Visible = false;//ẩn cột mã ;
-            gridDSGV.Columns[2].HeaderText = "Họ tên";
-            gridDSGV.Columns[3].HeaderText = "Giới tính";
-            gridDSGV.Columns[4].HeaderText = "Ngày sinh";
-            gridDSGV.Columns[5].HeaderText = "Dân tộc";
-            gridDSGV.Columns[6].HeaderText = "Tôn Giáo";
-            gridDSGV.Columns[7].HeaderText = "Địa chỉ";
-            gridDSGV.Columns[8].HeaderText = "SDT";
-            gridDSGV.Columns[9].HeaderText = "Trình Độ";
-            gridDSGV.Columns[10].HeaderText = "Ngày Vào Làm";
-            gridDSGV.Columns[11].Visible = false;
-            
-            gridDSGV.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            gridDSGV.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
         }
-
-
-
-        
-        private void LoadGVTodgvPhanCong()
-        {
-            string query = "SELECT MAGV, HOTEN, GIAOVIEN.MALOP, LOP.TENLOP FROM GIAOVIEN left join LOP on GIAOVIEN.MALOP=LOP.MALOP ORDER BY HOTEN";
-
-             
-            dgvPhanCong.DataSource = GiaoVienBUS.Instance.GetGiaoVien(query);
-
-            dgvPhanCong.Columns[0].Visible = true;
-            dgvPhanCong.Columns[1].Visible = false;//ẩn cột mã ;
-            dgvPhanCong.Columns[2].HeaderText = "Họ tên";
-            dgvPhanCong.Columns[3].Visible = false;
-            dgvPhanCong.Columns[4].HeaderText = "Lớp hiện tại";
-            dgvPhanCong.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvPhanCong.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-        }
-
-         
 
         private void gridDSGV_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
@@ -152,21 +182,6 @@ namespace GUI_QLNT
             }
         }
 
-        private void LoadNamHoctoCombobox()
-        {
-            cbNamHoc.DisplayMember = "NamBDKT";
-            cbNamHoc.ValueMember = "MaNamHoc";
-            cbNamHoc.DataSource = NamHocBUS.Instance.GetNamHoc();
-        }
-
-        private void LoadLoptoCombobox()
-        {
-            cbLop.DisplayMember = "TenLop";
-            cbLop.ValueMember = "MaLop";
-            cbLop.DataSource = LopBUS.Instance.GetLopByMaNamHoc((int)cbNamHoc.SelectedValue);
-            cbLop.SelectedItem = null;
-        }
-
         private void cbNamHoc_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadLoptoCombobox();
@@ -189,16 +204,16 @@ namespace GUI_QLNT
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (cbLop.SelectedItem != null && txtTenGV.Text!=string.Empty)
+            if (cbLop.SelectedItem != null && txtTenGV.Text != string.Empty)
             {
                 int magv = (int)dgvPhanCong.Rows[dgvPhanCong.SelectedRows[0].Index].Cells[1].Value;
                 int malop = (int)cbLop.SelectedValue;
                 if (GiaoVienBUS.Instance.PhanCongGiaoVien(magv, malop))
                 {
-                    MessageBox.Show("Đã phân công!","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Đã phân công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadGVTodgvPhanCong();
                 }
-                else MessageBox.Show("Thất bại!","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else MessageBox.Show("Thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             else if (cbLop.SelectedItem == null)
@@ -209,8 +224,12 @@ namespace GUI_QLNT
             {
                 MessageBox.Show("Chọn giáo viên để phân công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-               
-            
+
+
         }
+
+        #endregion
+
+
     }
 }
