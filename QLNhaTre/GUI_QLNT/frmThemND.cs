@@ -18,6 +18,11 @@ namespace GUI_QLNT
             InitializeComponent();
           
         }
+
+       
+
+        #region phương thức
+
         private void ThemUsers(string taiKhoan, int maGV, string quyen)
         {
             if (NguoiDungBUS.Instance.ThemUsers(taiKhoan, maGV, quyen))
@@ -29,14 +34,14 @@ namespace GUI_QLNT
         }
         bool CheckData()
         {
-            if(string.IsNullOrEmpty(txtTaiKhoan.Text))
+            if (string.IsNullOrEmpty(txtTaiKhoan.Text))
             {
-               
-                MessageBox.Show("Bạn chưa nhập tên đăng nhập","Thông Báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+                MessageBox.Show("Bạn chưa nhập tên đăng nhập", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtTaiKhoan.Focus();
                 return false;
             }
-            
+
             if (NguoiDungBUS.Instance.Check(txtTaiKhoan.Text))
             {
                 MessageBox.Show("trùng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -46,40 +51,49 @@ namespace GUI_QLNT
 
             return true;
         }
+
+        private void LoadTenGvtoCombobox()
+        {
+
+            cbGiaoVien.DisplayMember = "HoTen";
+            cbGiaoVien.ValueMember = "MaGV";
+            cbGiaoVien.DataSource = GiaoVienBUS.Instance.GetListGiaoVien();
+
+        }
+
+        #endregion
+
+        #region sự kiện
+
         private void btnThem_Click(object sender, EventArgs e)
         {
-            
+
             if (CheckData())
             {
                 string taiKhoan = txtTaiKhoan.Text;
-               
-                int maGV = (cbGiaoVien.SelectedItem as DTO_QLNT.GiaoVien).MaGiaoVien;
+
+                int maGV = (int)cbGiaoVien.SelectedValue;
                 string quyen = cbQuyen.SelectedItem.ToString();
-                ThemUsers(taiKhoan, maGV,quyen);
+                ThemUsers(taiKhoan, maGV, quyen);
                 this.Dispose();
             }
-           
+
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
-        private void LoadTenGvtoCombobox()
-        {
-            
-            cbGiaoVien.DisplayMember = "HOTEN";
-            cbGiaoVien.ValueMember = "MAGV";
-            cbGiaoVien.DataSource = GiaoVienBUS.Instance.GetListGiaoVien();
-
-        }
-
-       
-
+        
         private void frmThemND_Load(object sender, EventArgs e)
         {
             LoadTenGvtoCombobox();
             cbQuyen.SelectedIndex = 0;
         }
+
+        #endregion
+
+
+
     }
 }

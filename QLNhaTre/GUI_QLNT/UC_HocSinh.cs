@@ -32,7 +32,8 @@ namespace GUI_QLNT
                 string[] thongtinlop = NguoiDungBUS.Instance.GetThongTinLop(frmLogin.ID_USER);
                 if (thongtinlop[0]!=null)
                 {
-                    
+                    LoadNamHoctoCombobox();
+                    cbThangdo.SelectedIndex = DateTime.Now.Month - 1;
                     cbNamHoc.SelectedValue = int.Parse(thongtinlop[0]);
                     cbLop.SelectedValue = int.Parse(thongtinlop[1]);
                     cbNamHoc.Enabled = false;
@@ -42,7 +43,7 @@ namespace GUI_QLNT
                 }
                 else
                 {
-                    MessageBox.Show("Bạn chưa được phân công");
+                    MessageBox.Show("Bạn chưa được phân công" ,"Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                     
                 cbNamHoc.SelectedIndexChanged -= cbNamHoc_SelectedIndexChanged;
@@ -124,7 +125,7 @@ namespace GUI_QLNT
 
         private void Khongcoquyenthaotac(object sender, EventArgs e)
         {
-            MessageBox.Show("Tài khoản không có quyền để thực hiện hành động này");
+            MessageBox.Show("Tài khoản không có quyền để thực hiện hành động này","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
 
@@ -231,12 +232,11 @@ namespace GUI_QLNT
             }
             catch (Exception)
             {
-                MessageBox.Show("Không có dữ liệu");
+                MessageBox.Show("Không có dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            
-            
-
         }
+
+
         private void CellOnlyNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
@@ -308,7 +308,7 @@ namespace GUI_QLNT
         {
             if (cbLop.SelectedItem != null)
             {
-                int malop = (cbLop.SelectedItem as Lop).MaLop;
+                int malop = (int)cbLop.SelectedValue;
                 string thangdo = cbThangdo.SelectedItem.ToString();
 
 
@@ -393,6 +393,9 @@ namespace GUI_QLNT
                 excelApp.Columns.AutoFit();
                 excelApp.Visible = true;
             }
+            else
+                MessageBox.Show("Không có dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
         }
 
 

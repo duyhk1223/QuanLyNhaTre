@@ -154,17 +154,16 @@ namespace GUI_QLNT
 
         private void LoadNamHoctoCombobox()
         {
+            cbNamHoc.DisplayMember = "NamBDKT";
+            cbNamHoc.ValueMember = "MaNamHoc";
             cbNamHoc.DataSource = NamHocBUS.Instance.GetNamHoc();
-            cbNamHoc.DisplayMember = "NAMBDKT";
-            //cbNamHoc.ValueMember = "MANAMHOC";
         }
 
         private void LoadLoptoCombobox()
         {
-
-            cbLop.DataSource = LopBUS.Instance.GetLopByMaNamHoc((cbNamHoc.SelectedItem as NamHoc).MaNamHoc);
-            cbLop.DisplayMember = "TENLOP";
-            cbLop.ValueMember = "MALOP";
+            cbLop.DisplayMember = "TenLop";
+            cbLop.ValueMember = "MaLop";
+            cbLop.DataSource = LopBUS.Instance.GetLopByMaNamHoc((int)cbNamHoc.SelectedValue);
             cbLop.SelectedItem = null;
         }
 
@@ -196,19 +195,19 @@ namespace GUI_QLNT
                 int malop = (int)cbLop.SelectedValue;
                 if (GiaoVienBUS.Instance.PhanCongGiaoVien(magv, malop))
                 {
-                    MessageBox.Show("Đã phân công!");
+                    MessageBox.Show("Đã phân công!","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     LoadGVTodgvPhanCong();
                 }
-                else MessageBox.Show("Thất bại!");
+                else MessageBox.Show("Thất bại!","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             else if (cbLop.SelectedItem == null)
             {
-                MessageBox.Show("Chọn một lớp để phân công!!");
+                MessageBox.Show("Chọn một lớp để phân công!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                MessageBox.Show("Chọn giáo viên để phân công");
+                MessageBox.Show("Chọn giáo viên để phân công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
                
             

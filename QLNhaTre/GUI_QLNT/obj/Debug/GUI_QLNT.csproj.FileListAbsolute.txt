@@ -262,3 +262,7 @@ C:\Users\kdi69\Downloads\-N-master\-N-master\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLN
 C:\Users\kdi69\Downloads\-N-master\-N-master\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLNT.csproj.CopyComplete
 C:\Users\kdi69\Downloads\-N-master\-N-master\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLNT.exe
 C:\Users\kdi69\Downloads\-N-master\-N-master\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLNT.pdb
+C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLNT.frmSuaLop.resources
+C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLNT.frmSuaNamHoc.resources
+C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLNT.frmThemLop.resources
+C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLNT.frmThemNamHoc.resources

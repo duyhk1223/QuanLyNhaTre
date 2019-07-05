@@ -18,7 +18,9 @@ namespace GUI_QLNT
         {
             InitializeComponent();
         }
+
         string maLop;
+
         public frmSuaLop(Lop l)
         {
             InitializeComponent();
@@ -36,21 +38,30 @@ namespace GUI_QLNT
             cbNamHoc.DataSource = NamHocBUS.Instance.GetNamHoc();
             cbNamHoc.SelectedValue = l.MaNamHoc;
         }
+
+        
+
+        #region phương thức
+
         private void SuaLop(string maLop, string tenLop, string maKhoi, string maNH)
         {
             if (LopBUS.Instance.SuaLop(maLop, tenLop, maKhoi, maNH))
-             {
+            {
                 MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-             }
+            }
             else
                 MessageBox.Show("Sửa thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
         }
 
+        #endregion
+
+        #region sự kiện
+
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(txtTenLop.Text))
+            if (string.IsNullOrEmpty(txtTenLop.Text))
             {
                 MessageBox.Show("Bạn chưa nhập tên lớp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -59,7 +70,7 @@ namespace GUI_QLNT
                 string tenLop = txtTenLop.Text;
                 string maKhoi = (cbKhoi.SelectedItem as Khoi).MaKhoi.ToString();
                 string maNH = (cbNamHoc.SelectedItem as NamHoc).MaNamHoc.ToString();
-                SuaLop(maLop,tenLop, maKhoi, maNH);
+                SuaLop(maLop, tenLop, maKhoi, maNH);
                 this.Dispose();
             }
         }
@@ -68,5 +79,14 @@ namespace GUI_QLNT
         {
             this.Dispose();
         }
+
+        #endregion
+
+
+
+
+
+
+
     }
 }

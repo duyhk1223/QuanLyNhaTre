@@ -22,12 +22,7 @@ namespace GUI_QLNT
         public static string QUYEN = string.Empty;
 
 
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            QUYEN = NguoiDungBUS.Instance.GetQuyen(frmLogin.ID_USER);
-            UC_HocSinh uC_HocSinh = new UC_HocSinh();
-            AddControlsToPanel(uC_HocSinh);
-        }
+        #region phương thức
 
         private void moveSidePanel(Control btn)
         {
@@ -37,13 +32,35 @@ namespace GUI_QLNT
 
         private void AddControlsToPanel(Control c)
         {
-            
+
             while (pnlControl.Controls.Count > 0)
             {
                 pnlControl.Controls[0].Dispose();
             }
             c.Dock = DockStyle.Fill;
             pnlControl.Controls.Add(c);
+        }
+
+        private bool checkQuyen(string quyen)
+        {
+            if (quyen == "Giáo viên")
+            {
+                MessageBox.Show("Tài khoản của bạn không đủ quyền truy cập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
+
+        #endregion
+
+        #region sự kiện
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            QUYEN = NguoiDungBUS.Instance.GetQuyen(frmLogin.ID_USER);
+            UC_HocSinh uC_HocSinh = new UC_HocSinh();
+            AddControlsToPanel(uC_HocSinh);
         }
 
         private void btnHocSinh_Click(object sender, EventArgs e)
@@ -80,21 +97,30 @@ namespace GUI_QLNT
             AddControlsToPanel(uC);
         }
 
-
-        private bool checkQuyen(string quyen)
-        {
-            if(quyen=="Giáo viên")
-            {
-                MessageBox.Show("Tài khoản của bạn không đủ quyền truy cập");
-                return false;
-            }
-            return true;
-        }
-
         private void btnDMK_Click(object sender, EventArgs e)
         {
             frmDMK dmk = new frmDMK();
             dmk.ShowDialog();
         }
+
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

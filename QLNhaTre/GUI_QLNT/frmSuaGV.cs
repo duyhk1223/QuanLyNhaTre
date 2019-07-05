@@ -20,10 +20,6 @@ namespace GUI_QLNT
             InitializeComponent();
         }
 
-        private void btnHuy_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
 
         int maGV;
         public frmSuaGV(DTO_QLNT.GiaoVien gv)
@@ -45,16 +41,16 @@ namespace GUI_QLNT
             dtpkNgayVaoLam.Value = gv.NgayVaoLam;
         }
 
-
+        #region phương thức
 
         private void SuaGiaoVien(int maGiaoVien, string hoTen, string gioiTinh, string ngaySinh, string danToc, string diaChi, string sdt, string trinhDo, string ngayVaoLam, string tonGiao)
         {
             if (GiaoVienBUS.Instance.SuaGiaoVien(maGiaoVien, hoTen, gioiTinh, ngaySinh, danToc, diaChi, sdt, trinhDo, ngayVaoLam, tonGiao))
             {
-                MessageBox.Show("Sửa Thành Công","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Sửa Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
-                MessageBox.Show("Sửa Thất Bại","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Sửa Thất Bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         bool CheckData()
@@ -109,7 +105,7 @@ namespace GUI_QLNT
                 txtHoTen.Focus();
                 return false;
             }
-           
+
             if (IsNgayVaoLam(dtpkNgayVaoLam.Value.Date) == false)
             {
                 MessageBox.Show("Ngày vào làm không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -176,6 +172,14 @@ namespace GUI_QLNT
         }
 
 
+        #endregion
+
+        #region sự kiện
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
@@ -200,12 +204,28 @@ namespace GUI_QLNT
                 SuaGiaoVien(maGV, hoTen, gioitinh, ngaysinh, dantoc, diachi, sdt, trinhdo, ngayvaolam, tongiao);
                 this.Dispose();
             }
-            
+
         }
 
         private void txtHoTen_Validated(object sender, EventArgs e)
         {
             txtHoTen.Text = FormatProperCase(txtHoTen.Text);
         }
+
+        #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

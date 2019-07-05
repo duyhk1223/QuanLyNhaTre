@@ -18,9 +18,9 @@ namespace GUI_QLNT
         {
             InitializeComponent();
         }
+
         int maNH;
         public frmSuaNamHoc(DTO_QLNT.NamHoc nh)
-
         {
             InitializeComponent();
             maNH = nh.MaNamHoc;
@@ -31,13 +31,12 @@ namespace GUI_QLNT
             txtNKT.Text = nh.NamKT.ToString();
 
         }
-        public bool IsNumber(string pText)
-        {
-            Regex regex = new Regex(@"^[-+]?[0-9]*\.?[0-9]+$");
-            return regex.IsMatch(pText);
-        } 
-        
-        private void SuaNamHoc(int MaNH,string NamBD,string NamKT)
+
+       
+
+        #region phương thức
+
+        private void SuaNamHoc(int MaNH, string NamBD, string NamKT)
         {
             if (NamHocBUS.Instance.SuaNamHoc(maNH, NamBD, NamKT))
             {
@@ -47,26 +46,28 @@ namespace GUI_QLNT
                 MessageBox.Show("Sửa thất bại");
         }
 
-        private void btnHuy_Click(object sender, EventArgs e)
+        public bool IsNumber(string pText)
         {
-            this.Dispose();
+            Regex regex = new Regex(@"^[-+]?[0-9]*\.?[0-9]+$");
+            return regex.IsMatch(pText);
         }
+
         bool CheckData()
         {
-            if (IsNumber(txtNBD.Text)==false)
+            if (IsNumber(txtNBD.Text) == false)
             {
 
                 MessageBox.Show("Năm bắt đầu chưa đúng", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtNBD.Focus();
                 return false;
             }
-            if (IsNumber(txtNKT.Text)==false)
+            if (IsNumber(txtNKT.Text) == false)
             {
                 MessageBox.Show("Năm kết thúc chưa đúng", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtNKT.Focus();
                 return false;
             }
-            if(int.Parse(txtNKT.Text)<int.Parse(txtNBD.Text))
+            if (int.Parse(txtNKT.Text) < int.Parse(txtNBD.Text))
             {
                 MessageBox.Show("Năm kết thúc chưa đúng", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtNKT.Focus();
@@ -76,9 +77,18 @@ namespace GUI_QLNT
             return true;
         }
 
+        #endregion
+
+        #region sự kiện
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if(CheckData())
+            if (CheckData())
             {
 
                 string namBD = txtNBD.Text;
@@ -87,5 +97,16 @@ namespace GUI_QLNT
                 this.Dispose();
             }
         }
+
+        #endregion
+
+
+
+
+
+
+
+
+
     }
 }

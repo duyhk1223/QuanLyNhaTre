@@ -19,10 +19,11 @@ namespace GUI_QLNT
             InitializeComponent();
         }
 
-        private void btnHuy_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
+        #region phương thức
+
+        #endregion
+
+        #region sự kiện
 
         private void btnSua_Click(object sender, EventArgs e)
         {
@@ -43,5 +44,13 @@ namespace GUI_QLNT
                 MessageBox.Show("Mật khẩu mới chưa chính xác");
             }
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        #endregion
+
     }
 }

@@ -21,6 +21,9 @@ namespace GUI_QLNT
 
         }
 
+
+
+
         private void button3_Click(object sender, EventArgs e)
         {
             frmThemND fthemND = new frmThemND();
@@ -132,7 +135,22 @@ namespace GUI_QLNT
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-
+            DialogResult dr = MessageBox.Show(this, "Reset mật khẩu về mặc định?", "Cảnh báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dr == DialogResult.Yes)
+            {
+                if (gridNguoiDung.SelectedRows.Count > 0)
+                {
+                    int id=(int)gridNguoiDung.Rows[gridNguoiDung.SelectedRows[0].Index].Cells[1].Value;
+                    if (NguoiDungBUS.Instance.ResetMK(id))
+                    {
+                        MessageBox.Show("Đã xong!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         private void btnThemN_Click(object sender, EventArgs e)
@@ -231,7 +249,7 @@ namespace GUI_QLNT
 
             if (gridLop.SelectedRows.Count > 0)
             {
-                DialogResult dr = MessageBox.Show(this, "Thao tác này sẽ xóa tất cả dữ liệu trong lớp.\nXóa?", "Cảnh báo!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                DialogResult dr = MessageBox.Show(this, "Thao tác này sẽ xóa tất cả dữ liệu trong lớp.\nXóa?", "Cảnh báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dr == DialogResult.Yes)
                 {
                     int id;

@@ -20,10 +20,10 @@ namespace GUI_QLNT
             InitializeComponent();
         }
 
-        private void btnHuy_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
+       
+
+        #region phương thức
+
         private string GetGioiTinh()
         {
             if (rbtnNam.Checked == true)
@@ -36,6 +36,7 @@ namespace GUI_QLNT
             }
 
         }
+
         private void ThemGiaoVien(string hoTen, string gioiTinh, string ngaySinh, string danToc, string diaChi, string sdt, string trinhDo, string ngayVaoLam, string tongiao)
         {
             if (GiaoVienBUS.Instance.ThemGiaoVien(hoTen, gioiTinh, ngaySinh, danToc, diaChi, sdt, trinhDo, ngayVaoLam, tongiao))
@@ -45,11 +46,10 @@ namespace GUI_QLNT
             else
                 MessageBox.Show("Thêm Thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        
 
         bool CheckData()
         {
-            if(string.IsNullOrEmpty(txtHoTen.Text)||isName(txtHoTen.Text)==false)
+            if (string.IsNullOrEmpty(txtHoTen.Text) || isName(txtHoTen.Text) == false)
             {
                 MessageBox.Show("Bạn chưa nhập họ tên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtHoTen.Focus();
@@ -75,7 +75,7 @@ namespace GUI_QLNT
                 return false;
 
             }
-            if(string.IsNullOrEmpty(txtTonGiao.Text))
+            if (string.IsNullOrEmpty(txtTonGiao.Text))
             {
                 MessageBox.Show("Bạn chưa nhập tôn giáo", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtHoTen.Focus();
@@ -87,7 +87,7 @@ namespace GUI_QLNT
                 txtHoTen.Focus();
                 return false;
             }
-            if (string.IsNullOrEmpty(txtSDT.Text)||isPhoneNumber(txtSDT.Text)==false)
+            if (string.IsNullOrEmpty(txtSDT.Text) || isPhoneNumber(txtSDT.Text) == false)
             {
                 MessageBox.Show("sdt hợp lệ là từ 9-11 số", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtHoTen.Focus();
@@ -105,8 +105,8 @@ namespace GUI_QLNT
                 txtHoTen.Focus();
                 return false;
             }
-            
-            if(IsNgayVaoLam(dtpkNgayVaoLam.Value.Date)==false)
+
+            if (IsNgayVaoLam(dtpkNgayVaoLam.Value.Date) == false)
             {
                 MessageBox.Show("Ngày vào làm không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dtpkNgayVaoLam.Focus();
@@ -116,23 +116,6 @@ namespace GUI_QLNT
 
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            if (CheckData())
-            {
-                string hoTen = txtHoTen.Text;
-                string gioitinh = GetGioiTinh();
-                string ngaysinh = dtpkNgaySinh.Value.Date.ToString("MM/dd/yyyy");
-                string dantoc = txtDanToc.Text;
-                string tongiao = txtTonGiao.Text;
-                string diachi = txtDiaChi.Text;
-                string sdt = txtSDT.Text;
-                string ngayvaolam = dtpkNgayVaoLam.Value.Date.ToString("MM/dd/yyyy");
-                string trinhdo = txtTrinhDo.Text;
-                ThemGiaoVien(hoTen, gioitinh, ngaysinh, dantoc, diachi, sdt, trinhdo, ngayvaolam, tongiao);
-                this.Dispose();
-            }
-        }
         // chuẩn hóa họ tên
         public static string FormatProperCase(string str)
         {
@@ -188,11 +171,40 @@ namespace GUI_QLNT
             else
                 return false;
         }
-        
+
+        #endregion
+
+        #region sự kiện
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            if (CheckData())
+            {
+                string hoTen = txtHoTen.Text;
+                string gioitinh = GetGioiTinh();
+                string ngaysinh = dtpkNgaySinh.Value.Date.ToString("MM/dd/yyyy");
+                string dantoc = txtDanToc.Text;
+                string tongiao = txtTonGiao.Text;
+                string diachi = txtDiaChi.Text;
+                string sdt = txtSDT.Text;
+                string ngayvaolam = dtpkNgayVaoLam.Value.Date.ToString("MM/dd/yyyy");
+                string trinhdo = txtTrinhDo.Text;
+                ThemGiaoVien(hoTen, gioitinh, ngaysinh, dantoc, diachi, sdt, trinhdo, ngayvaolam, tongiao);
+                this.Dispose();
+            }
+        }
 
         private void txtHoTen_Validated(object sender, EventArgs e)
         {
             txtHoTen.Text = FormatProperCase(txtHoTen.Text);
         }
+
+        #endregion
+
     }
 }

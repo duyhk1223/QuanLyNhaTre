@@ -32,6 +32,10 @@ namespace GUI_QLNT
             cbQuyen.SelectedItem = gv.Quyen;
         }
 
+      
+
+        #region phương thức
+
         private void SuaUsers(int id, string taiKhoan, int maGV, string quyen)
         {
             if (NguoiDungBUS.Instance.SuaUsers(id, taiKhoan, maGV, quyen))
@@ -42,22 +46,31 @@ namespace GUI_QLNT
                 MessageBox.Show("Sửa Thất Bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void btnHuy_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
         bool CheckData()
         {
-            
             if (string.IsNullOrEmpty(txtTaiKhoan.Text))
             {
                 MessageBox.Show("Bạn chưa nhập tên đăng nhập", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtTaiKhoan.Focus();
                 return false;
             }
-            
-
             return true;
+        }
+
+        private void LoadTenGvtoCombobox()
+        {
+            cbGiaoVien.DisplayMember = "HoTen";
+            cbGiaoVien.ValueMember = "MaGV";
+            cbGiaoVien.DataSource = GiaoVienBUS.Instance.GetGiaoVien();
+        }
+
+        #endregion
+
+        #region sự kiện
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -67,16 +80,20 @@ namespace GUI_QLNT
                 string taiKhoan = txtTaiKhoan.Text;
                 string quyen = cbQuyen.SelectedItem.ToString();
                 int magv = (int)cbGiaoVien.SelectedValue;
-                //int maGV = (cbGiaoVien.SelectedItem as DTO_QLNT.GiaoVien).MaGiaoVien;
                 SuaUsers(Id, taiKhoan, magv, quyen);
                 this.Dispose();
             }
         }
-        private void LoadTenGvtoCombobox()
-        {
-            cbGiaoVien.DataSource = GiaoVienBUS.Instance.GetGiaoVien();
-            cbGiaoVien.DisplayMember = "HOTEN";
-            cbGiaoVien.ValueMember = "MAGV";
-        }
+
+        #endregion
+
+
+
+
+
+
+
+
+        
     }
 }

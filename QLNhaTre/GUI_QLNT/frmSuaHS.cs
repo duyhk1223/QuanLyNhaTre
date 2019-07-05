@@ -22,7 +22,7 @@ namespace GUI_QLNT
             InitializeComponent();
         }
         private int mahs;
-
+        
         public frmSuaHS(HocSinh hs, int manamhoc)
         {
             
@@ -36,14 +36,16 @@ namespace GUI_QLNT
 
             dtpkNgaySinh.Value = hs.NgaySinh;
 
+            
+            cbNamHoc.DisplayMember = "NamBDKT";
+            cbNamHoc.ValueMember = "MaNamHoc";
             cbNamHoc.DataSource = NamHocBUS.Instance.GetNamHoc();
-            cbNamHoc.DisplayMember = "NAMBDKT";
-            cbNamHoc.ValueMember = "MANAMHOC";
             cbNamHoc.SelectedValue = manamhoc;
 
+            
+            cbLop.DisplayMember = "TenLop";
+            cbLop.ValueMember = "MaLop";
             cbLop.DataSource = LopBUS.Instance.GetLopByMaNamHoc(manamhoc);
-            cbLop.DisplayMember = "TENLOP";
-            cbLop.ValueMember = "MALOP";
             cbLop.SelectedValue = hs.MaLop;
 
             dtpkNgayVaoHoc.Value = hs.NgayVaoHoc;
@@ -54,30 +56,35 @@ namespace GUI_QLNT
             txtHoTenMe.Text = hs.HoTenMe;
             txtSDTMe.Text = hs.SdtMe;
         }
+
+
+        bool kq;
+
+        #region phương thức
+
         bool CheckData()
         {
-            if (string.IsNullOrEmpty(txtHoTen.Text) || isName(txtHoTen.Text)==false)
+            if (string.IsNullOrEmpty(txtHoTen.Text) || isName(txtHoTen.Text) == false)
             {
                 MessageBox.Show("Họ tên không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtHoTen.Focus();
                 return false;
-
             }
             if (rbtnNam.Checked == false && rbtnNu.Checked == false)
             {
                 MessageBox.Show("Bạn chưa nhập giới tính", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-              
+
                 return false;
             }
-            if (isDoB(dtpkNgaySinh.Value.Date)==false)
+            if (isDoB(dtpkNgaySinh.Value.Date) == false)
             {
                 MessageBox.Show("Độ tuổi phải từ 3-5 ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dtpkNgaySinh.Focus();
                 return false;
             }
-            if (IsNgayVaoHoc(dtpkNgayVaoHoc.Value.Date)==false)
+            if (IsNgayVaoHoc(dtpkNgayVaoHoc.Value.Date) == false)
             {
-                MessageBox.Show("Ngày vào học không hợp lệ","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Ngày vào học không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 dtpkNgayVaoHoc.Focus();
                 return false;
             }
@@ -86,41 +93,35 @@ namespace GUI_QLNT
                 MessageBox.Show("Bạn chưa nhập địa chỉ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtDiaChi.Focus();
                 return false;
-
             }
-            if (string.IsNullOrEmpty(txtHoTenCha.Text) || isName(txtHoTenCha.Text)==false)
+            if (string.IsNullOrEmpty(txtHoTenCha.Text) || isName(txtHoTenCha.Text) == false)
             {
                 MessageBox.Show("họ tên cha không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtHoTenCha.Focus();
                 return false;
-
             }
-            if (string.IsNullOrEmpty(txtSDTCha.Text) || isPhoneNumber(txtSDTCha.Text)==false)
+            if (string.IsNullOrEmpty(txtSDTCha.Text) || isPhoneNumber(txtSDTCha.Text) == false)
             {
                 MessageBox.Show("sdt hợp lệ là từ 9-11 số", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtSDTCha.Focus();
                 return false;
-
             }
-            if (string.IsNullOrEmpty(txtHoTenMe.Text) || isName(txtHoTenMe.Text)==false)
+            if (string.IsNullOrEmpty(txtHoTenMe.Text) || isName(txtHoTenMe.Text) == false)
             {
                 MessageBox.Show("tên mẹ không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtHoTenMe.Focus();
                 return false;
-
             }
-            if (string.IsNullOrEmpty(txtSDTMe.Text) || isPhoneNumber(txtSDTMe.Text)==false)
+            if (string.IsNullOrEmpty(txtSDTMe.Text) || isPhoneNumber(txtSDTMe.Text) == false)
             {
                 MessageBox.Show(" sdt hợp lệ là từ 9-11 số", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtSDTMe.Focus();
                 return false;
-
             }
             return true;
-
         }
-        bool kq;
-        private void SuaHocSinh(int mahs,string ten, string gioitinh, string ngaysinh, int malop, string ngayvaohoc, string diachi, string tencha, string sdtcha, string tenme, string sdtme)
+
+        private void SuaHocSinh(int mahs, string ten, string gioitinh, string ngaysinh, int malop, string ngayvaohoc, string diachi, string tencha, string sdtcha, string tenme, string sdtme)
         {
             try
             {
@@ -131,65 +132,27 @@ namespace GUI_QLNT
 
                 if (sqlex.Procedure == "SiSoToiDa" || sqlex.Message.Contains("lop full"))
                 {
-                    MessageBox.Show("Đã đạt tối đa học sinh trong lớp này","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Đã đạt tối đa học sinh trong lớp này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show("Có lỗi!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("Có lỗi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             finally
             {
                 if (kq)
                 {
-                    MessageBox.Show("Cập nhật học sinh thành công!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Cập nhật học sinh thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            
-        }
 
-        private void btnHuy_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            if (CheckData())
-            {
-                string hoten = txtHoTen.Text.Trim();
-                string gioitinh;
-                if (rbtnNam.Checked)
-                    gioitinh = rbtnNam.Text.Trim();
-                else gioitinh = rbtnNu.Text.Trim();
-                string ngaysinh = dtpkNgaySinh.Value.ToString("MM/dd/yyyy");
-
-                int malop = (cbLop.SelectedItem as Lop).MaLop;
-                string ngayvaohoc = dtpkNgayVaoHoc.Value.ToString("MM/dd/yyyy");
-                string diachi = txtDiaChi.Text.Trim();
-                string tencha = txtHoTenCha.Text.Trim();
-                string sdtcha = txtSDTCha.Text.Trim();
-                string tenme = txtHoTenMe.Text.Trim();
-                string sdtme = txtSDTMe.Text.Trim();
-                SuaHocSinh(mahs, hoten, gioitinh, ngaysinh, malop, ngayvaohoc, diachi, tencha, sdtcha, tenme, sdtme);
-                this.Dispose();
-            }
-            
-            
-        }
-      
-        
-
-        private void cbNamHoc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            LoadLoptoCombobox();
         }
 
         private void LoadLoptoCombobox()
         {
-
-            cbLop.DataSource = LopBUS.Instance.GetLopByMaNamHoc((cbNamHoc.SelectedItem as NamHoc).MaNamHoc);
-            cbLop.DisplayMember = "TENLOP";
-            //cbLop.ValueMember = "MALOP";
+            cbLop.DisplayMember = "TenLop";
+            cbLop.ValueMember = "MaLop";
+            cbLop.DataSource = LopBUS.Instance.GetLopByMaNamHoc((int)cbNamHoc.SelectedValue);
         }
         // chuẩn hóa họ tên
         public static string FormatProperCase(string str)
@@ -203,21 +166,6 @@ namespace GUI_QLNT
             return textInfo.ToTitleCase(str);
         }
 
-
-        private void txtHoTen_Validated(object sender, EventArgs e)
-        {
-            txtHoTen.Text = FormatProperCase(txtHoTen.Text);
-        }
-
-        private void txtHoTenCha_Validated(object sender, EventArgs e)
-        {
-            txtHoTenCha.Text = FormatProperCase(txtHoTenCha.Text);
-        }
-
-        private void txtHoTenMe_Validated(object sender, EventArgs e)
-        {
-            txtHoTenMe.Text = FormatProperCase(txtHoTenMe.Text);
-        }
         //kiểm tra sdt
         private bool isPhoneNumber(string pText)
         {
@@ -262,6 +210,60 @@ namespace GUI_QLNT
             else
                 return false;
         }
+
+        #endregion
+
+        #region sự kiện
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if (CheckData())
+            {
+                string hoten = txtHoTen.Text.Trim();
+                string gioitinh;
+                if (rbtnNam.Checked)
+                    gioitinh = rbtnNam.Text.Trim();
+                else gioitinh = rbtnNu.Text.Trim();
+                string ngaysinh = dtpkNgaySinh.Value.ToString("MM/dd/yyyy");
+
+                int malop = (cbLop.SelectedItem as Lop).MaLop;
+                string ngayvaohoc = dtpkNgayVaoHoc.Value.ToString("MM/dd/yyyy");
+                string diachi = txtDiaChi.Text.Trim();
+                string tencha = txtHoTenCha.Text.Trim();
+                string sdtcha = txtSDTCha.Text.Trim();
+                string tenme = txtHoTenMe.Text.Trim();
+                string sdtme = txtSDTMe.Text.Trim();
+                SuaHocSinh(mahs, hoten, gioitinh, ngaysinh, malop, ngayvaohoc, diachi, tencha, sdtcha, tenme, sdtme);
+                this.Dispose();
+            }
+        }
+
+        private void cbNamHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadLoptoCombobox();
+        }
+
+        private void txtHoTen_Validated(object sender, EventArgs e)
+        {
+            txtHoTen.Text = FormatProperCase(txtHoTen.Text);
+        }
+
+        private void txtHoTenCha_Validated(object sender, EventArgs e)
+        {
+            txtHoTenCha.Text = FormatProperCase(txtHoTenCha.Text);
+        }
+
+        private void txtHoTenMe_Validated(object sender, EventArgs e)
+        {
+            txtHoTenMe.Text = FormatProperCase(txtHoTenMe.Text);
+        }
+
+        #endregion
 
     }
 }

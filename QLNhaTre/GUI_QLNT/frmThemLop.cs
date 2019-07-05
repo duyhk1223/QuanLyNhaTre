@@ -18,19 +18,25 @@ namespace GUI_QLNT
         {
             InitializeComponent();
         }
+
+
+        #region phương thức
+
         private void LoadNamHoctoCombobox()
         {
-            cbNamHoc.DataSource = NamHocBUS.Instance.GetNamHoc();
             cbNamHoc.DisplayMember = "NamBDKT";
             cbNamHoc.ValueMember = "MaNamHoc";
+            cbNamHoc.DataSource = NamHocBUS.Instance.GetNamHoc();
         }
+
         private void LoadKhoitoCombobox()
         {
             cbKhoi.DisplayMember = "TenKhoi";
             cbKhoi.ValueMember = "MaKhoi";
             cbKhoi.DataSource = KhoiBUS.Instance.GetKhoi();
         }
-        private void ThemLop(string tenLop,string maKhoi,string maNH)
+
+        private void ThemLop(string tenLop, string maKhoi, string maNH)
         {
             if (LopBUS.Instance.ThemLop(tenLop, maKhoi, maNH))
             {
@@ -39,22 +45,27 @@ namespace GUI_QLNT
             else
                 MessageBox.Show("Thêm thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        #endregion
+
+        #region sự kiện
+
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(txtTenLop.Text))
+            if (string.IsNullOrEmpty(txtTenLop.Text))
             {
                 MessageBox.Show("Chưa nhập tên lớp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtTenLop.Focus();
             }
-            else if(cbNamHoc.SelectedItem == null)
+            else if (cbNamHoc.SelectedItem == null)
             {
                 MessageBox.Show("Chưa chọn năm học", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 string tenLop = txtTenLop.Text;
-                string maKhoi = (cbKhoi.SelectedItem as Khoi).MaKhoi.ToString();
-                string maNH = (cbNamHoc.SelectedItem as NamHoc).MaNamHoc.ToString();
+                string maKhoi = cbKhoi.SelectedValue.ToString();
+                string maNH = cbNamHoc.SelectedValue.ToString();
                 ThemLop(tenLop, maKhoi, maNH);
                 this.Dispose();
             }
@@ -70,5 +81,11 @@ namespace GUI_QLNT
             LoadKhoitoCombobox();
             LoadNamHoctoCombobox();
         }
+
+        #endregion
+
+
+
+
     }
 }

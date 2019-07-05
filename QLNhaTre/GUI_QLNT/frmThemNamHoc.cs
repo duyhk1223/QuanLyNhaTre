@@ -18,7 +18,12 @@ namespace GUI_QLNT
         {
             InitializeComponent();
         }
-        private void ThemNamHoc( string namBD,string namKT)
+
+
+        
+        #region phương thức
+
+        private void ThemNamHoc(string namBD, string namKT)
         {
             if (NamHocBUS.Instance.ThemNamHoc(namBD, namKT))
             {
@@ -58,6 +63,11 @@ namespace GUI_QLNT
             return true;
         }
 
+
+        #endregion
+
+        #region sự kiện
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (CheckData())
@@ -74,5 +84,10 @@ namespace GUI_QLNT
         {
             this.Dispose();
         }
+
+        #endregion
+
+
+
     }
 }
