@@ -26,18 +26,38 @@ namespace GUI_QLNT
 
         private void UC_HocSinh_Load(object sender, EventArgs e)
         {
-            LoadNamHoctoCombobox();
-            cbThangdo.SelectedIndex = DateTime.Now.Month - 1;
-
-
+            
             if (frmMain.QUYEN == "Giáo viên")
             {
                 string[] thongtinlop = NguoiDungBUS.Instance.GetThongTinLop(frmLogin.ID_USER);
-                cbNamHoc.SelectedValue = int.Parse(thongtinlop[0]);
-                cbLop.SelectedValue = int.Parse(thongtinlop[1]);
-
-                cbNamHoc.Enabled = false;
-                cbLop.Enabled = false;
+                if (thongtinlop[0]!=null)
+                {
+                    
+                    cbNamHoc.SelectedValue = int.Parse(thongtinlop[0]);
+                    cbLop.SelectedValue = int.Parse(thongtinlop[1]);
+                    cbNamHoc.Enabled = false;
+                    cbLop.Enabled = false;
+                    
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Bạn chưa được phân công");
+                }
+                    
+                cbNamHoc.SelectedIndexChanged -= cbNamHoc_SelectedIndexChanged;
+                cbLop.SelectedIndexChanged -= cbLop_SelectedIndexChanged;
+                btnThem.Click -= btnThem_Click;
+                btnSua.Click -= btnSua_Click;
+                btnXoa.Click -= btnXoa_Click;
+                btnThem.Click += Khongcoquyenthaotac;
+                btnSua.Click += Khongcoquyenthaotac;
+                btnXoa.Click += Khongcoquyenthaotac;
+            }
+            else
+            {
+                LoadNamHoctoCombobox();
+                cbThangdo.SelectedIndex = DateTime.Now.Month - 1;
             }
         }
 
@@ -100,6 +120,13 @@ namespace GUI_QLNT
             if (tabctrlHocsinh.SelectedTab == tabSK)
                 LoadSucKhoe();
         }
+
+
+        private void Khongcoquyenthaotac(object sender, EventArgs e)
+        {
+            MessageBox.Show("Tài khoản không có quyền để thực hiện hành động này");
+        }
+
 
         private void btnThem_Click(object sender, EventArgs e)
         {

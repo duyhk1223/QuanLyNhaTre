@@ -62,7 +62,7 @@
             this.txtHoTen.Location = new System.Drawing.Point(95, 33);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(280, 20);
-            this.txtHoTen.TabIndex = 7;
+            this.txtHoTen.TabIndex = 0;
             this.txtHoTen.Validated += new System.EventHandler(this.txtHoTen_Validated);
             // 
             // label1
@@ -107,7 +107,7 @@
             this.txtTrinhDo.Location = new System.Drawing.Point(95, 187);
             this.txtTrinhDo.Name = "txtTrinhDo";
             this.txtTrinhDo.Size = new System.Drawing.Size(130, 20);
-            this.txtTrinhDo.TabIndex = 20;
+            this.txtTrinhDo.TabIndex = 9;
             // 
             // label9
             // 
@@ -123,7 +123,7 @@
             this.txtSDT.Location = new System.Drawing.Point(95, 137);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(130, 20);
-            this.txtSDT.TabIndex = 18;
+            this.txtSDT.TabIndex = 7;
             // 
             // label7
             // 
@@ -139,7 +139,7 @@
             this.txtDiaChi.Location = new System.Drawing.Point(95, 111);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(280, 20);
-            this.txtDiaChi.TabIndex = 16;
+            this.txtDiaChi.TabIndex = 6;
             // 
             // label6
             // 
@@ -155,7 +155,7 @@
             this.txtTonGiao.Location = new System.Drawing.Point(275, 85);
             this.txtTonGiao.Name = "txtTonGiao";
             this.txtTonGiao.Size = new System.Drawing.Size(100, 20);
-            this.txtTonGiao.TabIndex = 14;
+            this.txtTonGiao.TabIndex = 5;
             // 
             // label5
             // 
@@ -171,7 +171,7 @@
             this.txtDanToc.Location = new System.Drawing.Point(95, 85);
             this.txtDanToc.Name = "txtDanToc";
             this.txtDanToc.Size = new System.Drawing.Size(100, 20);
-            this.txtDanToc.TabIndex = 14;
+            this.txtDanToc.TabIndex = 4;
             // 
             // label2
             // 
@@ -188,7 +188,7 @@
             this.rbtnNu.Location = new System.Drawing.Point(336, 63);
             this.rbtnNu.Name = "rbtnNu";
             this.rbtnNu.Size = new System.Drawing.Size(39, 17);
-            this.rbtnNu.TabIndex = 11;
+            this.rbtnNu.TabIndex = 3;
             this.rbtnNu.TabStop = true;
             this.rbtnNu.Text = "Nữ";
             this.rbtnNu.UseVisualStyleBackColor = true;
@@ -199,7 +199,7 @@
             this.rbtnNam.Location = new System.Drawing.Point(283, 63);
             this.rbtnNam.Name = "rbtnNam";
             this.rbtnNam.Size = new System.Drawing.Size(47, 17);
-            this.rbtnNam.TabIndex = 12;
+            this.rbtnNam.TabIndex = 2;
             this.rbtnNam.TabStop = true;
             this.rbtnNam.Text = "Nam";
             this.rbtnNam.UseVisualStyleBackColor = true;
@@ -210,7 +210,7 @@
             this.dtpkNgaySinh.Location = new System.Drawing.Point(95, 59);
             this.dtpkNgaySinh.Name = "dtpkNgaySinh";
             this.dtpkNgaySinh.Size = new System.Drawing.Size(100, 20);
-            this.dtpkNgaySinh.TabIndex = 10;
+            this.dtpkNgaySinh.TabIndex = 1;
             // 
             // dtpkNgayVaoLam
             // 
@@ -218,7 +218,7 @@
             this.dtpkNgayVaoLam.Location = new System.Drawing.Point(95, 163);
             this.dtpkNgayVaoLam.Name = "dtpkNgayVaoLam";
             this.dtpkNgayVaoLam.Size = new System.Drawing.Size(100, 20);
-            this.dtpkNgayVaoLam.TabIndex = 10;
+            this.dtpkNgayVaoLam.TabIndex = 8;
             // 
             // label4
             // 
@@ -255,7 +255,7 @@
             this.btnThem.Location = new System.Drawing.Point(263, 241);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
-            this.btnThem.TabIndex = 9;
+            this.btnThem.TabIndex = 10;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -268,7 +268,7 @@
             this.btnHuy.Location = new System.Drawing.Point(346, 241);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(75, 23);
-            this.btnHuy.TabIndex = 10;
+            this.btnHuy.TabIndex = 11;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);

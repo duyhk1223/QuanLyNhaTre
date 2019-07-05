@@ -49,14 +49,14 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 153);
+            this.panel4.Size = new System.Drawing.Size(5, 144);
             this.panel4.TabIndex = 3;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 158);
+            this.panel3.Location = new System.Drawing.Point(0, 149);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(336, 5);
             this.panel3.TabIndex = 4;
@@ -67,7 +67,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(336, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 158);
+            this.panel2.Size = new System.Drawing.Size(5, 149);
             this.panel2.TabIndex = 5;
             // 
             // panel1
@@ -93,7 +93,7 @@
             this.txtTaiKhoan.Location = new System.Drawing.Point(116, 25);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(183, 20);
-            this.txtTaiKhoan.TabIndex = 7;
+            this.txtTaiKhoan.TabIndex = 0;
             // 
             // label3
             // 
@@ -112,7 +112,7 @@
             this.btnThem.Location = new System.Drawing.Point(143, 105);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
-            this.btnThem.TabIndex = 9;
+            this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -125,7 +125,7 @@
             this.btnHuy.Location = new System.Drawing.Point(224, 105);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(75, 23);
-            this.btnHuy.TabIndex = 18;
+            this.btnHuy.TabIndex = 4;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
@@ -136,7 +136,7 @@
             this.cbGiaoVien.Location = new System.Drawing.Point(116, 51);
             this.cbGiaoVien.Name = "cbGiaoVien";
             this.cbGiaoVien.Size = new System.Drawing.Size(183, 21);
-            this.cbGiaoVien.TabIndex = 19;
+            this.cbGiaoVien.TabIndex = 1;
             // 
             // label4
             // 
@@ -156,14 +156,14 @@
             this.cbQuyen.Location = new System.Drawing.Point(116, 78);
             this.cbQuyen.Name = "cbQuyen";
             this.cbQuyen.Size = new System.Drawing.Size(183, 21);
-            this.cbQuyen.TabIndex = 19;
+            this.cbQuyen.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(10, 142);
+            this.label2.Location = new System.Drawing.Point(9, 134);
             this.label2.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(231, 12);
@@ -175,7 +175,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(341, 163);
+            this.ClientSize = new System.Drawing.Size(341, 154);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbQuyen);
             this.Controls.Add(this.cbGiaoVien);

@@ -167,12 +167,5 @@ namespace DAL_QLNT
 
             return DataProvider.Instance.ExecuteNonQuery(query) > 0;
         }
-
-
-        public bool ResetMK(int id)
-        {
-            string query = string.Format("UPDATE NGUOIDUNG SET MATKHAU = '3244185981728979115075721453575112' WHERE ID={0}", id);
-            return DataProvider.Instance.ExecuteNonQuery(query) > 0;
-        }
     }
 }

@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbNamHoc = new System.Windows.Forms.ComboBox();
             this.cbLop = new System.Windows.Forms.ComboBox();
             this.rbtnNu = new System.Windows.Forms.RadioButton();
             this.rbtnNam = new System.Windows.Forms.RadioButton();
@@ -58,8 +59,6 @@
             this.txtHoTenCha = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
-            
-            this.cbNamHoc = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -108,7 +107,7 @@
             this.btnHuy.Location = new System.Drawing.Point(360, 362);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(75, 23);
-            this.btnHuy.TabIndex = 2;
+            this.btnHuy.TabIndex = 13;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
@@ -127,7 +126,7 @@
             this.txtHoTen.Location = new System.Drawing.Point(97, 41);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(280, 20);
-            this.txtHoTen.TabIndex = 4;
+            this.txtHoTen.TabIndex = 0;
             this.txtHoTen.Validated += new System.EventHandler(this.txtHoTen_Validated);
             // 
             // groupBox1
@@ -161,7 +160,7 @@
             this.cbNamHoc.Location = new System.Drawing.Point(97, 119);
             this.cbNamHoc.Name = "cbNamHoc";
             this.cbNamHoc.Size = new System.Drawing.Size(106, 21);
-            this.cbNamHoc.TabIndex = 7;
+            this.cbNamHoc.TabIndex = 5;
             this.cbNamHoc.SelectedIndexChanged += new System.EventHandler(this.cbNamHoc_SelectedIndexChanged);
             // 
             // cbLop
@@ -171,7 +170,7 @@
             this.cbLop.Location = new System.Drawing.Point(258, 119);
             this.cbLop.Name = "cbLop";
             this.cbLop.Size = new System.Drawing.Size(119, 21);
-            this.cbLop.TabIndex = 7;
+            this.cbLop.TabIndex = 6;
             // 
             // rbtnNu
             // 
@@ -179,7 +178,7 @@
             this.rbtnNu.Location = new System.Drawing.Point(339, 69);
             this.rbtnNu.Name = "rbtnNu";
             this.rbtnNu.Size = new System.Drawing.Size(39, 17);
-            this.rbtnNu.TabIndex = 6;
+            this.rbtnNu.TabIndex = 3;
             this.rbtnNu.TabStop = true;
             this.rbtnNu.Text = "Nữ";
             this.rbtnNu.UseVisualStyleBackColor = true;
@@ -190,7 +189,7 @@
             this.rbtnNam.Location = new System.Drawing.Point(286, 69);
             this.rbtnNam.Name = "rbtnNam";
             this.rbtnNam.Size = new System.Drawing.Size(47, 17);
-            this.rbtnNam.TabIndex = 6;
+            this.rbtnNam.TabIndex = 2;
             this.rbtnNam.TabStop = true;
             this.rbtnNam.Text = "Nam";
             this.rbtnNam.UseVisualStyleBackColor = true;
@@ -201,7 +200,7 @@
             this.dtpkNgayVaoHoc.Location = new System.Drawing.Point(97, 146);
             this.dtpkNgayVaoHoc.Name = "dtpkNgayVaoHoc";
             this.dtpkNgayVaoHoc.Size = new System.Drawing.Size(95, 20);
-            this.dtpkNgayVaoHoc.TabIndex = 5;
+            this.dtpkNgayVaoHoc.TabIndex = 7;
             // 
             // dtpkNgaySinh
             // 
@@ -209,7 +208,7 @@
             this.dtpkNgaySinh.Location = new System.Drawing.Point(97, 67);
             this.dtpkNgaySinh.Name = "dtpkNgaySinh";
             this.dtpkNgaySinh.Size = new System.Drawing.Size(100, 20);
-            this.dtpkNgaySinh.TabIndex = 5;
+            this.dtpkNgaySinh.TabIndex = 1;
             // 
             // txtDiaChi
             // 
@@ -294,14 +293,14 @@
             this.txtSDTMe.Location = new System.Drawing.Point(98, 116);
             this.txtSDTMe.Name = "txtSDTMe";
             this.txtSDTMe.Size = new System.Drawing.Size(139, 20);
-            this.txtSDTMe.TabIndex = 6;
+            this.txtSDTMe.TabIndex = 11;
             // 
             // txtSDTCha
             // 
             this.txtSDTCha.Location = new System.Drawing.Point(98, 64);
             this.txtSDTCha.Name = "txtSDTCha";
             this.txtSDTCha.Size = new System.Drawing.Size(139, 20);
-            this.txtSDTCha.TabIndex = 6;
+            this.txtSDTCha.TabIndex = 9;
             // 
             // label10
             // 
@@ -326,7 +325,7 @@
             this.txtHoTenMe.Location = new System.Drawing.Point(98, 90);
             this.txtHoTenMe.Name = "txtHoTenMe";
             this.txtHoTenMe.Size = new System.Drawing.Size(279, 20);
-            this.txtHoTenMe.TabIndex = 4;
+            this.txtHoTenMe.TabIndex = 10;
             this.txtHoTenMe.Validated += new System.EventHandler(this.txtHoTenMe_Validated);
             // 
             // label9
@@ -343,7 +342,7 @@
             this.txtHoTenCha.Location = new System.Drawing.Point(98, 38);
             this.txtHoTenCha.Name = "txtHoTenCha";
             this.txtHoTenCha.Size = new System.Drawing.Size(279, 20);
-            this.txtHoTenCha.TabIndex = 4;
+            this.txtHoTenCha.TabIndex = 8;
             this.txtHoTenCha.Validated += new System.EventHandler(this.txtHoTenCha_Validated);
             // 
             // label2
@@ -363,7 +362,7 @@
             this.btnThem.Location = new System.Drawing.Point(279, 362);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
-            this.btnThem.TabIndex = 2;
+            this.btnThem.TabIndex = 12;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);

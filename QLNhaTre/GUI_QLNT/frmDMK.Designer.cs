@@ -92,7 +92,8 @@
             this.txtMkcu.Location = new System.Drawing.Point(132, 29);
             this.txtMkcu.Name = "txtMkcu";
             this.txtMkcu.Size = new System.Drawing.Size(181, 20);
-            this.txtMkcu.TabIndex = 19;
+            this.txtMkcu.TabIndex = 0;
+            this.txtMkcu.UseSystemPasswordChar = true;
             // 
             // label2
             // 
@@ -108,7 +109,8 @@
             this.txtMkmoi.Location = new System.Drawing.Point(132, 55);
             this.txtMkmoi.Name = "txtMkmoi";
             this.txtMkmoi.Size = new System.Drawing.Size(181, 20);
-            this.txtMkmoi.TabIndex = 19;
+            this.txtMkmoi.TabIndex = 1;
+            this.txtMkmoi.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -124,7 +126,8 @@
             this.txtMkmoi2.Location = new System.Drawing.Point(132, 81);
             this.txtMkmoi2.Name = "txtMkmoi2";
             this.txtMkmoi2.Size = new System.Drawing.Size(181, 20);
-            this.txtMkmoi2.TabIndex = 19;
+            this.txtMkmoi2.TabIndex = 2;
+            this.txtMkmoi2.UseSystemPasswordChar = true;
             // 
             // btnSua
             // 
@@ -134,7 +137,7 @@
             this.btnSua.Location = new System.Drawing.Point(157, 107);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
-            this.btnSua.TabIndex = 21;
+            this.btnSua.TabIndex = 3;
             this.btnSua.Text = "Cập nhật";
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -147,7 +150,7 @@
             this.btnHuy.Location = new System.Drawing.Point(238, 108);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(75, 23);
-            this.btnHuy.TabIndex = 22;
+            this.btnHuy.TabIndex = 4;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);

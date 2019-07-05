@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDMK = new System.Windows.Forms.Button();
             this.pnlSide = new System.Windows.Forms.Panel();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnHeThong = new System.Windows.Forms.Button();
@@ -37,7 +38,6 @@
             this.btnHocSinh = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlControl = new System.Windows.Forms.Panel();
-            this.btnDMK = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(158, 560);
             this.panel1.TabIndex = 0;
+            // 
+            // btnDMK
+            // 
+            this.btnDMK.BackColor = System.Drawing.Color.Transparent;
+            this.btnDMK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDMK.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnDMK.FlatAppearance.BorderSize = 0;
+            this.btnDMK.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
+            this.btnDMK.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateGray;
+            this.btnDMK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDMK.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btnDMK.Image = ((System.Drawing.Image)(resources.GetObject("btnDMK.Image")));
+            this.btnDMK.Location = new System.Drawing.Point(-2, 535);
+            this.btnDMK.Margin = new System.Windows.Forms.Padding(0);
+            this.btnDMK.Name = "btnDMK";
+            this.btnDMK.Size = new System.Drawing.Size(25, 25);
+            this.btnDMK.TabIndex = 4;
+            this.btnDMK.UseVisualStyleBackColor = false;
+            this.btnDMK.Click += new System.EventHandler(this.btnDMK_Click);
             // 
             // pnlSide
             // 
@@ -101,7 +120,7 @@
             this.btnHeThong.Margin = new System.Windows.Forms.Padding(0);
             this.btnHeThong.Name = "btnHeThong";
             this.btnHeThong.Size = new System.Drawing.Size(158, 70);
-            this.btnHeThong.TabIndex = 3;
+            this.btnHeThong.TabIndex = 2;
             this.btnHeThong.Text = "    Danh mục";
             this.btnHeThong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHeThong.UseVisualStyleBackColor = false;
@@ -166,25 +185,6 @@
             this.pnlControl.Name = "pnlControl";
             this.pnlControl.Size = new System.Drawing.Size(882, 545);
             this.pnlControl.TabIndex = 2;
-            // 
-            // btnDMK
-            // 
-            this.btnDMK.BackColor = System.Drawing.Color.Transparent;
-            this.btnDMK.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDMK.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.btnDMK.FlatAppearance.BorderSize = 0;
-            this.btnDMK.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateGray;
-            this.btnDMK.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SlateGray;
-            this.btnDMK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDMK.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.btnDMK.Image = ((System.Drawing.Image)(resources.GetObject("btnDMK.Image")));
-            this.btnDMK.Location = new System.Drawing.Point(-2, 535);
-            this.btnDMK.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDMK.Name = "btnDMK";
-            this.btnDMK.Size = new System.Drawing.Size(25, 25);
-            this.btnDMK.TabIndex = 4;
-            this.btnDMK.UseVisualStyleBackColor = false;
-            this.btnDMK.Click += new System.EventHandler(this.btnDMK_Click);
             // 
             // frmMain
             // 

@@ -132,16 +132,7 @@ namespace GUI_QLNT
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            
-            if (gridNguoiDung.SelectedRows.Count > 0)
-            {
-                DialogResult dr = MessageBox.Show(this, "Khôi phục mật khẩu của tài khoản này về mặt định?", "Cảnh báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (dr == DialogResult.Yes)
-                {
-                    int id = (int)gridNguoiDung.Rows[gridNguoiDung.SelectedRows[0].Index].Cells[1].Value;
-                    NguoiDungBUS.Instance.ResetMK(id);
-                }
-            }
+
         }
 
         private void btnThemN_Click(object sender, EventArgs e)
@@ -153,7 +144,7 @@ namespace GUI_QLNT
 
         private void btnSuaN_Click(object sender, EventArgs e)
         {
-            if (dgvNamHoc.SelectedRows.Count > 0)
+            if (dgvNamHoc.SelectedRows.Count != 0)
             {
                 int maNH = (int)dgvNamHoc.Rows[dgvNamHoc.SelectedRows[0].Index].Cells[1].Value;
                 DTO_QLNT.NamHoc nh = NamHocBUS.Instance.GetNamHocByMaNH(maNH);
@@ -240,7 +231,7 @@ namespace GUI_QLNT
 
             if (gridLop.SelectedRows.Count > 0)
             {
-                DialogResult dr = MessageBox.Show(this, "Thao tác này sẽ xóa tất cả dữ liệu trong lớp.\nXóa?", "Cảnh báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult dr = MessageBox.Show(this, "Thao tác này sẽ xóa tất cả dữ liệu trong lớp.\nXóa?", "Cảnh báo!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (dr == DialogResult.Yes)
                 {
                     int id;

@@ -50,7 +50,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(239, 112);
+            this.groupBox1.Size = new System.Drawing.Size(239, 100);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Năm Học";
@@ -60,14 +60,14 @@
             this.txtNKT.Location = new System.Drawing.Point(86, 61);
             this.txtNKT.Name = "txtNKT";
             this.txtNKT.Size = new System.Drawing.Size(128, 20);
-            this.txtNKT.TabIndex = 3;
+            this.txtNKT.TabIndex = 1;
             // 
             // txtNBD
             // 
             this.txtNBD.Location = new System.Drawing.Point(86, 28);
             this.txtNBD.Name = "txtNBD";
             this.txtNBD.Size = new System.Drawing.Size(128, 20);
-            this.txtNBD.TabIndex = 2;
+            this.txtNBD.TabIndex = 0;
             // 
             // label2
             // 
@@ -92,10 +92,10 @@
             this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnHuy.FlatAppearance.BorderSize = 0;
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuy.Location = new System.Drawing.Point(176, 130);
+            this.btnHuy.Location = new System.Drawing.Point(176, 118);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(75, 23);
-            this.btnHuy.TabIndex = 1;
+            this.btnHuy.TabIndex = 3;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
@@ -105,7 +105,7 @@
             this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnSua.FlatAppearance.BorderSize = 0;
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Location = new System.Drawing.Point(83, 130);
+            this.btnSua.Location = new System.Drawing.Point(95, 118);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
             this.btnSua.TabIndex = 2;
@@ -119,14 +119,14 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 154);
+            this.panel4.Size = new System.Drawing.Size(5, 142);
             this.panel4.TabIndex = 15;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 159);
+            this.panel3.Location = new System.Drawing.Point(0, 147);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(260, 5);
             this.panel3.TabIndex = 16;
@@ -137,7 +137,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(260, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 159);
+            this.panel2.Size = new System.Drawing.Size(5, 147);
             this.panel2.TabIndex = 17;
             // 
             // panel1
@@ -153,7 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(265, 164);
+            this.ClientSize = new System.Drawing.Size(265, 152);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);

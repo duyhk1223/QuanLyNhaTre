@@ -76,7 +76,7 @@
             this.txtTenLop.Location = new System.Drawing.Point(73, 19);
             this.txtTenLop.Name = "txtTenLop";
             this.txtTenLop.Size = new System.Drawing.Size(127, 20);
-            this.txtTenLop.TabIndex = 3;
+            this.txtTenLop.TabIndex = 0;
             // 
             // cbNamHoc
             // 
@@ -84,7 +84,7 @@
             this.cbNamHoc.Location = new System.Drawing.Point(73, 69);
             this.cbNamHoc.Name = "cbNamHoc";
             this.cbNamHoc.Size = new System.Drawing.Size(127, 21);
-            this.cbNamHoc.TabIndex = 5;
+            this.cbNamHoc.TabIndex = 2;
             // 
             // cbKhoi
             // 
@@ -92,17 +92,17 @@
             this.cbKhoi.Location = new System.Drawing.Point(73, 42);
             this.cbKhoi.Name = "cbKhoi";
             this.cbKhoi.Size = new System.Drawing.Size(127, 21);
-            this.cbKhoi.TabIndex = 6;
+            this.cbKhoi.TabIndex = 1;
             // 
             // btnSua
             // 
             this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnSua.FlatAppearance.BorderSize = 0;
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.Location = new System.Drawing.Point(82, 121);
+            this.btnSua.Location = new System.Drawing.Point(86, 119);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
-            this.btnSua.TabIndex = 7;
+            this.btnSua.TabIndex = 3;
             this.btnSua.Text = "Cập nhật";
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -112,10 +112,10 @@
             this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnHuy.FlatAppearance.BorderSize = 0;
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuy.Location = new System.Drawing.Point(163, 121);
+            this.btnHuy.Location = new System.Drawing.Point(167, 119);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(75, 23);
-            this.btnHuy.TabIndex = 8;
+            this.btnHuy.TabIndex = 4;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
@@ -130,7 +130,7 @@
             this.groupBox1.Controls.Add(this.txtTenLop);
             this.groupBox1.Location = new System.Drawing.Point(13, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(225, 100);
+            this.groupBox1.Size = new System.Drawing.Size(228, 100);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lớp";
@@ -141,25 +141,25 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 146);
+            this.panel4.Size = new System.Drawing.Size(5, 143);
             this.panel4.TabIndex = 15;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 151);
+            this.panel3.Location = new System.Drawing.Point(0, 148);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(251, 5);
+            this.panel3.Size = new System.Drawing.Size(248, 5);
             this.panel3.TabIndex = 16;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(251, 5);
+            this.panel2.Location = new System.Drawing.Point(248, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 151);
+            this.panel2.Size = new System.Drawing.Size(5, 148);
             this.panel2.TabIndex = 17;
             // 
             // panel1
@@ -168,14 +168,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(256, 5);
+            this.panel1.Size = new System.Drawing.Size(253, 5);
             this.panel1.TabIndex = 14;
             // 
             // frmSuaLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(256, 156);
+            this.ClientSize = new System.Drawing.Size(253, 153);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -185,6 +185,7 @@
             this.Controls.Add(this.btnSua);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSuaLop";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SuaLop";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

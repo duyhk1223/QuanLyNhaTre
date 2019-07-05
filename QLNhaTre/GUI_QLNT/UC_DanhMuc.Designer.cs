@@ -156,6 +156,8 @@
             // btnThemN
             // 
             this.btnThemN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnThemN.FlatAppearance.BorderSize = 0;
+            this.btnThemN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemN.Location = new System.Drawing.Point(18, 317);
             this.btnThemN.Name = "btnThemN";
             this.btnThemN.Size = new System.Drawing.Size(75, 23);
@@ -168,6 +170,7 @@
             // 
             this.btnXoaN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnXoaN.FlatAppearance.BorderSize = 0;
+            this.btnXoaN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoaN.Location = new System.Drawing.Point(180, 317);
             this.btnXoaN.Name = "btnXoaN";
             this.btnXoaN.Size = new System.Drawing.Size(75, 23);
@@ -180,6 +183,7 @@
             // 
             this.btnSuaN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnSuaN.FlatAppearance.BorderSize = 0;
+            this.btnSuaN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuaN.Location = new System.Drawing.Point(99, 317);
             this.btnSuaN.Name = "btnSuaN";
             this.btnSuaN.Size = new System.Drawing.Size(75, 23);
@@ -190,8 +194,6 @@
             // 
             // dgvNamHoc
             // 
-            this.dgvNamHoc.AllowUserToAddRows = false;
-            this.dgvNamHoc.AllowUserToDeleteRows = false;
             this.dgvNamHoc.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dgvNamHoc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -213,7 +215,6 @@
             this.dgvNamHoc.Location = new System.Drawing.Point(7, 19);
             this.dgvNamHoc.MultiSelect = false;
             this.dgvNamHoc.Name = "dgvNamHoc";
-            this.dgvNamHoc.ReadOnly = true;
             this.dgvNamHoc.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvNamHoc.RowHeadersVisible = false;
             this.dgvNamHoc.RowHeadersWidth = 20;
@@ -230,7 +231,6 @@
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Column1.HeaderText = "STT";
             this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
             this.Column1.Width = 35;
             // 
             // groupBox2
@@ -317,7 +317,9 @@
             // btnSuaL
             // 
             this.btnSuaL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnSuaL.Location = new System.Drawing.Point(175, 370);
+            this.btnSuaL.FlatAppearance.BorderSize = 0;
+            this.btnSuaL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuaL.Location = new System.Drawing.Point(200, 370);
             this.btnSuaL.Name = "btnSuaL";
             this.btnSuaL.Size = new System.Drawing.Size(75, 23);
             this.btnSuaL.TabIndex = 13;
@@ -329,7 +331,8 @@
             // 
             this.btnXoaL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnXoaL.FlatAppearance.BorderSize = 0;
-            this.btnXoaL.Location = new System.Drawing.Point(267, 370);
+            this.btnXoaL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoaL.Location = new System.Drawing.Point(281, 370);
             this.btnXoaL.Name = "btnXoaL";
             this.btnXoaL.Size = new System.Drawing.Size(75, 23);
             this.btnXoaL.TabIndex = 12;
@@ -341,7 +344,8 @@
             // 
             this.btnThemL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnThemL.FlatAppearance.BorderSize = 0;
-            this.btnThemL.Location = new System.Drawing.Point(79, 370);
+            this.btnThemL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThemL.Location = new System.Drawing.Point(119, 370);
             this.btnThemL.Name = "btnThemL";
             this.btnThemL.Size = new System.Drawing.Size(75, 23);
             this.btnThemL.TabIndex = 12;

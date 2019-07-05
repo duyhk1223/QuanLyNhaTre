@@ -31,6 +31,7 @@ namespace GUI_QLNT
                 if (NguoiDungBUS.Instance.DMK(Convert.ToInt16(frmLogin.ID_USER), txtMkcu.Text, txtMkmoi.Text))
                 {
                     MessageBox.Show("Đổi mật khẩu thành công");
+                    this.Dispose();
                 }
                 else
                 {

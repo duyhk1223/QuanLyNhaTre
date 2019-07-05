@@ -65,7 +65,7 @@
             this.cbNamHoc.Location = new System.Drawing.Point(94, 80);
             this.cbNamHoc.Name = "cbNamHoc";
             this.cbNamHoc.Size = new System.Drawing.Size(121, 21);
-            this.cbNamHoc.TabIndex = 5;
+            this.cbNamHoc.TabIndex = 2;
             // 
             // cbKhoi
             // 
@@ -73,14 +73,14 @@
             this.cbKhoi.Location = new System.Drawing.Point(94, 53);
             this.cbKhoi.Name = "cbKhoi";
             this.cbKhoi.Size = new System.Drawing.Size(121, 21);
-            this.cbKhoi.TabIndex = 4;
+            this.cbKhoi.TabIndex = 1;
             // 
             // txtTenLop
             // 
             this.txtTenLop.Location = new System.Drawing.Point(94, 24);
             this.txtTenLop.Name = "txtTenLop";
             this.txtTenLop.Size = new System.Drawing.Size(121, 20);
-            this.txtTenLop.TabIndex = 3;
+            this.txtTenLop.TabIndex = 0;
             // 
             // label3
             // 
@@ -114,10 +114,10 @@
             this.btnThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnThem.FlatAppearance.BorderSize = 0;
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.Location = new System.Drawing.Point(97, 139);
+            this.btnThem.Location = new System.Drawing.Point(97, 140);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
-            this.btnThem.TabIndex = 1;
+            this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -127,10 +127,10 @@
             this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnHuy.FlatAppearance.BorderSize = 0;
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHuy.Location = new System.Drawing.Point(178, 139);
+            this.btnHuy.Location = new System.Drawing.Point(178, 140);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(75, 23);
-            this.btnHuy.TabIndex = 2;
+            this.btnHuy.TabIndex = 4;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
@@ -185,6 +185,7 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmThemLop";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ThemLop";
             this.Load += new System.EventHandler(this.frmThemLop_Load);
             this.groupBox1.ResumeLayout(false);

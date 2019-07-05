@@ -50,7 +50,7 @@
             this.btnSua.Location = new System.Drawing.Point(143, 105);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
-            this.btnSua.TabIndex = 20;
+            this.btnSua.TabIndex = 3;
             this.btnSua.Text = "Cập nhật";
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -69,7 +69,7 @@
             this.txtTaiKhoan.Location = new System.Drawing.Point(116, 25);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(183, 20);
-            this.txtTaiKhoan.TabIndex = 19;
+            this.txtTaiKhoan.TabIndex = 0;
             // 
             // label1
             // 
@@ -124,7 +124,7 @@
             this.btnHuy.Location = new System.Drawing.Point(224, 105);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(75, 23);
-            this.btnHuy.TabIndex = 21;
+            this.btnHuy.TabIndex = 4;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
@@ -135,7 +135,7 @@
             this.cbGiaoVien.Location = new System.Drawing.Point(116, 51);
             this.cbGiaoVien.Name = "cbGiaoVien";
             this.cbGiaoVien.Size = new System.Drawing.Size(183, 21);
-            this.cbGiaoVien.TabIndex = 22;
+            this.cbGiaoVien.TabIndex = 1;
             // 
             // label4
             // 
@@ -155,7 +155,7 @@
             this.cbQuyen.Location = new System.Drawing.Point(116, 78);
             this.cbQuyen.Name = "cbQuyen";
             this.cbQuyen.Size = new System.Drawing.Size(183, 21);
-            this.cbQuyen.TabIndex = 22;
+            this.cbQuyen.TabIndex = 2;
             // 
             // frmSuaND
             // 

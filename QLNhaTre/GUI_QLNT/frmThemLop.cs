@@ -26,7 +26,6 @@ namespace GUI_QLNT
         }
         private void LoadKhoitoCombobox()
         {
-            
             cbKhoi.DisplayMember = "TenKhoi";
             cbKhoi.ValueMember = "MaKhoi";
             cbKhoi.DataSource = KhoiBUS.Instance.GetKhoi();
@@ -46,6 +45,10 @@ namespace GUI_QLNT
             {
                 MessageBox.Show("Chưa nhập tên lớp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtTenLop.Focus();
+            }
+            else if(cbNamHoc.SelectedItem == null)
+            {
+                MessageBox.Show("Chưa chọn năm học", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
