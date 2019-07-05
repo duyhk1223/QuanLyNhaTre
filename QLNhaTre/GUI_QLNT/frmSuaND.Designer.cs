@@ -86,14 +86,14 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 130);
+            this.panel4.Size = new System.Drawing.Size(5, 129);
             this.panel4.TabIndex = 11;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 135);
+            this.panel3.Location = new System.Drawing.Point(0, 134);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(336, 5);
             this.panel3.TabIndex = 12;
@@ -104,7 +104,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(336, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 135);
+            this.panel2.Size = new System.Drawing.Size(5, 134);
             this.panel2.TabIndex = 13;
             // 
             // panel1
@@ -161,7 +161,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 140);
+            this.ClientSize = new System.Drawing.Size(341, 139);
             this.Controls.Add(this.cbQuyen);
             this.Controls.Add(this.cbGiaoVien);
             this.Controls.Add(this.btnHuy);

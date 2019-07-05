@@ -114,7 +114,7 @@ namespace GUI_QLNT
             {
                 int mahs = (int)dgvDSHS.Rows[dgvDSHS.SelectedRows[0].Index].Cells[1].Value;
                 HocSinh hs = HocSinhBUS.Instance.GetHocSinhByMaHS(mahs);
-                frmSuaHS fsua = new frmSuaHS(hs, (cbNamHoc.SelectedValue as NamHoc).MaNamHoc);
+                frmSuaHS fsua = new frmSuaHS(hs, (int)cbNamHoc.SelectedValue);
                 fsua.ShowDialog();
                 LoadDSHocSinhtodtgv();
             }
@@ -229,18 +229,16 @@ namespace GUI_QLNT
 
         private void LoadLoptoCombobox()
         {
-            
-            cbLop.DataSource = LopBUS.Instance.GetLopByMaNamHoc((cbNamHoc.SelectedItem as NamHoc).MaNamHoc);
-            cbLop.DisplayMember = "TENLOP";
-            cbLop.ValueMember = "MALOP";
+            cbLop.DisplayMember = "TenLop";
+            cbLop.ValueMember = "MaLop";
+            cbLop.DataSource = LopBUS.Instance.GetLopByMaNamHoc((int)cbNamHoc.SelectedValue);
         }
 
         private void LoadNamHoctoCombobox()
         {
+            cbNamHoc.DisplayMember = "NamBDKT";
+            cbNamHoc.ValueMember = "MaNamHoc";
             cbNamHoc.DataSource = NamHocBUS.Instance.GetNamHoc();
-            cbNamHoc.DisplayMember = "NAMBDKT";
-            cbNamHoc.ValueMember = "MANAMHOC";
-            
         }
 
         private void LoadDSHocSinhtodtgv()

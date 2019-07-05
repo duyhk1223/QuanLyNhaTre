@@ -66,5 +66,10 @@ namespace BUS_QLNT
         {
             return NguoiDungDAL.Instance.getthongtinlop(id);
         }
+
+        public bool DMK(int id, string mkcu, string mkmoi)
+        {
+            return NguoiDungDAL.Instance.DMK(id, mkcu, mkmoi);
+        }
     }
 }

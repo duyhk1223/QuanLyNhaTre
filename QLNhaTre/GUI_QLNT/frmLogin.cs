@@ -22,7 +22,7 @@ namespace GUI_QLNT
         }
 
         public static string ID_USER = string.Empty;
-
+        public static string NAME = string.Empty;
 
         private void btnDangnhap_Click(object sender, EventArgs e)
         {
@@ -31,6 +31,7 @@ namespace GUI_QLNT
             ID_USER = NguoiDungBUS.Instance.GetID(taiKhoan,matKhau);
             if (ID_USER != string.Empty)
             {
+
                 frmMain fm = new frmMain();
                 this.Hide();
                 fm.ShowDialog();

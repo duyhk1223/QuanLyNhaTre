@@ -139,5 +139,33 @@ namespace DAL_QLNT
             }
             return thongtinlop;
         }
+
+        public bool DMK(int id, string mkcu,string mkmoi)
+        {
+            byte[] temp = ASCIIEncoding.ASCII.GetBytes(mkcu);
+            byte[] hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
+
+            string hasmkcu = "";
+
+            foreach (byte item in hasData)
+            {
+                hasmkcu += item;
+            }
+
+            temp = ASCIIEncoding.ASCII.GetBytes(mkmoi);
+            hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
+
+            string hasmkmoi = "";
+
+            foreach (byte item in hasData)
+            {
+                hasmkmoi += item;
+            }
+
+            string query = string.Empty;
+            query += string.Format("UPDATE NGUOIDUNG SET MATKHAU = '{0}' WHERE ID={1} AND MATKHAU='{2}'",hasmkmoi,id,hasmkcu);
+
+            return DataProvider.Instance.ExecuteNonQuery(query) > 0;
+        }
     }
 }

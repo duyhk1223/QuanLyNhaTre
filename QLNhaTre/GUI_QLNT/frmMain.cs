@@ -91,5 +91,10 @@ namespace GUI_QLNT
             return true;
         }
 
+        private void btnDMK_Click(object sender, EventArgs e)
+        {
+            frmDMK dmk = new frmDMK();
+            dmk.ShowDialog();
+        }
     }
 }

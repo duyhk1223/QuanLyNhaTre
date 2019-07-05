@@ -152,3 +152,4 @@ C:\Users\kdi69\Downloads\-N-master\-N-master\checkdataHS-GV-ND\GUI_QLNT\obj\Debu
 C:\Users\kdi69\Downloads\-N-master\-N-master\checkdataHS-GV-ND\GUI_QLNT\obj\Debug\GUI_QLNT.UC_DanhMuc.resources
 C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLNT.UC_DanhMuc.resources
 C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLNT.UC_TimKiem.resources
+C:\Users\kdi69\Documents\GitHub\QuanLyNhaTre\QLNhaTre\GUI_QLNT\obj\Debug\GUI_QLNT.frmDMK.resources
