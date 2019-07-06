@@ -264,20 +264,39 @@ namespace GUI_QLNT
 
             if (gridLop.SelectedRows.Count > 0)
             {
+                bool kq = false;
                 DialogResult dr = MessageBox.Show(this, "Thao tác này sẽ xóa tất cả dữ liệu trong lớp.\nXóa?", "Cảnh báo!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dr == DialogResult.Yes)
                 {
                     int id;
                     id = (int)gridLop.Rows[gridLop.SelectedRows[0].Index].Cells[1].Value;
-                    if (LopBUS.Instance.XoaLop(id.ToString()))
+                    try
                     {
-                        MessageBox.Show("Đã xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadLopToDGV();
+                        kq = LopBUS.Instance.XoaLop(id.ToString());
                     }
-                    else
+                    catch (SqlException sqlex)
                     {
-                        MessageBox.Show("Xóa không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (sqlex.Message.Contains("FK__HOCSINH__MALOP__1B0907CE") || sqlex.Message.Contains("FK__GIAOVIEN__MALOP__182C9B23"))
+                        {
+                            MessageBox.Show("Không thể xóa lớp có học sinh hoặc giáo viên đã được phân công");
+                        }
+
+
                     }
+                    finally
+                    {
+
+                        if (kq)
+                        {
+                            MessageBox.Show("Đã xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadLopToDGV();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Xóa không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+
                 }
             }
             else
